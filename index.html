@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>To-do Challenge</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <main>
+        <!-- Header -->
+        <section>
+            <div class="header">
+              <div>
+                <img src="img/16-165882_check-mark-computer-icons-check-icon-png-clipart.png" alt="">
+              </div>
+              <div class="header-text">  
+               <h1>TO-DO <em>LIST</em></h1>
+             </div>
+                
+            </div>
+        </section>
+
+        <!-- Task Lists -->
+        <section class="todos">
+            <div class="new-tasks">
+                <h1>To-DO</h1>
+            </div>
+            <div class="in-progress">
+                <h1>In Progress</h1>
+            </div>
+            <div class="done-tasks">
+                <h1>Done</h1>
+            </div>
+            
+        </section>
+        <div class="content-section">
+        <section class="content-section">
+            <div class="list-overflow">
+            <div class="new-list">
+                <ul class="list-group" id="newList"></ul>
+            </div>
+            <div>
+                <ul class="list-group" id="currentList"></ul>
+            </div>
+            <div>
+                <ul class="list-group" id="archivedList"></ul>
+            </div>
+            </div>
+        </section>
+        <!-- Add Task -->
+        <section class="task-section">
+            <div class="task-form">
+                <input type="text" id="newInput" placeholder="Task..."><br><br>
+                <button id="submit">Add To-Do</button>
+            </div>
+        </section>
+         </div>
+        <!-- Footer -->
+        
+        <footer>
+            
+        </footer>
+        <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
+        <script src="scripts/script.js"></script>
+    </main>
+    
+</body>
+</html>
