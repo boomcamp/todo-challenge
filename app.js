@@ -59,10 +59,10 @@ $(document).ready(function() {
             <input type="checkbox">
             <label>${$(this).text()}</label>
             <input type="text">
-            <button class="edit"><i class = "fa fa-edit"></i></button>
-            <button class="save"><i class = "fa fa-check"></i></button>
-            <button class="delete"><i class = "fa fa-trash"></i></button>
-            <button class="return"><i class = "fa fa-backward"></i></button>
+            <button class="edit"><i class = "fa fa-edit top"></i></button>
+            <button class="save"><i class = "fa fa-check top"></i></button>
+            <button class="delete"><i class = "fa fa-trash top"></i></button>
+            <button class="return"><i class = "fa fa-backward top"></i></button>
         </li>
         `
         );
@@ -135,10 +135,10 @@ $(document).ready(function() {
                     <input type="checkbox">
                     <label>${value}</label>
                     <input type="text">
-                    <button class="edit"><i class = "fa fa-edit"></i></button>
-                    <button class="save"><i class = "fa fa-check"></i></button>
-                    <button class="delete"><i class = "fa fa-trash"></i></button>
-                    <button class="return"><i class = "fa fa-backward"></i></button>
+                    <button class="edit"><i class = "fa fa-edit top"></i></button>
+                    <button class="save"><i class = "fa fa-check top"></i></button>
+                    <button class="delete"><i class = "fa fa-trash top"></i></button>
+                    <button class="return"><i class = "fa fa-backward top"></i></button>
                 </li>
                 `
                 );
