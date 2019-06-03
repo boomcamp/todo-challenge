@@ -38,7 +38,7 @@ function completedLoader(){
         page += '<div class="list '+color+'">'+
         '<button onclick="edit('+key.id+')" class="task">'+
         key.task+
-   ' <sup>'+state+'</sup></div>'+
+   ' <sup>'+state+'</sup></button>'+
    
 
     '<div class="icons">'+
@@ -71,7 +71,7 @@ function activeLoader(){
         page += '<div class="list '+color+'">'+
         '<button onclick="edit('+key.id+')" class="task">'+
         key.task+
-   ' <sup>'+state+'</sup></div>'+
+   ' <sup>'+state+'</sup></button>'+
    
 
     '<div class="icons">'+
