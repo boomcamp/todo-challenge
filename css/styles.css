@@ -30,14 +30,14 @@ sup {
     align-items: center;
     justify-content: center;
     width: 100vw;
-    height: 100vh;
+    height: fit-content;
    
 }
 
 
 .sub-container {
     width: 500px;
-    height: 100vh;
+    height: fit-content;
     background: white;
     border: 1px solid darkolivegreen;
 }   
