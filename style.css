@@ -1,0 +1,120 @@
+body {
+    width: 100%;
+    background-color: whitesmoke ;
+    margin: 0;
+}
+.todo-con {
+    background-color: aqua;
+    height: 100%;
+    width: 30%;
+    margin: 0 auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.todo-con header {
+    box-sizing: border-box;
+    padding: 50px;
+}
+.todo-con header h1 {
+    text-align: center;
+    opacity: 0.7;
+    color: blueviolet;
+}
+.status{
+    margin-bottom: 50px;
+    width:100%;
+    padding: 0;
+}
+.status ul {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+}
+.status ul li{
+    /* width: 33%; */
+    text-align: center;
+    list-style: none;
+    color: white;
+    padding: 5px;
+}
+.status ul li:hover{
+    color:yellow;
+}
+.todo-con .todo-body{
+    height:500px;
+    width: 100%;
+}
+.todo-con .footer {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+.todo-con .footer img {
+    max-width: 50px;
+    max-height: 50px;
+    height: auto;
+    width: auto;
+
+}
+.todo-body{
+    position: relative;
+}
+.todo-con .footer input{
+    width: 75%;
+}
+.todo-con .footer img:hover{
+    opacity: 0.5;
+}
+
+    list-style-type: square;
+.todo-body ul {
+    list-style-type: square;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+}
+.todo-body ul li{
+    text-align: center;
+    color: #0e0b11;
+    font-weight: 500;
+    text-align: left;
+    padding: 10px;
+    display: flex;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.todo-body ul li:hover button{
+    display: inline;
+}
+.todo-body ul li button {
+    background-color: yellowgreen;
+    color: white;
+    margin-left: 10px;
+    width: 50px;
+    border-radius: 10px;
+    display: none;
+    font-weight: bold;
+}
+.active {
+    border-bottom: 5px solid yellowgreen;
+}
+
+.todo, .in-progress, .done {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0;
+    background-color: aqua;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.selected {
+    z-index: 10;
+}
+
+.list {
+    width: 100%;
+}
