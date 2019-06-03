@@ -16,18 +16,31 @@
 </head>
 <body>
     <div id="main-container">
+      <!--The modal of the app-->
       <div id="modal-main">
+        <!--The Add Task Modal-->
         <div class="modal-create">
-          <div class="header-modal"><h2>Add Task</h2> <span><i class="fa fa-lg fa-times"></i></span></div>
+          <div class="header-modal"><h2><i class="fa fa-lg fa-sticky-note-o"></i> Add Task</h2> <span><i class="fa fa-lg fa-times"></i></span></div>
           <div class="inner-modal">
-            <label for="title">Title:</label><br>
-            <center><input title="Enter the task title" class="title" name="title" type="text"></center><br>
-            <label for="info">Information:</label><br>
             <center><textarea title="Enter the information" style="resize: none" name="info" id="info" cols="30" rows="10"></textarea></center><br>
             <center><button title="Create the task!" class="sub-btn box-shad1"><i class="fa fa-lg fa-plus-circle"></i> Add Task</button></center>
           </div>
+
         </div>
       </div>
+      <!--The body starts here-->
+      <div id="content-container">
+        <div class="box-cont box-shad1 color1">
+          <div class="box-head"><h2>Todo:</h2></div>
+        </div>
+        <div class="box-cont box-shad1 color2">
+            <div class="box-head"><h2>In Progress:</h2></div>
+        </div>
+        <div class="box-cont box-shad1 color3">
+            <div class="box-head"><h2>Done:</h2></div>
+        </div>
+      </div>
+      <!--The floating button-->
       <button title="Add new task" class="task-btn bot-pos box-shad1"><i class="fa fa-lg fa-sticky-note-o"></i></button>
     </div>
 </body>

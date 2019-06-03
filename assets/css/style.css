@@ -28,12 +28,13 @@ body {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     width: 80%;
     height: auto;
-    min-height: 350px;
+    min-height: 100px;
     padding-bottom: 20px;
 }
 
 #modal-main h2 {
     float: left;
+    color: #100c08;
     padding: 15px;
 }
 
@@ -42,6 +43,7 @@ body {
     float: right;
     font-size: 18px;
     transition: all 50ms;
+    color: #100c08;
 }
 
 #modal-main span:hover {
@@ -52,7 +54,7 @@ body {
     margin-bottom: 20px;
     height: auto;
     min-height: 50px;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #100c08;
 }
 
 #main-container {
@@ -72,7 +74,7 @@ body {
     z-index: 999;
     position: absolute;
     outline: none;
-    color: black;
+    color: #100c08;
     height: 100px;
     width: 100px;
     border: none;
@@ -108,7 +110,7 @@ body {
     font-family: 'Roboto';
     font-size: 21px;
     padding: 5px;
-    width: 99%;
+    width: 98%;
     height: 80px;
     border: 1px solid #696969;
 }
@@ -117,24 +119,12 @@ body {
     border: 1px solid #03a9f4;
 }
 
-.inner-modal .title {
-    font-family: 'Roboto';
-    width: 98%;
-    height: 40px;
-    font-size: 21px;
-    padding-left: 5px;
-    border: 1px solid #696969;
-}
-
-.inner-modal .title:focus {
-    border: 1px solid #03a9f4;
-}
-
 .inner-modal label {
     font-size: 21px;
 }
 
 .sub-btn {
+    color: #100c08;
     margin: 0 auto;
     border: none;
     width: 100%;
@@ -143,4 +133,47 @@ body {
     border: none;
     border-radius: 5px;
     background-color: #defcfc;
+}
+
+#content-container {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-gap: 10px;
+    position: relative;
+    top: 10px;
+    margin: auto auto;
+    width: 95%;
+    height: auto;
+    min-height: 880px;
+    color: #100c08;
+}
+
+#content-container .box-cont {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.box-cont .box-head {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    min-height: 60px;
+}
+
+.box-cont .box-head h2 {
+    font-size: 36px;
+    padding-left: 15px;
+}
+
+.color1 {
+    background-color: #d6f8b8;
+}
+
+.color2 {
+    background-color: #deecfc;
+}
+
+.color3 {
+    background-color: #faa9e0;
 }
