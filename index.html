@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>To-Do Challenge</title>
+	<link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+	<div class="modal">
+		<div class="modal-add">
+			<div class="modal-header">
+				<p>Add new task &nbsp;<span class="fa fa-tasks"></span></p>
+				<span class="fa fa-times" id="close"></span>
+			</div>
+			<div class="modal-body">
+				<input type="text" name="task" class="input-text" placeholder="Enter new task" required>
+			</div>
+			<div class="modal-footer">
+				<button class="btn green" id="save">Save</button>
+				<button class="btn green" id="update">Update</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="header">
+			<h1>To do Lists  &nbsp;<span class="fa fa-tasks"></span></h1>
+		</div>
+		<div class="buttons">
+			<button class="btn" id="newTask"><span class="fa fa-plus"></span> New Task</button>
+		</div>
+		<div class="body-items" id="body-item">
+			<div class="fr-todo">
+				<div class="todo-header">
+					To-Do List <span class="fa fa-tasks"></span>
+				</div>
+				<ul class="todo-body">
+
+				</ul>
+			</div>
+			<div class="fr-progress">
+				<div class="progress-header">
+					In-Progress <span class="fa fa-tasks"></span>
+				</div>
+				<ul class="progress-body">
+
+				</ul>
+			</div>
+			<div class="fr-done">
+				<div class="done-header">
+					Done <span class="fa fa-tasks"></span>
+				</div>
+				<ul class="done-body">
+
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+</body>
+<script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
+
+<script type="text/javascript" src="script/jquery.js"></script>
+
+</html>
