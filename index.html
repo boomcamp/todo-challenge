@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <h1 class="heading">To-<span class="red">Do</span> List</h1>
+      <hr class="line" />
+      <div class="task-headings">
+        <h3>New Task</h3>
+        <h3>Task in Progress</h3>
+        <h3>Done Task</h3>
+      </div>
+      <div class="task-container">
+        <div class="new-task">
+        </div>
+        <div class="current">
+
+        </div>
+        <div class="done"></div>
+      </div>
+      <div class="add-task" id="addTask">
+        <h2>NEW TASK</h2>
+        <textarea id="task-input" cols="96" rows="3"></textarea>
+        <button id='task'>ADD TASK</button>
+      </div>
+      <button class="newTask" id="newTask">ADD NEW TASK</button>
+    </div>
+  </body>
+  <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
+  <script src="index.js"></script>
+</html>
