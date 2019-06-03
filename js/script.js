@@ -132,7 +132,7 @@ function dataLoader(){
     let page = "";
     let counter = 1;
     let color = "";
-    let done = "",remove="",active="",state="";
+    let done = "Set Done",remove="",active="Set Active",state="";
     tasks.forEach(key=>{
         
         !key.done ? done = "Set Done":state="Done";
@@ -160,6 +160,7 @@ function dataLoader(){
     });
     $('.body').html(page);
     
+    
    
 }
 
@@ -174,28 +175,37 @@ function setItem(key,state){
             if(x.id===key){
               x.done = true;
               x.active = false;
+              return;
             }
-        })   
+        });
+        // activeLoader();
+       
         
        
       break;
       case 2:
-            tasks=tasks.filter(y=>y.id!==key);   
+            tasks=tasks.filter(y=>y.id!==key); 
+            dataLoader();  
+            activeLoader();
+            completedLoader();
       break;
       case 3: 
             tasks.forEach(x=>{
             if(x.id===key){
               x.active = true;
               x.done = false;
+              return;
             }
-        })      
+        });
+        // completedLoader();
         
       break;
 
       default: 
+      
        
   }
-   
+  
    
    dataLoader();
    localStorage['tasks'] = JSON.stringify(tasks);
