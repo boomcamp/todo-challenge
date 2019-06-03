@@ -1,0 +1,158 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main{
+    background-image: url("../images/blue.png");
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+    height: 900px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14pt;
+}
+.header{
+    background-image: url("../images/headerbg.jpg");
+    position: absolute;
+    z-index: 100;
+    height: 55px;
+    font-weight: 1000;
+    color: red;
+    top: 12px;
+    font-family: 'Arial Narrow Bold', sans-serif;
+    font-size: 2em;
+    border-radius: 5px;
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 5px;
+}
+
+.container{
+    height: 750px;
+    width: 30%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.ToDo{
+    background-image: url("../images/addtask.jpg");
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 10px;
+    color: blue;
+}
+.add-task{
+    position: relative;
+    top: 10px;
+    height: 90px;
+    width: 90px;
+    background: transparent;
+    border-radius: 40px;
+    border: 0px;
+
+}
+.taskTextfield{
+    position: relative;
+    top: 30px;
+    height: 90px;
+}
+.input-task{
+    background: transparent;
+    border-radius: 5px;
+    border: 2px solid skyblue;
+    height: 40px;
+    width: 500px;
+}
+.ttfActions{
+    position: relative;
+    top: 5px;
+}
+.addInputTask{
+    background: skyblue;
+    border-radius: 20px;
+    height: 30px;
+    width: 100px;
+    border: 0px;
+}
+.cancelAddTask{
+    text-decoration: none;
+    color: red;
+}
+a{
+    text-decoration: none;
+}
+.newtask{
+    position: relative;
+    
+}
+.task-content{
+    position: relative;
+    top: 50px;
+    background-color: transparent;
+    width: 90%;   
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+     
+}
+
+.InProgress{
+    background-image: url("../images/progress.png");;
+    color: white;
+}
+.progress-content{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.Done{
+    background-image: url("../images/completed.jpg");
+    color: green;
+    
+}
+.done-content{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    color: blue;
+
+}
+.btn-start{
+    background-color: lightgreen;
+    border-radius: 10px;
+    width: 60px;
+}
+.btn-delete{
+    background-color: red;
+    border-radius: 10px;
+    width: 60px;
+}
+.btn-back{
+    background-color: gray;
+    border-radius: 10px;
+    width: 60px;
+}
+.btn-done{
+    background-color: lightblue;
+    border-radius: 10px;
+    width: 100px;
+}
+
+footer{
+
+    position: relative;
+    top: 15px;
+    left: 50px;
+    width: 500px;
+
+    
+}
