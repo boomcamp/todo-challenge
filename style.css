@@ -1,0 +1,134 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-image: url(./cbff4c80dc2012d3825b276c1ec2d761.jpg);
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+.main{
+    background-color: rgb(34, 34, 34);
+    height: 900px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: initial;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 27px;
+    color: aliceblue;
+}
+.main p{
+    align-items: center;
+}
+.line{
+    width: 100%;
+    position: relative;
+    bottom: 25px;
+    color: black;
+}
+.red{
+    color: red;
+    font-size: 2.15rem;
+}
+.task-headings{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    align-items: center;
+}
+.task-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+.new-task{
+    width: 33.33%;
+    display: flex;
+    flex-direction: column;
+   
+    justify-content: flex-start;
+    padding-top: 30px;
+    padding-left: 50px;
+
+}
+.current{
+    height:680px;
+    width: 33.33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border-right: 3px solid aliceblue;
+    border-left: 3px solid aliceblue;
+    padding-top: 30px;
+}
+.done{
+    width: 33.33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 30px;
+}
+.newTask{
+    width: 100%;
+    background-color: rgba(255, 0, 0, 0.473);
+    border-radius: 2px;
+    border:none;
+    height: 80px;
+    letter-spacing: 5px;
+    font-size: 20px;
+    color: blanchedalmond;
+}
+.add-task{
+    height: 200px;
+    background-color: rgb(34, 34, 34);
+    width: 100%;
+    color: black;
+    padding: 30px;
+    overflow-wrap: normal;
+}
+.add-task h2{
+    color: aliceblue;
+    text-align: center;
+    letter-spacing: 5px;
+}
+.add-task textarea{
+    background-color: transparent;
+    color: aliceblue;
+    border-radius:5px;
+    font-size: 18px;
+}
+.add-task button{
+    border: none;
+    border-radius: 3px;
+    letter-spacing: 5px;
+    width: 100%;
+    height:70px;
+    background-color: rgba(255, 0, 0, 0.473);
+    font-size: 25px;
+    color: aliceblue;
+}
+.check{
+    height: 25px;
+  width: 25px;
+  background-color: #eee;
+  position: relative;
+  top: 5px;
+  left: 15px;
+}
+.todo{
+    height:80px;
+    width: 88%;
+}
+.todo button{
+    border:none;
+    background-color: orange;
+    border-radius:5px;
+    width: 29%;
+    height: 23px;
+}
