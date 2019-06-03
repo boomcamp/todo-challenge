@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TODO APP</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="todo-con">
+        <header>
+            <h1>TODO LIST</h1>
+        </header>
+        <div class="status">
+            <ul>
+                <li class="stat active" id="todo">TODO</li>
+                <li class="stat" id="current">IN PROGRESS</li>
+                <li class="stat" id="done">DONE</li>
+            </ul>
+        </div>
+        <div class="todo-body">
+            <div class="todo selected">
+                <ul class="list"></ul>
+            </div>
+            <div class="in-progress">
+                <ul class="list"></ul>
+            </div>
+            <div class="done">
+                <ul class="list"></ul>
+            </div>
+        </div>
+        <div class="footer">
+            <input type="text" placeholder="Add text here" id="newTaskInput">
+            <img src="img/add-icon.png" alt="" id="add">
+        </div>
+    </div>
+    <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
+    <script src="./app.js"></script>
+</body>
+</html>
