@@ -17,10 +17,18 @@
 <body>
     <div id="main-container">
       <div id="modal-main">
-        <div class="modal-create"></div>
+        <div class="modal-create">
+          <div class="header-modal"><h2>Add Task</h2> <span><i class="fa fa-lg fa-times"></i></span></div>
+          <div class="inner-modal">
+            <label for="title">Title:</label><br>
+            <center><input title="Enter the task title" class="title" name="title" type="text"></center><br>
+            <label for="info">Information:</label><br>
+            <center><textarea title="Enter the information" style="resize: none" name="info" id="info" cols="30" rows="10"></textarea></center><br>
+            <center><button title="Create the task!" class="sub-btn box-shad1"><i class="fa fa-lg fa-plus-circle"></i> Add Task</button></center>
+          </div>
+        </div>
       </div>
-      <nav class="top-bar"></nav>
-      <button class="task-btn bot-pos"><i class="fa fa-lg fa-sticky-note-o"></i></button>
+      <button title="Add new task" class="task-btn bot-pos box-shad1"><i class="fa fa-lg fa-sticky-note-o"></i></button>
     </div>
 </body>
 </html>
