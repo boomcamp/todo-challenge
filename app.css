@@ -20,7 +20,6 @@ body{
     margin-top: 10px;
     border-radius: 50px;
     color: black;
-    font-family: 'Poppins', sans-serif;
     font-weight: bold;
     font-size: 2em;
     text-align: center;
@@ -37,15 +36,12 @@ body{
         align-items: center;     
     }
         .list-item {
-            /* padding: 5px; */
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding: 10px auto;
             width: 90%;
             height: auto;
             margin-top: 10px;
             border-radius: 50px;
             color: black;
-            font-family: 'Poppins', sans-serif;
             font-weight: bold;
             font-size: 1em;
             }
@@ -106,15 +102,12 @@ body{
         align-items: center;     
     }
         .list-item-2 {
-            /* padding: 5px; */
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding: 10px auto;
             width: 90%;
             height: auto;
             margin-top: 10px;
             border-radius: 50px;
             color: black;
-            font-family: 'Poppins', sans-serif;
             font-weight: bold;
             font-size: 1em;
             }
@@ -123,7 +116,7 @@ body{
             -webkit-box-shadow: 8px 4px 12px 0px #000000; 
             box-shadow: 8px 4px 12px 0px #000000;
         }
-     /* In progress section */
+     /* Done section */
      .list-3{
         padding: 20px;
         margin: 0;
@@ -134,15 +127,12 @@ body{
         align-items: center;     
     }
         .list-item-3 {
-            /* padding: 5px; */
-            padding-top: 10px;
-            padding-bottom: 10px;
+            padding: 10px auto;
             width: 90%;
             height: auto;
             margin-top: 10px;
             border-radius: 50px;
             color: black;
-            font-family: 'Poppins', sans-serif;
             font-weight: bold;
             font-size: 1em;
             }
@@ -156,11 +146,9 @@ body{
         .flex-container{
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            
+            justify-content: center; 
         }
         .flex-item{
             width: 80vw;
-    
         }
-      }
+    }
