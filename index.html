@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link
+     rel="stylesheet"
+     href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+     crossorigin="anonymous"
+   />
+   
+</head>
+<body>
+    <section class=nav-bar>
+        <div class="nav-title">
+            TO-DO LIST
+        </div>
+    </section>
+    
+    <section class="content">
+        <div class="add-wrapper">
+            <div class="add-task field">
+                <input class="task-input" type="text" id="add-task" placeholder="Add a new task...">
+            </div>
+            <div class="add-task">
+                    <img id="add-btn" src="images/add.png" align="middle">
+                    <!--<input type="text" id="lname" name="lastname" placeholder="Add a new task...">-->
+            </div>
+       </div>
+
+        <div class="box-wrapper"> 
+            <div class="box">
+                <div class="box-header peach" id="task-container">
+                        <img src="images/todo.png" alt="Smiley face" width="60" height="60" align="middle">
+                    TODO TASK
+                </div>
+                <div class="box-list new-task">
+                    
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-header pink">
+                        <img src="images/progress.png" alt="Smiley face" width="60" height="60" align="middle">
+                    PROGRESS TASK
+                </div>
+                <div class="box-list progress">
+                        
+                    </div>
+            </div>
+            <div class="box">
+                <div class="box-header peach">
+                        <img src="images/done.png" alt="Smiley face" width="60" height="60" align="middle">
+                    DONE TASK
+                </div>
+                <div class="box-list done">
+                       
+                    </div>
+            </div>
+        </div>
+    </section>
+    <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
