@@ -25,13 +25,21 @@ $(document).ready(function() {
         $('.NewTask-form').toggle();
     })
 
-    $('#add2do').click(function() {
-        $('.todo-list').append(
-            '<div class="todo">' +
-            $('#todo-input').val() +
-            '</div>'
-        )
-        event.preventDefault();
-    })
-
 })
+
+
+$('#add2do').click(function() {
+    $('.todo-list').append(
+        '<div class="todo">' +
+        $('#todo-input').val() +
+        ' <button class="todo-del"><i class="btn-ico fas fa-trash-alt"></i></button>' +
+        '</div>'
+    )
+    event.preventDefault();
+});
+
+$(document).on("click", ".todo-del", function(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    $(this).parent().remove();
+});
