@@ -11,6 +11,12 @@
 
 <body>
     <div class="main-container">
+        <div class="prog-container">
+            <h2>In Progress:</h2>
+            <hr>
+            <div class="prog-list">
+            </div>
+        </div>
         <div class="main">
             <div class="date-container date-box">
                 <div class="box item1">
@@ -30,12 +36,15 @@
             </div>
             <form class="NewTask-form">
                 <h2>Add To-Do:</h2>
-                <input id="todo-input" type="text" autocomplete="off">
-                <button id="add2do" type="submit">Submit</button>
+                <hr>
+                <div class="newTaskForm">
+                    <input class="todo-input" id="todo-input" type="text" autocomplete="off">
+                    <button class="add-btn" id="add2do" type="submit">Submit</button>
+                </div>
             </form>
 
             <div class="todo-container">
-                <h2><i class='large fas fa-tasks'></i></h2>
+                <h2></h2>
                 <div class="todo-list">
                     <div class="todo">
                         <span>Eat lunch today!</span>
@@ -46,6 +55,12 @@
             <div class="footer">
                 <button class="add-todo btn"><i class='btn-ico far fa-edit'> </i>
                 </button>
+            </div>
+        </div>
+        <div class="done-container">
+            <h2>Done!</h2>
+            <hr>
+            <div class="done-list">
             </div>
 
         </div>

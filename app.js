@@ -1,6 +1,8 @@
 $(document).ready(function() {
     //hidden by default{
     $('.NewTask-form').hide();
+    $('.prog-container').hide();
+    $('.done-container').hide();
 
     //}
 
@@ -23,23 +25,101 @@ $(document).ready(function() {
 
     $('.add-todo').click(function() {
         $('.NewTask-form').toggle();
+    });
+
+    $('#add2do').click(function() {
+        var regEx = /^\s+$/;
+        var checkArray = $('#todo-input').val()
+        if (checkArray == '') {
+            alert('Enter something!');
+        } else {
+            $('.todo-list').append(
+                '<div class="todo">' +
+                '<span>' +
+                $('#todo-input').val() +
+                '</span>' +
+                '<button class="todo-del"><i class="btn-ico fas fa-trash-alt"></i></button>' +
+                '</div>'
+            )
+            $('#todo-input').val('');
+            $('.NewTask-form').hide();
+        }
+
+        event.preventDefault();
+    });
+
+    $('.progress').click(function() {
+        $('.prog-container').toggle();
     })
 
-})
+    $('.done').click(function() {
+        $('.done-container').toggle();
+    })
 
 
-$('#add2do').click(function() {
-    $('.todo-list').append(
-        '<div class="todo">' +
-        $('#todo-input').val() +
-        ' <button class="todo-del"><i class="btn-ico fas fa-trash-alt"></i></button>' +
-        '</div>'
-    )
-    event.preventDefault();
 });
+
+
 
 $(document).on("click", ".todo-del", function(e) {
     e.stopPropagation();
     e.preventDefault();
     $(this).parent().remove();
+});
+
+$(document).on("click", ".todo-undo", function(event) {
+    event.stopPropagation();
+    event.preventDefault();
+
+    $('.todo-list').append(
+        '<div class="todo">' +
+        '<span>' +
+        $(this).parent().text() +
+        '</span>' +
+        '<button class="todo-del"><i class="btn-ico fas fa-trash-alt"></i></button>' +
+        '</div>'
+    )
+    $(this).parent().remove();
+
+
+})
+
+$(document).on("click", ".todo", function(e) {
+    e.stopPropagation();
+    e.preventDefault();
+    $('.prog-list').append(
+        '<div class="prog">' +
+        '<span>' +
+        $(this).text() +
+        '</span>' +
+        '<button class="todo-undo"><i class="btn-ico fas fa-undo-alt"></i></button>' +
+        '</div>'
+    )
+    $(this).fadeOut("normal", function() {
+        $(this).remove();
+    });
+})
+
+$(document).on("click", ".prog", function(e) {
+    e.stopPropagation;
+    e.preventDefault;
+    $('.done-list').append(
+        '<div class="jobDone">' +
+        '<span>' +
+        $(this).text() +
+        '</span>' +
+        '<button class="prog-undo"><i class="btn-ico fas fa-undo-alt"></i></button>' +
+        '</div>'
+    )
+    $(this).fadeOut("normal", function() {
+        $(this).remove();
+    });
+});
+
+$(document).on("click", ".jobDone", function(e) {
+    e.stopPropagation;
+    e.preventDefault;
+    $(this).fadeOut("normal", function() {
+        $(this).remove();
+    });
 });
