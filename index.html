@@ -7,8 +7,65 @@
     <title>Todo Challenge</title>
 
     <link rel="stylesheet" href="styles/index.css">
+   
+    <link href="https://fonts.googleapis.com/css?family=Didact+Gothic|Quicksand&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
 </head>
 <body>
+    <header>
+        <div class="header-wrapper">
+            <div class="logo header-item">
+                <span class="logo-title">
+                    <b>Todo</b> | 
+                    <sub-title>Challenge</sub-title>
+                </span>
+            </div>
+            <div class="time header-item">
+                <span id="header-time">
+
+                </span>
+            </div>
+
+            <div class="date header-item">
+                <span>
+                        <span class="date-display"></span>
+                </span>
+            </div>
+            
+        </div>
+    </header>
+
+    <main>
+        <div class="todo-wrapper">
+            <form id="todoForm" class="todoForm">
+                <div class="group-input">
+                   <input type="text" class="text" placeholder="Add task.." required>
+                   <input type="submit" class="submit">
+                </div>
+            </form>
+
+            <div class="task-list-wrapper">
+                <div class="task-list">
+                    <ul class="list-group" id="taskList">
+                        <li class="list-group-item no-task">
+                            <span class="description">No task</span>
+                           
+                           
+                           
+                        </li>
+
+                       
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+    <script src="scripts/app.js"></script>
     
 </body>
 </html>

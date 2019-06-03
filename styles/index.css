@@ -1,4 +1,211 @@
 html , body{
     margin: 0;
     background: #f1f1f1;
+    font-family: 'Didact Gothic', sans-serif;
+    font-size:16px;
+}
+
+/* Header */
+
+header{
+   box-sizing: border-box;
+   background: whitesmoke;
+    border-bottom: solid 1px #CCC;
+}
+.header-wrapper{
+    margin: 0 auto;
+    padding: 5px;
+    width:60%;
+    
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+}
+.header-wrapper .logo{
+   
+  
+}
+
+.header-item{
+    width:30%;
+    font-size:1.3em;
+    margin: 0 auto;
+  
+    padding:5px;
+    color:#333;
+}
+
+.date{
+    font-size:1.3em;
+}
+.date-display{
+    
+}
+
+sub-title{
+    color:#555;
+}
+
+
+/* End Header */
+
+
+/* Main-content */
+
+main{
+    margin-top:25px;
+    box-sizing: border-box;
+}
+
+.todo-wrapper{
+    margin: 0 auto;
+    width:50%;
+    padding:15px;
+   
+   
+
+}
+.todoForm{
+    
+    box-sizing:border-box;
+
+}
+
+.group-input{
+    display: flex;
+}
+.group-input input{
+    font-size: 1em;
+    padding:10px;
+    background: transparent;
+    
+    border:solid 1px #CCC;
+}
+
+.group-input .text{
+    width:85%;
+    background: whitesmoke;
+    outline: none;
+    color:#333;
+    border-right: 0;
+  
+    
+}
+.group-input .submit{
+    width:15%;
+    background:#3491AE;
+    color:#fff;
+    border-right: 0;
+   
+}
+
+/* task list */
+
+.task-list-wrapper{
+    margin-top:10px;
+    border-top:solid 1px #CCC;
+    background: whitesmoke;
+    color:#333;
+    border-radius: 2px;
+}
+
+.task-list{
+  
+}
+.list-group{
+    list-style:none;
+    padding:0;
+    margin-top: auto;
+    
+}
+.list-group-item{
+    padding:10px;
+    padding-left:10px;
+    
+    border:solid 1px #CCC;
+    border-top:0;
+    display: flex;
+    
+    align-items: center;
+}
+.list-group-item span{
+  margin-left:5px;
+
+}
+.description{
+    width:90%;
+}
+/* task list end */
+
+
+/* Main-content end */
+
+
+/* positioning */
+
+
+.pull-right{
+    display: flex;
+    justify-content: flex-end;
+}
+.pull-left{
+    float:left;
+   
+}
+
+/* btn */
+
+.btn{
+    border:0;
+    padding:5px;
+    border-radius: 3px;
+}
+.btn i{
+    font-size:1.5em;
+    color:#fff;
+}
+.btn-delete{
+    background:#E5705D;
+    
+}
+.btn-proceed{
+    background:#E5B35D;
+}
+.btn-done{
+    background:#0E6E42;
+}
+.btn-cancel{
+    background:#C8C918;
+}
+
+.done{
+    text-decoration: line-through;
+}
+
+@media screen 
+ 
+  and (max-device-width: 1200px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+
+    .todo-wrapper{
+        width:80%;
+    }
+    .header-wrapper{
+        width: 80%;
+    }
+}
+
+
+@media screen 
+ 
+  and (max-device-width: 768px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+
+    .todo-wrapper{
+        width:90%;
+    }
+    .header-wrapper{
+        width: 100%;
+    }
 }
