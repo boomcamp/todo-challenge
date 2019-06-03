@@ -1,0 +1,167 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    
+}
+ul{
+    padding-inline-start:0px;
+}
+.mobile{
+    margin:0 auto;
+    width: 620px;
+    background-color: white;
+}
+
+header{
+    display: flex;
+    max-height: 120px;
+    background-color: #F96160;
+    padding: 20px 0;
+}
+
+.header{
+   text-align: center;
+   color: #fff;
+}
+.header h3{ 
+   font-weight:bold;
+}
+
+.nav-header ul{
+    margin: 0 ;
+    margin-top:20px;
+    display: flex;
+    padding-inline-start:0px;
+    justify-content: space-around;
+}
+ul li{
+    list-style-type: none;
+}
+
+.nav-header ul li{
+    list-style-type: none;
+}
+
+.nav-header ul li a{
+    text-align: center;
+    font-size: 18px;
+    text-decoration: none;
+    color: #fff;
+}
+
+ul li a:hover{
+    border-bottom: 3px solid #fff;
+  
+}
+ 
+.white ul li {
+    list-style-type: none;
+    text-align: center;
+    font-size: 18px;
+    text-decoration: none;
+    color: #000;
+}
+
+.white .done-body li {
+    list-style-type: none;
+    text-align: center;
+    font-size: 18px;
+    text-decoration: none;
+    color: #000;
+}
+
+.input-text{
+    width:100%;
+}
+.active, a:hover{
+    border-bottom: 3px solid #fff;
+}
+
+.body{
+    background-color: rgb(236, 236, 236);
+    padding:20px;
+    height:580px;
+     
+} 
+.to-do-task{
+   margin-top:20px;
+}
+
+.fr-progress{
+   margin-top:20px;
+}
+
+.white{
+    background-color: #fff !important;
+    width: 33.33% !important;
+    height:540px;
+    display:inline-block;;
+  
+}
+
+.mid{
+    border-right: #f1f1f1 1px solid;
+    border-left: #f1f1f1 1px solid;
+}
+
+.to-do-body li{
+    margin-top:-25px;
+}
+
+.progress-body li{
+    margin-top:-25px;
+}
+.done-body li{
+    margin-top:-25px;
+}
+
+.row{
+    margin: 0 auto ; 
+    display: flex;
+    justify-content: space-around;
+} 
+
+.add-button{
+    display: flex;
+    justify-content: flex-end; 
+}
+
+.circle-btn{
+    position: fixed;
+    margin-left: -30px;
+    border-radius: 50%;
+    margin-top: -75px;
+    height: 60px;
+    width: 60px;
+    border:#F96160;
+    background-color: #F96160;
+}
+
+.circle-btn:hover{
+    background-color: rgb(245, 118, 118);
+}
+ 
+ 
+/* footer  */
+
+.footer{
+    background-color: #272E4E;
+    height: 60px ;
+    display: flex;
+    justify-content: center;
+
+}
+
+.circle-btn span{
+    color: #fff;
+}
+
+
+
+

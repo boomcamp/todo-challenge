@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/bootstrap.css"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+  />
+    <title>TO DO APP</title>
+</head>
+<body>
+<div class="main">
+    <div class="container">
+        <div class="mobile">
+               <header>
+                   <div class="header">
+                          <h3>  TO DO LIST </h3>
+                    </div>
+                    <div class="nav-header">
+                            <ul>
+                                <li><a href="#" class="active">TO DO</a></li>
+                                <li><a href="#" class="active">IN PROGRESS</a></li>
+                                <li><a href="#"class="active" >DONE</a></li>
+                            </ul>
+                    </div>
+                </header>
+                <div class="body">
+
+                        
+                    <div class="row">
+                      <div class="col-md-4  white ">
+                          <div class="to-do-task">
+                            <ul class="to-do-body">
+
+                            </ul>
+                          </div>
+                      </div>
+                      <div class="col-md-4 white mid">
+                          <div class="fr-progress">
+                              <ul class="progress-body">
+                        
+                              </ul>
+                          </div>
+
+                      </div>
+                      <div class="col-md-4 white">
+                          <div class="done">
+                              <ul class="done-body">
+                              </ul>
+                          </div> 
+                      </div> 
+                    </div>
+                    
+                    <div class="add-button">
+                        <button type="button" class="circle-btn pull-right" id="newTask" >
+                                <span class="fa fa-plus" ></span>
+                        </button>
+                </div>
+                
+            <!-- Modal -->
+          
+                        <div class="modal">
+                                 
+                            <div class="modal-dialog" >
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                     <h4>Add New Task</h4>
+                                     <span class="fa fa-times" id="close"></span>
+                                  </div>
+                                  <div class="modal-body">
+                                    	
+                                      <input type="text" name="task" class="input-text" placeholder="Enter new task" required>
+                                      
+                                    </div>
+                                   <div class="modal-footer">
+                                      <button class="btn btn-primary" id="save">Save</button>
+                                    </div>
+                                </div>
+                            
+                          </div>
+                    </div>
+              </div>  <!-- End body -->  
+              <div class="footer">
+                </div> 
+          </div> <!-- End mobile -->
+     </div>   <!-- End container -->
+</div>   <!-- End Main -->
+
+
+<script >
+    $('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').trigger('focus')
+})
+</script>
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
