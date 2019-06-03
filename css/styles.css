@@ -1,0 +1,185 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: Open Sans Condensed;
+}
+
+
+sup {
+    font-size: 12px;
+    font-weight: bolder;
+    color: teal;
+}
+
+/* customs */
+
+.container {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+   
+}
+
+
+.sub-container {
+    width: 500px;
+    height: 100vh;
+    background: white;
+    border: 1px solid darkolivegreen;
+}   
+
+.navigation{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #222f3e;
+  
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: white;
+    border: 1px solid #111;
+    width: fit-content;
+    
+    
+}
+
+.m1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 11;
+}
+
+.actual {
+    padding: 5px 20px 5px 20px;
+    font-size: 1rem;
+    color: #222;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-left: 1px solid #111;
+}
+
+.actual:hover{
+    background: #ff6b6b;
+}
+
+.input {
+    width: inherit;
+    display: none;
+    flex-direction: row;
+    
+}
+
+.edit2 {
+    width: inherit;
+}
+
+.edit {
+
+    position: absolute;
+    margin: auto;
+    width: inherit;
+    height:fit-content;
+    padding: 20px 0px 20px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #222;
+}
+
+.updatetask {
+    width: 400px;
+    height: 30px;
+    text-indent: 2px;
+}
+
+.task {
+    outline: none;
+    background: none;
+    border: none;
+}
+
+.addtask {
+    width: inherit;
+    padding: 10px 0px 10px 0px;
+    border: none;
+    border-bottom: 1px solid #222;
+    margin-bottom: 2px;
+    text-indent: 10px;
+    font-size: 1rem;
+    
+}
+
+
+
+.add {
+   
+   background: none;
+   border: 1px solid green;
+   padding: 10px;
+   font-size: 16px;
+   display: flex;
+   color: greenyellow;
+   flex: 1;
+  
+}
+
+.gray {
+    background-color:lightgrey !important;
+}
+
+.add:hover {
+    background: red;
+}
+
+.list {
+
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    width: inherit;
+    height: fit-content;
+    padding: 20px;
+    background: white;
+    
+}
+
+.task {
+    flex:1;
+    font-size: 20px;
+}
+
+.date {
+    flex:1;
+    font-size: 20px;
+}
+
+.icons {
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-size: 20px;
+    flex: 2;
+}
+
+.ic {
+    margin-left: 10px;
+    font-weight: bolder;
+    color: green;
+}
+
+.ic:hover {
+    border-bottom: 1px solid orange;
+}
