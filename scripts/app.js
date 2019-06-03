@@ -8,6 +8,8 @@ function listCreate(description , date){
     var taskList = $(
         '<li class="list-group-item">' +
             '<span class="description">'+ description+'</span>'+
+            '<span class="date">'+ jQuery.timeago(date) +'</span>'+
+            
         '</li>'
     );
 
@@ -16,7 +18,7 @@ function listCreate(description , date){
 function listDisplay(){
     const data = JSON.parse(localStorage.getItem('items'))
     data.forEach(element => {
-            listCreate(element.description);
+            listCreate(element.description , element.date);
     })
 }
 $(document).ready(function(){
@@ -38,10 +40,7 @@ $(document).ready(function(){
         
    });
 
-   
    listDisplay();
-
-  
    
 
 })
