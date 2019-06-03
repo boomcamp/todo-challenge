@@ -1,0 +1,101 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+}
+
+*{ box-sizing: border-box }
+
+.container{
+    display: grid;
+    background-color: maroon;
+    color: white;
+    height: 100vh;
+    width: 600px;
+    min-width: 200px;
+    margin: 0 auto;
+    padding: 4px;
+    position: relative;
+    grid-template-rows: 100px 1fr 80px;
+}
+
+#list{
+    overflow-y: auto;
+}
+
+h1{
+    text-align: center;
+    margin-top: 0;
+}
+
+h3{
+    text-align: left;
+}
+
+ul{
+    list-style: none;
+}
+
+fieldset{
+    font-size: 18px;
+    color: white;
+    width: 100%;
+}
+
+legend{
+    font-weight: bold;
+}
+
+fieldset #txtVal{
+    width: 75%;
+    padding: 5px;
+    margin: 5px 0;
+}
+
+#submit{
+    width: 20%;
+    float: right;
+    padding: 5px;
+    margin: 5px 0;
+    font-weight: 400;
+}
+
+#submit:hover{
+    color: maroon;
+}
+
+.hover{
+    cursor: pointer;
+}
+
+.hover:disabled{
+    cursor: default;
+    color: grey !important;
+}
+
+.list-item{
+    display: inline-block;
+    width: 100%;
+    padding: 3px;
+}
+
+.remove-item, .to-progress, .up{
+    float: right;
+    margin-left: 5px;
+    padding: 0 5px;
+    font-weight: bolder;
+}
+
+.remove-item:hover{
+    background: red;
+}
+
+.to-progress:hover{
+    background: green;
+}
+
+.up:hover{
+    background: blue;
+}
+
+/*{ border: 1px solid aqua !important }

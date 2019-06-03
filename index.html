@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TODO List - Micko Matamorosa</title>
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 id="header">To-Do List</h1>
+
+        <div id="list">
+            <h3>TODO : </h2>
+            <ul id="todoLists"></ul>
+            <h3>IN PROGRESS : </h2>
+            <ul id="progressLists"></ul>
+            <h3>DONE : </h2>
+            <ul id="doneList"></ul>
+        </div>
+
+        <form id="addForm" action="#">
+        <fieldset>
+            <legend>Adding New Item:</legend>
+            <input id="txtVal" type="text" name="txtVal" placeholder="Item Name">
+            <input id="submit" class="hover" type="submit" value="Submit" disabled>
+        </fieldset>
+        </form>
+    </div>
+    <script src="Scripts/main-script.js"></script>
+</body>
+</html>
