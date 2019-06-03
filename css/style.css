@@ -1,0 +1,100 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+}
+.container {
+    display: flex;
+}
+
+.main-container {
+    justify-content: center; 
+}
+
+.app-container {
+    flex-direction: column;
+    justify-items: center;
+    margin: 5vh 0;
+    height: 90vh;
+    width: 500px;
+    background: #31acbd;
+    border-radius: 5px;
+}
+
+.items {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 170px;
+    overflow-y: scroll;
+}
+
+.item { 
+    height: 30px;
+    width: 80%;
+    margin: 2px;
+    border-radius: 5px;
+    text-align: center;
+    background: white;
+    border: 2px solid grey;
+}
+
+.todo-div, .inProgress-div, .done-div{
+    width: 360px;
+    display: flex;
+    align-items: center;
+}
+
+.inProgress-div input{
+    background: #31acbd;
+    color:white;
+}
+
+.done-div input{
+    text-decoration: line-through;
+    background: #31acbd;
+    color:white;
+}
+
+.btn {
+    height: 33px;
+    font-size: 20px;
+    background: white;
+    color: #31acbd;
+    border: 2px solid grey;
+    border-radius: 5px;
+}
+
+.add {
+    position: absolute;
+    top: 730px;
+    left: 680px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    color: #31acbd;
+}
+
+.add-text {
+    height: 40px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 0 20px;
+    font-size: 20px;
+    color: #31acbd;
+}
+
+.circle-btn {
+    height: 50px;
+    width: 50px;
+    background: white;
+    font-size: 43px;
+    border-radius: 50%;
+}
