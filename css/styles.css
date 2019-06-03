@@ -4,6 +4,17 @@ body {
     font-family: Open Sans Condensed;
 }
 
+header {
+    width: inherit;
+    height: fit-content;
+    padding: 10px;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    font-size: 20px;
+    font-weight: bold;
+}
+
 
 sup {
     font-size: 12px;

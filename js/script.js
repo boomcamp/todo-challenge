@@ -1,4 +1,6 @@
 let tasks = [];
+tasks  = JSON.parse(localStorage['tasks']);
+
 let flag = false;
 let gid;
 let updateFlag = false;
@@ -17,11 +19,13 @@ function Task(task){
     }
     tasks.unshift(t);
     dataLoader();
+    localStorage['tasks'] = JSON.stringify(tasks);
+   
 }
 
 
 function completedLoader(){
-    let page = "";
+    let page2 = "";
     let counter = 1;
     let color = "";
     let done = "",remove="",active="",state="Done";
@@ -35,10 +39,10 @@ function completedLoader(){
         let a2 = key.remove?'<button onclick="setItem('+key.id+',2)" class="ic"> '+remove+'</button>':"";
         let a3 = !key.active?'<button onclick="setItem('+key.id+',3)" class="ic"> '+active+'</button>':"";
        
-        page += '<div class="list '+color+'">'+
-        '<button onclick="edit('+key.id+')" class="task">'+
+        page2 += '<div class="list '+color+'">'+
+        '<a onclick="edit('+key.id+')" class="task">'+
         key.task+
-   ' <sup>'+state+'</sup></button>'+
+   ' <sup>'+state+'</sup></a>'+
    
 
     '<div class="icons">'+
@@ -49,12 +53,12 @@ function completedLoader(){
 '</div>';
    counter++;
     });
-    $('.completed').html(page);
+    $('.completed').html(page2);
 }
 
 
 function activeLoader(){
-    let page = "";
+    let page1 = "";
     let counter = 1;
     let color = "";
     let done = "",remove="",active="",state="Active";
@@ -68,10 +72,10 @@ function activeLoader(){
         let a2 = key.remove?'<button onclick="setItem('+key.id+',2)" class="ic"> '+remove+'</button>':"";
         let a3 = !key.active?'<button onclick="setItem('+key.id+',3)" class="ic"> '+active+'</button>':"";
        
-        page += '<div class="list '+color+'">'+
-        '<button onclick="edit('+key.id+')" class="task">'+
+        page1 += '<div class="list '+color+'">'+
+        '<a onclick="edit('+key.id+')" class="task">'+
         key.task+
-   ' <sup>'+state+'</sup></button>'+
+   ' <sup>'+state+'</sup></a>'+
    
 
     '<div class="icons">'+
@@ -82,7 +86,18 @@ function activeLoader(){
 '</div>';
    counter++;
     });
-    $('.active').html(page);
+    $('.active').html(page1);
+}
+
+
+function update(){
+    tasks.forEach(t => {
+        if(t.id===gid){
+            t.task = $('.addtask').val();
+        }
+    });
+    dataLoader();
+   
 }
 
 function edit(key){
@@ -93,10 +108,23 @@ function edit(key){
 //       }
 //   });
 //   dataLoader();
-        let ht = '<div class="edit"><div class="con">'+
-        '<input type="text" class="updatetask" placeholder="Update Task">'+
-    '</div></div>';
-        $('.edit2').html(ht);
+    $('.edit2').css('display','block');
+    $('.input').css('display','block');
+    updateFlag = true;
+    gid=key;
+    $('.add').text("UPDATE");
+    let name = "";
+    tasks.forEach(k=>{
+        if(k.id===key){
+            name=k.task;
+        }
+    });
+    $('.addtask').val(name);
+    localStorage['tasks'] = JSON.stringify(tasks);
+    // let ht = '<div class="edit"><div class="con">'+
+    //     '<input type="text" class="updatetask" placeholder="Update Task" value="'+name+'" required>'+
+    // '</div></div>';
+    //     $('.edit2').html(ht);
 }
 
 function dataLoader(){
@@ -117,9 +145,9 @@ function dataLoader(){
         let a3 = !key.active?'<button onclick="setItem('+key.id+',3)" class="ic"> '+active+'</button>':"";
        
         page += '<div class="list '+color+'">'+
-    '<button onclick="edit('+key.id+')" class="task">'+
+    '<a onclick="edit('+key.id+')" class="task">'+
        key.task+
-   ' <sup>'+state+'</sup></button>'+
+   ' <sup>'+state+'</sup></a>'+
    
 
     '<div class="icons">'+
@@ -131,6 +159,7 @@ function dataLoader(){
    counter++;
     });
     $('.body').html(page);
+    
    
 }
 
@@ -146,7 +175,9 @@ function setItem(key,state){
               x.done = true;
               x.active = false;
             }
-        })    
+        })   
+        
+       
       break;
       case 2:
             tasks=tasks.filter(y=>y.id!==key);   
@@ -158,15 +189,19 @@ function setItem(key,state){
               x.done = false;
             }
         })      
+        
       break;
 
       default: 
        
   }
    
-   completedLoader();
-   activeLoader();
+   
    dataLoader();
+   localStorage['tasks'] = JSON.stringify(tasks);
+//    activeLoader();
+//    completedLoader();
+   
   
 }
 
@@ -183,6 +218,23 @@ $(document).ready(()=>{
         
     });
     $('.add').on('click',function(){
+
+
+        if($('.addtask').val()<1 && flag){
+            alert("Add a task.!");
+        }
+        else{
+        if(updateFlag){
+            update();
+            updateFlag=false;
+            gid="";
+            $('.edit2').css('display','none');
+            $('.add').text('ADD');
+            $('.input').css('display','none');
+        }
+        else{
+
+
        if(!flag){
         $('.input').css('display','block');
         flag=true;
@@ -194,6 +246,8 @@ $(document).ready(()=>{
            $('.input').css('display','none');
            flag = false;
        }
+    }
+}
     });
 
     $('#active').on('click',function(){
