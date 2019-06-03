@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+  <head>
+    <title>Todo App</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>    
+  </head>
+    <body>
+       
+        <div class="container">
+            <h2>To Do List</h2>
+        <p><small>Click the task title to mark as <b>In-Progress</b></small></p>
+           
+            <form name="toDoList">
+                <input type="text" name="ListItem" class="name"/>
+            </form> 
+        
+            <div id="button">Add Task</div>
+            <br/>
+            <ol id="tasks">
+                    
+            </ol>
+            
+        </div>
+
+        <div class="container">
+            <h2>Tasks In-Progress </h2>
+            <ul id="incomplete-tasks">
+            </ul>
+        </div>
+
+        <div class="container complete">
+                <h2>Completed Tasks</h2>
+                <ul id="done-tasks">
+                </ul>  
+            </div>
+
+    <script type="text/javascript" src="app.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,166 @@
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400);
+@import url('https://fonts.googleapis.com/css?family=Ranga:700&display=swap');
+
+body {
+font: normal normal 13px/16px "Open Sans", sans-serif;
+background: url(https://source.unsplash.com/user/erondu/1600x900) no-repeat center center fixed; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+
+h2 {
+  font-family: 'Ranga', cursive;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.container{
+opacity: 0.85;
+padding: 20px;
+width: 350px;
+margin: 0 auto;
+margin-top: 40px;
+background: white;
+border-radius: 5px;}
+
+form {
+display: inline-block;
+}
+
+p {
+  text-align: center;
+}
+
+.name {
+padding: 4px 5px 4px 5px;
+width: 230px;
+}
+
+#mark-progress {
+  float: right;
+  background-color:#5fd1fd !important;
+  color:#000000;
+  border-radius: 5px;
+  text-align:center;
+}
+
+h2 {
+  text-align: center;
+}
+
+#button{
+display: inline-block;
+background-color:#fc999b;
+color:#ffffff;
+border-radius: 5px;
+text-align:center;
+margin-top:2px;
+margin-left: 15px;
+padding: 5px 15px;
+}
+
+#button:hover{
+cursor: pointer;
+opacity: .8;}
+
+ol {padding-left: 15px;
+  padding-right: 15px;}
+
+ol li {padding: 5px;color:#000;}
+
+ol li:nth-child(even){background: #dfdfdf;}
+
+.strike{text-decoration: line-through;}
+
+.mark {
+  color: rgb(11, 82, 11);
+  font-size: 20px;
+}
+
+li:hover{
+  cursor: pointer;
+ }
+
+li * {
+  float: left;
+}
+
+li, h3 {
+  clear:both;
+}
+
+#incomplete-tasks, #done-tasks {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Task list */
+.incomplete {
+  overflow: hidden;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+}
+.incomplete > input[type="checkbox"] {
+  margin: 0 10px;
+  position: relative;
+  top: 10px;
+}
+.incomplete > label {
+  font-size: 18px;
+  line-height: 40px;
+  width: 237px;
+  padding: 0 0 0 11px;
+}
+.incomplete > input[type="text"] {
+  width: 200px;
+}
+.incomplete > .delete:hover {
+  color: #CF2323;
+}
+
+ul li input[type=text] {
+  display:none;
+}
+
+ol li input[type=text] {
+  display:none;
+}
+
+ul li.editMode input[type=text] {
+  display:block;
+}
+
+ul li.editMode label {
+  display:none;
+}
+
+.delete, .edit, .mark-progress, .save, .return, .edit-task, .save-task {
+  border:none;
+  background-color: #fff;
+}
+
+.save, .save-task {
+  display: none;
+}
+
+.return-strike {
+  color: rgb(95, 11, 11);
+}
+
+a {
+  float: right; 
+  padding-left: 5px;
+  padding-top: 1px; 
+  color: red; 
+  font-size: 12px;
+}
+
+i {
+  padding-left: 5px;
+  padding-top: 2px; 
+}
+
