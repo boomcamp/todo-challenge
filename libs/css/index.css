@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap');
+* {
+	padding:0;
+	margin:0;
+	box-sizing: border-box;
+}
+body {
+	font-family: 'Montserrat', sans-serif;
+}
+.main-container {
+	width:90%;
+	margin: auto;
+}
+.header {
+	padding:20px;
+	height: 100px;
+	background: #343434;
+	text-align: center;
+}
+.header h1 {
+	 color:#fff;
+}
+.new-task { 
+	width:100%;
+	padding:20px;	
+ }
+.box-button {
+	color:#fff;
+	width:200px;	
+	padding:14px;
+	background:#39f;
+	cursor: pointer;
+}
+.todo-container {
+	display: flex;	
+	flex-direction: row;
+}
+.list-box {
+	height: 300px;
+	display: flex;
+	flex-direction: column;
+	width: 33.33%;
+}
+.list-box h3 {
+		text-align: center;
+
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.customBtn {
+	border:none;
+	height: 40px;
+	padding:10px;	
+
+}
+.task-input {
+	font-size: 0.9em;
+	height: 40px;
+	width:90%;
+}
+.list-item {
+	list-style: none;
+
+}
+li {
+	width:80%;
+	float: right;
+	display:inline;
+	font-size: 1.2em;
+}
+li > i {
+	width:40px;
+	float: right;
+	margin:auto;
+}
+li > i:hover {
+	cursor: pointer;
+	color:red;
+}
+.hide {
+	display: none;
+}
+.taskText {
+
+	max-width: 40px;
+}

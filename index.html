@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>To do challenge</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="libs/css/index.css">
+
+
+</head>
+<body>
+<div class="main-container">
+	<div class="header">
+		<h1>To-do List  <i class="fa fa-edit"></i></h1>
+	</div>
+	<div class="new-task">
+			<div id="myBtn" class="box-button">Create a new task <i class="fa fa-plus-square"></i></div>
+		</div>
+	<div class="todo-container">
+		<div class="list-box">
+			<h3>TODO</h3>
+			<ul class="list-item" id="todo"></ul>
+		</div>
+		
+		<div class="list-box">
+			<h3>In Progress</h3>
+			<ul class="list-item" id="in-progress"></ul>
+		</div>
+		<div class="list-box">
+			<h3>Done</h3>
+			<ul class="list-item" id=done></ul>
+		</div>
+	</div>
+</div>
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+	<input type="text" class="task-input" id="newTask" name="newTask" placeholder="Add new task..">     
+	<button class="customBtn" id="saveNewTask"><i class="fa fa-plus"></i></button>
+  </div>
+
+</div>
+ <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
+
+<script type="text/javascript" src="libs/js/index.js"></script>
+</body>
+</html>
