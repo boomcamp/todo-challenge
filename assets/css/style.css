@@ -34,7 +34,7 @@ body {
 
 #modal-main h2 {
     float: left;
-    color: #100c08;
+    color: #333;
     padding: 15px;
 }
 
@@ -43,7 +43,7 @@ body {
     float: right;
     font-size: 18px;
     transition: all 50ms;
-    color: #100c08;
+    color: #333;
 }
 
 #modal-main span:hover {
@@ -54,7 +54,7 @@ body {
     margin-bottom: 20px;
     height: auto;
     min-height: 50px;
-    border-bottom: 2px solid #100c08;
+    border-bottom: 2px solid #333;
 }
 
 #main-container {
@@ -74,7 +74,7 @@ body {
     z-index: 999;
     position: absolute;
     outline: none;
-    color: #100c08;
+    color: #333;
     height: 100px;
     width: 100px;
     border: none;
@@ -124,7 +124,7 @@ body {
 }
 
 .sub-btn {
-    color: #100c08;
+    color: #333;
     margin: 0 auto;
     border: none;
     width: 100%;
@@ -145,7 +145,7 @@ body {
     width: 95%;
     height: auto;
     min-height: 880px;
-    color: #100c08;
+    color: #333;
 }
 
 #content-container .box-cont {
@@ -164,6 +164,22 @@ body {
 .box-cont .box-head h2 {
     font-size: 36px;
     padding-left: 15px;
+}
+
+.box-body {
+    width: 95%;
+    height: auto;
+    min-height: 20px;
+    position: relative;
+    margin: auto auto;
+    overflow: auto;
+}
+
+.box-body ul li {
+    list-style-type: none;
+    font-size: 20px;
+    width: 100%;
+    margin-bottom: 5px;
 }
 
 .color1 {
