@@ -29,19 +29,19 @@ $(document).ready(function(){
     });
     $(document).on("click", "button.move1", function(){
         //   alert("clicked");
-        var newHtml = `<li><span>${$(this).siblings('span').text()}</span><button title=" to todo" class="move3">&lsaquo;</button><button title="to done" class="move2">&rsaquo;</button></li>`;
+        var newHtml = `<li><span contenteditable="true">${$(this).siblings('span').text()}</span><button title=" to todo" class="move3">&lsaquo;</button><button title="to done" class="move2">&rsaquo;</button></li>`;
         $('.in-progress .list').append(newHtml);
         $(this).parent().remove();
     });
     $(document).on("click", "button.move2", function(){
         //   alert("clicked");
-         var newHtml = `<li><span>${$(this).siblings('span').text()}</span><button class="delete" title="remove">&times;</button><button title=" to in progress" class="move1">&lsaquo;</button></li>`;
+         var newHtml = `<li><span contenteditable="true">${$(this).siblings('span').text()}</span><button class="delete" title="remove">&times;</button><button title=" to in progress" class="move1">&lsaquo;</button></li>`;
         $('.done .list').append(newHtml);
         $(this).parent().remove();
     });
     $(document).on("click", "button.move3", function(){
         //   alert("clicked");
-         var newHtml = `<li><span>${$(this).siblings('span').text()}</span><button class="delete" title="remove">&times;</button><button title=" to in progress" class="move1">&rsaquo;</button></li>`;
+         var newHtml = `<li><span contenteditable="true">${$(this).siblings('span').text()}</span><button class="delete" title="remove">&times;</button><button title=" to in progress" class="move1">&rsaquo;</button></li>`;
         $('.todo .list').append(newHtml);
         $(this).parent().remove();
     });
@@ -58,7 +58,7 @@ $(document).ready(function(){
           list.push(newTask);
           $('input').val('');
 
-          var newHtml = `<li><span>${newTask.task}</span><button class="delete" title="remove">&times;</button><button title=" to in progress" class="move1">&rsaquo;</button></li>`;
+          var newHtml = `<li><span contenteditable="true">${newTask.task}</span><button class="delete" title="remove">&times;</button><button title=" to in progress" class="move1">&rsaquo;</button></li>`;
           $('.todo .list').append(newHtml);
         }
     }
@@ -67,6 +67,6 @@ $(document).ready(function(){
         const task = $('input').val().trim();
         addTask(task);
     });
-
+    
     
 })

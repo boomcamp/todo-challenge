@@ -1,13 +1,13 @@
 body {
     width: 100%;
+    height: 100%;
     background-color: whitesmoke ;
-    margin: 0;
 }
 .todo-con {
     background-color: aqua;
     height: 100%;
-    width: 30%;
-    margin: 0 auto;
+    width: 600px;
+    margin: 20px auto;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .todo-con header {
@@ -28,19 +28,22 @@ body {
     display: flex;
     justify-content: space-evenly;
     margin: 0;
+    padding-left:0;
 }
 .status ul li{
-    /* width: 33%; */
+     width: 20%; 
     text-align: center;
     list-style: none;
     color: white;
-    padding: 5px;
+    font-weight: 900;
+     padding: 5px; 
 }
 .status ul li:hover{
     color:yellow;
+    cursor: pointer;
 }
 .todo-con .todo-body{
-    height:500px;
+    height:550px;
     width: 100%;
 }
 .todo-con .footer {
@@ -60,18 +63,18 @@ body {
 }
 .todo-con .footer input{
     width: 75%;
+    padding: 10px;
 }
 .todo-con .footer img:hover{
     opacity: 0.5;
 }
 
-    list-style-type: square;
 .todo-body ul {
-    list-style-type: square;
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-content: flex-start;
+    align-items: center;
+    padding: 0;
 }
 .todo-body ul li{
     text-align: center;
@@ -80,19 +83,26 @@ body {
     text-align: left;
     padding: 10px;
     display: flex;
+    justify-content: center;
     text-transform: uppercase;
     letter-spacing: 1px;
+    /* border: 2px solid gray; */
+    width: 90%;
 }
-.todo-body ul li:hover button{
+.todo-body ul li span{
+    min-width: 50%;
+}
+/* .todo-body ul li:hover button{
     display: inline;
-}
+} */
 .todo-body ul li button {
-    background-color: yellowgreen;
-    color: white;
+    background-color: white;
+    color: black;
+    border: 2px solid red;
     margin-left: 10px;
     width: 50px;
     border-radius: 10px;
-    display: none;
+    /* display: none; */
     font-weight: bold;
 }
 .active {
