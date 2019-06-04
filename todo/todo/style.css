@@ -1,0 +1,253 @@
+body {
+    margin: 0;
+    min-width: 250px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #464646;
+    background-image: linear-gradient(to right, rgb(255, 150, 150), rgb(204, 204, 255));
+  }
+  
+  /* Include the padding and border in an element's total width and height */
+  * {
+    box-sizing: border-box;
+  }
+  
+  .flexDiv{
+    display: flex;
+  }
+
+  /* Remove margins and padding from the list */
+  ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    padding: 10px;
+  }
+  
+  /* Style the list items */
+  ul li {
+    cursor: pointer;
+    position: relative;
+    text-align: center;
+    padding: 12px 8px 12px 40px;
+    list-style-type: none;
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
+    
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Set all odd list items to a different color (zebra-stripes) */
+  ul li:nth-child(odd) {
+    background: #f9f9f9;
+  }
+  
+  /* Darker background-color on hover */
+  ul li:hover {
+    background: #ddd;
+  }
+  
+  ul li:first-child{
+    text-align: center;
+    text-transform: uppercase;  
+    background-image: linear-gradient(to right, rgba(102, 178, 255, 2), rgba(204, 229, 255, 1));
+    
+  }
+
+  ul li.title:hover {
+    background: none;
+  }
+
+  /* delete button */
+  .deletebtn{
+    width: 45px;
+    color: #000000;
+    position: absolute;
+    padding: 12px;
+    right: 0;
+    top: 0;
+  }
+
+  .deletebtn:hover{
+    background-color: #f44336;
+    color: #ffffff;
+  }
+
+  /* next button */
+  .next{
+    width: 45px;
+    color: #000000;
+    position: absolute;
+    padding: 12px;
+    right: 45px;
+    top: 0;
+  }
+
+  .next:hover{
+    background-color: #4CAF50;
+    color: #ffffff;
+  }
+
+  /* back to progress button */
+  .backprogress{
+    width: 45px;
+    color: #000000;
+    position: absolute;
+    padding: 12px;
+    right: 45px;
+    top: 0;
+  }
+
+  .backprogress:hover{
+    background-color: #4CAF50;
+    color: #ffffff;
+  }
+
+  /* edit button */
+  .edit{
+    width: 45px;
+    color: #000000;
+    position: absolute;
+    padding: 12px;
+    right: 90px;
+    top: 0;
+    text-align: center;
+  }
+
+  .edit:hover, .edit2:hover{
+    background-color: #6699ff;
+    color: #ffffff;
+  }
+
+  /* edit2 button */
+  .edit2{
+    width: 70px;
+    color: #000000;
+    position: absolute;
+    padding: 20px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+  }
+
+
+  .inprogress{
+    width: 45px;
+    color: #000000;
+    position: absolute;
+    padding: 12px;
+    top: 0;
+    text-align: center;
+    right: 45px;
+  }
+
+  .inprogress:hover{
+    background-color: #6699ff;
+    color: #ffffff;
+  }
+
+  /* dropdown */
+  .dropdown {
+    width: 45px;
+    display: inline-block;
+    position: absolute;
+    padding: 12px;
+    right: 0;
+    top: 0;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    color: #000000;
+  }
+  
+  .dropdown-content > p{
+    padding: 10px;
+  }
+
+  .dropdown:hover {
+    background-color: #4CAF50;
+    color: #ffffff;
+  }
+  
+  .dropdown-content > p:hover {
+    background-color: gray;
+    color: #ffffff;
+  }
+  /* Style the header */
+  .header {
+    /* background-image: linear-gradient(to right, rgba(102, 178, 255, 2), rgba(204, 229, 255, 1)); */
+    background: url(river.jpg) no-repeat;
+    background-size: cover;
+    padding: 30px 40px;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  h2{
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 700;
+  }
+
+  .align{
+    display: inline;
+    justify-content: center;
+  }
+  
+  /* Style the input */
+  input {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 20px;
+  }
+  
+  /* Style the "Add" button */
+  .addBtn {
+    padding: 10px;
+    width: 20%;
+    background: #d9d9d9;
+    color: #555;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+    border-radius: 10px;
+  }
+  
+  .addBtn:hover {
+    background-color: #bbb;
+  }
+
+  .none{
+    display: none;
+  }
+
+  /* Style the header */
+  .footer {
+    /* background-image: linear-gradient(to right, rgba(102, 178, 255, 2), rgba(204, 229, 255, 1)); */
+    background: url(river.jpg) no-repeat;
+    background-size: cover;
+    padding: 80px;
+    color: white;
+    text-align: center;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+  }
