@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <div class="header-cont">
+            <span class="title">TO-DO LIST</span>
+        </div>
+    </header>
+    <nav class="create-task"><div class="modal-btn"><button id="myBtn">Create Task</button></div></nav>
+    <main>
+        <div class="box bx-1c">
+            <div class="task-title"><span>TO DO TASK</span></div>
+            <div class="task-handler"></div>
+        </div>
+        <div class="box bx-2c">
+            <div class="task-title"><span>IN PROGRESS TASK</span></div>
+            <div class="progress-handler"></div>
+        </div>
+        <div class="box bx-3c">
+            <div class="task-title"><span>DONE TASK</span></div>
+            <div class="done-handler"></div>
+        </div>
+
+    </main>
+    <footer>
+        <div class="instruction">
+            <p> 
+                <ol>
+                    <li>The 'Create Task' button is to create or add a task.</li>
+                    <li>The 'Blue Box'(checkbox) is to proceed to the next task status.</li>
+                    <li>The 'Orange Box' is either to 'Go back to the previus Task status' or to move it directly to the 'Done Task'.</li>
+                    <li>Double click the task content to 'Edit' the task description.</li>
+                </ol>   
+            </p>
+        </div>
+    </footer>   
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close" style="float: right">&times;</span>
+          <div class="modal-body">
+                <br>
+                <input type="text" id="task-input" placeholder="What's in your mind?"> 
+          </div>
+          <div class="modal-footer">
+              <button id="create-task-button">CREATE</button>
+          </div>
+        </div>
+    </div>
+<script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
+<script src="script/script.js"></script>    
+</body>
+</html>
