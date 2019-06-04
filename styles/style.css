@@ -177,6 +177,11 @@ li button{
 
 }
 
+#backToProg {
+  float: right;
+
+}
+
 #done {
   float: right;
 
