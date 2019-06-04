@@ -4,6 +4,7 @@
 }
 
 body {
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     font-family: 'Roboto', sans-serif;
     background-color: #e2e1e0;
 }
@@ -175,14 +176,22 @@ body {
     overflow: auto;
 }
 
-.box-body ul li {
+.box-body ul li p {
+    float: left;
     margin-top: 5px;
     list-style-type: none;
     font-size: 20px;
-    width: 100%;
+    width: 50%;
     margin-bottom: 5px;
     height: auto;
-    min height: 40px;
+    min height: 10px;
+}
+
+.box-body ul li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .box-body ul li i {
