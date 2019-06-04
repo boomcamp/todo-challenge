@@ -1,5 +1,10 @@
 (function(){
-    
+    function initLocalStorage(){
+        localStorage.setItem("todo","");
+        localStorage.setItem("active","");
+        localStorage.setItem("done","");
+    }
+
     let add = document.getElementById('addForm');
     let inTxt = document.getElementById('txtVal');
     let todo = document.getElementById('todoLists');
@@ -13,6 +18,9 @@
 
     function addItem(e){
         e.preventDefault();
+
+        if(!localStorage.length)
+        initLocalStorage();
         
         let newItem = document.getElementById('txtVal').value;
         let li = document.createElement('li');
@@ -31,7 +39,12 @@
         li.appendChild(edit);
         todo.appendChild(li);
 
+        let lsGetItem = localStorage.getItem("todo") + "|" + inTxt.value;
+
+        localStorage.setItem("todo",lsGetItem);
+
         inTxt.value = "";
+        submit.setAttribute("disabled", "disabled");
     }
 
     inTxt.addEventListener('input',enableSubmit);
@@ -108,6 +121,7 @@
         function submitUpdate(){
             e.target.parentElement.firstChild.textContent = editing.value;
             closeForm();
+            updItem.removeEventListener('click', submitUpdate);
         }
     }
 
