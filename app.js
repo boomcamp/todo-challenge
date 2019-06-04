@@ -1,11 +1,16 @@
 $(document).ready(function() {
     var taskInput = document.getElementsByClassName("new-task");
         
-
+    
+    
     //add new task
 
     $('#button').click(
         function(){
+            if ($('.name').val().length === 0){
+            alert('Please enter a valid task!');
+            }
+            else{
             var toAdd = $('input[name=ListItem]').val();
             $('#tasks').append(`
             <li id="new-task">
@@ -17,6 +22,7 @@ $(document).ready(function() {
             </li>`
             );
             $('input[name=ListItem]').val('');
+            }
         });
 
     //move task to in-progress
