@@ -3,6 +3,7 @@
 $(document).ready(function(){
 	var  id = 0;
 	var list = [];
+
 	function Task(task) {
 		this.task = task;
 		this.id = id;
@@ -14,17 +15,16 @@ $(document).ready(function(){
 
 		$('.modal').css('display', 'none');
 
-		var to_do = '<div id="'+id+'">'+
+		var to_do = '<li id="'+id+'">'+
 					'<span id="'+id+'" class="fa fa-angle-double-right"></span>'+
 					'<span id="'+id+'" class="fa fa-edit"></span>'+					
 					'<span id="'+id+'" class="fa fa-trash"></span>'+
-					'<li id="'+id+'"><span id="span'+id+'">'+$('.input-text').val()+'</span></li></div><br>';
+					'<span id="span'+id+'">'+$('.input-text').val()+'</span></li>';
 
-		$('.todo-body').append(to_do);
-
-		// mer(id);
+		$('.todo-ul').prepend(to_do);
 		
 		$('.input-text').val('');
+
 		id++;
 	}
 
@@ -32,6 +32,8 @@ $(document).ready(function(){
 		$('.modal').css('display','block');
 		$('.modal-add').css('display','block');
 		$('.input-text').focus();
+		$('#close1').hide();
+		$('#close').show();
 	});
 	$('#close').on('click', () => {
 		$('.modal').css('display', 'none');
@@ -39,51 +41,51 @@ $(document).ready(function(){
 
 
 	$('#save').click(function(){
-		addNewTask($('.input-text').val());
-		
-
+		if($('.input-text').val() == ''){
+			alert('Input task before saving!');
+		}else{
+			addNewTask($('.input-text').val());
+		}
 	});
 
 		$(document).on('click', '.fa-angle-double-right', function(e){
+			
 			var id = e.target.id;
 
-			var to_do = '<div id="'+id+'">'+
-					'<span id="'+id+'" class="fa fa-angle-double-left"></span>'+
-					'<span id="'+id+'" class="fa fa-angle-double-right done"></span>'+
-					// '<span id="'+id+'" class="fa fa-angle-double-right"></span>'+
-					'<span id="'+id+'" class="fa fa-edit"></span>'+					
-					'<span id="'+id+'" class="fa fa-trash"></span>'+
-					'<li id="'+id+'"><span id="span'+id+'">'+list[id]['task']+'</span></li></div><br>';
+			var to_do = '<li id="'+id+'">'+
+						'<span id="'+id+'" class="fa fa-angle-double-left"></span>'+
+						'<span id="'+id+'" class="fa fa-angle-double-right done"></span>'+
+						'<span id="'+id+'" class="fa fa-edit"></span>'+					
+						'<span id="'+id+'" class="fa fa-trash"></span>'+
+						'<span id="span'+id+'">'+list[id]['task']+'</span></li>';
 			$('#'+id).remove();
-			$('.progress-body').append(to_do);
+			$('.prog-ul').prepend(to_do);
 		});
 
 		$(document).on('click', '.fa-angle-double-left', function(i){
 			var id = i.target.id;
 
-			var to_do = '<div id="'+id+'">'+
-					// '<span id="'+id+'" class="fa fa-angle-double-left"></span>'+
-					'<span id="'+id+'" class="fa fa-angle-double-right"></span>'+
-					'<span id="'+id+'" class="fa fa-edit"></span>'+					
-					'<span id="'+id+'" class="fa fa-trash"></span>'+
-					'<li id="'+id+'"><span id="span'+id+'">'+list[id]['task']+'</span></li></div><br>';
+			var to_do = '<li id="'+id+'">'+
+						'<span id="'+id+'" class="fa fa-angle-double-right"></span>'+
+						'<span id="'+id+'" class="fa fa-edit"></span>'+					
+						'<span id="'+id+'" class="fa fa-trash"></span>'+
+						'<span id="span'+id+'">'+list[id]['task']+'</span></li>';
 			$('#'+id).remove();
-			$('.fr-todo').append(to_do);
+			$('.todo-ul').prepend(to_do);
 			
 
-		});
+		})
 
 		$(document).on('click', '.done', function(i){
 			var id = i.target.id;
 
-			var to_do = '<div id="'+id+'">'+
-					'<span id="'+id+'" class="fa fa-angle-double-left done-back"></span>'+
-					// '<span id="'+id+'" class="fa fa-angle-double-right"></span>'+
-					'<span id="'+id+'" class="fa fa-edit"></span>'+					
-					'<span id="'+id+'" class="fa fa-trash"></span>'+
-					'<li id="'+id+'"><span id="span'+id+'">'+list[id]['task']+'</span></li></div><br>';
+			var to_do = '<li id="'+id+'">'+
+						'<span id="'+id+'" class="fa fa-angle-double-left done-back"></span>'+				
+						'<span id="'+id+'" class="fa fa-edit"></span>'+					
+						'<span id="'+id+'" class="fa fa-trash"></span>'+
+						'<span id="span'+id+'">'+list[id]['task']+'</span></li>';
 			$('#'+id).remove();
-			$('.fr-done').append(to_do);			
+			$('.done-ul').prepend(to_do);			
 		});
 
 
@@ -98,22 +100,10 @@ $(document).ready(function(){
 					'<span id="'+id+'" class="fa fa-trash"></span>'+
 					'<span id="span'+id+'">'+list[id]['task']+'</span></li>';
 			$('#'+id).remove();
-			$('.fr-progress').append(to_do);
+			$('.prog-ul').prepend(to_do);
 		});
 
 
-
-		$(document).on('click', '.fa-edit', function(e){
-			var id = e.target.id;	
-			$('.modal').css('display','block');
-			$('.modal-add').css('display','block');
-			$('.input-text').focus();			
-			
-		});	
-		$(document).on('click', '.fa-trash', function(e){
-			var id = e.target.id;
-			$('#'+id).remove();
-		});
 
 		let currentIndex = 0;
 
@@ -123,29 +113,46 @@ $(document).ready(function(){
 			$('.modal-add').css('display','block');
 			$('.input-text').focus();
 			$('#update').css('display', 'block');
-			$('#save').hide();	
+			$('#save').hide();
+			$('#close').hide();
+			$('#close1').show();
 
 			var x  = list[id]['task'];
 			$('.input-text').val(x);
 			currentIndex = id;		
 			
 		});	
+
+		$('#close1').click(function(){
+			$('.modal').css('display', 'none');
+			$('.input-text').val('');
+			$('#save').show();
+			$('#update').css('display', 'none');
+		});
+
+		// $('.fa-edit').on('click', () => {
+		// 	alert();
+		// });
+
 		$(document).on('click', '.fa-trash', function(e){
-			var id = e.target.id;
-			$('#'+id).remove();
+			if(confirm('Are you sure')) {
+				var id = e.target.id;
+				$('#'+id).remove();
+			}else
+			{
+				return false;
+			}
 		});
 
 		
 
 		$(document).on('click', '#update', function(e){
 			var id = e.target.id;
-			// var x = list[id]['task'];
 			$('#span'+currentIndex).text($('.input-text').val());
 			$('#update').hide();
 			$('#save').show();
 			
 			$('.modal').css('display', 'none');
-			// alert($('.input-text').val());
 			list[currentIndex]['task'] = $('.input-text').val();
 			$('.input-text').val('');
 		});	
