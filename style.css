@@ -49,7 +49,7 @@ body{
     width: 33.33%;
     display: flex;
     flex-direction: column;
-   
+    
     justify-content: flex-start;
     padding-top: 30px;
     padding-left: 50px;
@@ -124,11 +124,40 @@ body{
 .todo{
     height:80px;
     width: 88%;
+    
+}
+.todo p{
+    
+    overflow-wrap: break-word;
+    
+}
+::-webkit-scrollbar {
+    width: 20px;
+    }
+    
+    ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+    background:rgb(68, 68, 68); 
+    border-radius: 10px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+    background:rgb(54, 56, 58); 
 }
 .todo button{
     border:none;
     background-color: orange;
     border-radius:5px;
-    width: 29%;
+    width: 11%;
     height: 23px;
+    float: inline-start;
+}
+.edit{
+    height: 30px;
+    border: 1px solid aliceblue;
+    overflow: hidden;
 }

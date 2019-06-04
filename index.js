@@ -14,69 +14,70 @@ $(document).ready(() => {
 
   $("#task").on("click", () => {
     var taskTxt = $("#task-input").val();
-    var task = `<div class="todo" id="">
-        <label>
-        <p>${taskTxt}</p>
-        <button id="move${i}">Next Phase</button>
-        <button id="remove${i}">Remove</button>
-        <button id="back${i}">Revert</button>
-        </label>
+    var task = `<div class="todo">
+        
+        <p id='tasktxt${i}'>${taskTxt}</p>
+        
+        <button id="move${i}"><i class="fas fa-hand-point-right" ></i></button>
+        <button id="remove${i}"><i class="fas fa-trash-alt" ></i></button>
+        <button id="back${i}"><i class="fas fa-hand-point-left" ></i></button>
+        <button id="edit${i}"><i class="fas fa-edit" ></i></button>
+       
+        
+        
         </div>`;
-    $(".new-task").append(task);
-    // $("#back" + i).hide();
+    if (taskTxt != "") {
+      $(".new-task").append(task);
+    }
     $("#task-input").val("");
-    $
     console.log(i);
 
-    $(".new-task").on("click", "#remove" + i, function() {
+    $("#remove" + i).on("click", function() {
       $(this)
-        .parent()
         .parent()
         .remove();
     });
     $(".new-task").on("click", "#move" + i, function() {
-      $(".current").append(
-        $(this)
-          .parent()
-          .parent()
-      );
-      $("#back" + i).show();
+      $(".current").append($(this).parent());
+      
     });
     $(".current").on("click", "#back" + i, function() {
-      $(".new-task").append(
-        $(this)
-          .parent()
-          .parent()
-      );
-      $("#back" + i).hide();
-    });
-    $(".current").on("click", "#remove" + i, function() {
-      $(this)
-        .parent()
-        .parent()
-        .remove();
-    });
-    $(".current").on("click", "#move" + i, function() {
-      $(".done").append(
-        $(this)
-          .parent()
-          .parent()
-      );
-    });
-    $(".done").on("click", "#remove" + i, function() {
-      $(this)
-        .parent()
-        .parent()
-        .remove();
-    });
-    $(".done").on("click", "#back" + i, function() {
-      $(".current").append(
-        $(this)
-          .parent()
-          .parent()
-      );
+      $(".new-task").append($(this).parent());
     });
     
+    $(".current").on("focus", "#move" + i, function() {
+      $(".done").append($(this).parent());
+    });
+
+    $(".done").on("click", "#back" + i, function() {
+      $(".current").append($(this).parent());
+    });
+    $(".task-container").on("click", "#edit" + i, function() {
+      $(this)
+        .prev()
+        .prev()
+        .prev()
+        .prev()
+        .attr("contenteditable", "true");
+      $(this)
+        .prev()
+        .prev()
+        .prev()
+        .prev()
+        .addClass("edit");
+      $(this)
+        .prev()
+        .prev()
+        .prev()
+        .prev()
+        .focus();
+    });
+
+    $(".task-container").on("focusout", "p", function() {
+      $(this).removeAttr("contenteditable");
+      $(this).removeClass("edit");
+    });
+
     i += 1;
   });
 });
