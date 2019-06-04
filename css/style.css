@@ -46,7 +46,7 @@ main{
     align-items: center;
     position: relative;
     padding: 10px;
-    color: blue;
+    
 }
 .add-task{
     position: relative;
@@ -102,6 +102,21 @@ a{
     flex-direction: column;
      
 }
+.task-content-inner{
+    display: flex; 
+    width: 100%;
+  
+}
+.tci-text{
+    display: flex;
+    justify-content: flex-start;
+    width: 60%;
+}
+.tci-btn{
+    display: flex;
+    justify-content: center;
+    width: 40%;
+}
 
 .InProgress{
     background-image: url("../images/progress.png");;
@@ -130,21 +145,33 @@ a{
     background-color: lightgreen;
     border-radius: 10px;
     width: 60px;
+    border: 0px;
+
 }
 .btn-delete{
     background-color: red;
     border-radius: 10px;
     width: 60px;
+    border: 0px;
+
 }
 .btn-back{
     background-color: gray;
     border-radius: 10px;
     width: 60px;
+    border: 0px;
+
 }
-.btn-done{
+.btn-edit{
     background-color: lightblue;
     border-radius: 10px;
+    border: 0px;
     width: 100px;
+
+}
+.edit{
+    border: 1px solid black;
+
 }
 
 footer{
@@ -153,6 +180,4 @@ footer{
     top: 15px;
     left: 50px;
     width: 500px;
-
-    
 }

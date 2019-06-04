@@ -22,11 +22,15 @@ $(document).ready(() => {
         var newTaskValue = $('#inputTask').val();
         var newTask = 
        ` <div class="task-content-inner">
-            ${newTaskValue} 
-            <button class ="btn-start"  id="start-todo${counter}">Move</button>
-            <button class ="btn-delete" id="delete-todo${counter}">Delete</button>
-            <button class ="btn-back" id="back-todo${counter}">Back</button>
-            <button class ="btn-done" id="Done${counter}">Mark as Done</button>
+
+            &#8226;<span class="tci-text">${newTaskValue}</span>
+            <button class ="btn-edit" id="edit1"><i class="fas fa-edit"></i></button>
+            <div class="tci-btn">
+            <button class ="btn-start"  id="start-todo1"><i class="fas fa-play"></i></button>
+            <button class ="btn-delete" id="delete-todo1"><i class="fas fa-trash-alt"></i></button>
+            <button class ="btn-back" id="back-todo1"><i class="fas fa-undo"></i></button>
+            
+            <div>
         </div>`
         ;
            
@@ -43,106 +47,66 @@ $(document).ready(() => {
         $(`#Done1`).hide();
 
         $('.task-content').on('click', `#delete-todo1`,function(){
-            $(this).parent().remove();
+            $(this).parent().parent().remove();
         });
 
         $('.task-content').on('click', `#start-todo1`,function(){
-            $('.progress-content').append($(this).parent());       
+            $('.progress-content').append($(this).parent().parent());       
             $(`#back-todo1`).show();
         });
         $('.progress-content').on('click', `#delete-todo1`,function(){
-            $(this).parent().remove();       
+            $(this).parent().parent().remove();       
         });
         $('.progress-content').on('click', `#back-todo1` ,function(){
-            $('.task-content').append($(this).parent());
+            $('.task-content').append($(this).parent().parent());
+            $(`#back-todo1`).hide();
         })
         $('.progress-content').on('click', `#start-todo1`,function(){
-            $('.done-content').append($(this).parent());       
+            $('.done-content').append($(this).parent().parent());       
             $(`#back-todo1`).show();
         });
         $('.done-content').on('click', `#delete-todo1`,function(){
-            $(this).parent().remove();
+            $(this).parent().parent().remove();
         });
         $('.done-content').on('click', `#back-todo1` ,function(){
-            $('.progress-content').append($(this).parent());
+            $('.progress-content').append($(this).parent().parent());
         })
 
 
+        $('.task-content').on('click', '#edit1', function(){
+            $(this).prev().attr('contenteditable', 'true');
+            $(this).prev().addClass('edit');
+            $(this).prev().focus();
+         });
 
-        // 2
+         $('.task-content').on('focusout', 'span', function(){
+            $(this).removeAttr('contenteditable');
+            $(this).removeClass('edit');
+        })
+
+        $('.progress-content').on('click', '#edit1', function(){
+            $(this).prev().attr('contenteditable', 'true');
+            $(this).prev().addClass('edit');
+            $(this).prev().focus();
+         });
+
+         $('.progress-content').on('focusout', 'span', function(){
+            $(this).removeAttr('contenteditable');
+            $(this).removeClass('edit');
+        })
         
-        // $(`#back-todo2`).hide();
-        // $(`#Done2`).hide();
+        $('.done-content').on('click', '#edit1', function(){
+            $(this).prev().attr('contenteditable', 'true');
+            $(this).prev().addClass('edit');
+            $(this).prev().focus();
+         });
 
-        // $('.task-content').on('click', `#delete-todo2`,function(){
-        //     $(this).parent().remove();
-        // });
-
-        // $('.task-content').on('click', `#start-todo2`,function(){
-        //     $('.progress-content').append($(this).parent());       
-        //     $(`#back-todo2`).show();
-        // });
-        // $('.progress-content').on('click', `#delete-todo2`,function(){
-        //     $(this).parent().remove();       
-        // });
-
-        // // 3
-        
-        // $(`#back-todo3`).hide();
-        // $(`#Done3`).hide();
-
-        // $('.task-content').on('click', `#delete-todo3`,function(){
-        //     $(this).parent().remove();
-        // });
-
-        // $('.task-content').on('click', `#start-todo3`,function(){
-        //     $('.progress-content').append($(this).parent());       
-        //     $(`#back-todo3`).show();
-        // });
-        // $('.progress-content').on('click', `#delete-todo3`,function(){
-        //     $(this).parent().remove();       
-        // });
-
-        // // 4
-        
-        // $(`#back-todo4`).hide();
-        // $(`#Done4`).hide();
-
-        // $('.task-content').on('click', `#delete-todo4`,function(){
-        //     $(this).parent().remove();
-        // });
-
-        // $('.task-content').on('click', `#start-todo4`,function(){
-        //     $('.progress-content').append($(this).parent());       
-        //     $(`#back-todo4`).show();
-        // });
-        // $('.progress-content').on('click', `#delete-todo4`,function(){
-        //     $(this).parent().remove();       
-        // });
-
-        // // 5
-        
-        // $(`#back-todo5`).hide();
-        // $(`#Done5`).hide();
-
-        // $('.task-content').on('click', `#delete-todo5`,function(){
-        //     $(this).parent().remove();
-        // });
-
-        // $('.task-content').on('click', `#start-todo5`,function(){
-        //     $('.progress-content').append($(this).parent());       
-        //     $(`#back-todo5`).show();
-        // });
-        // $('.progress-content').on('click', `#delete-todo5`,function(){
-        //     $(this).parent().remove();       
-        // });
-        
-
+         $('.done-content').on('focusout', 'span', function(){
+            $(this).removeAttr('contenteditable');
+            $(this).removeClass('edit');
+        })
 
         
-
-        //counter = counter +1;
-
     });
 
 
