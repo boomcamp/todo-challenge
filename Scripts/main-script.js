@@ -24,10 +24,8 @@
         li.appendChild(document.createTextNode(newItem));
 
         rem.className = 'hover remove-item';
-        rem.appendChild(document.createTextNode('x'));
 
         edit.className = 'hover edit-item';
-        edit.appendChild(document.createTextNode('e'));
 
         li.appendChild(rem);
         li.appendChild(edit);
@@ -59,7 +57,7 @@
             updateItem(e);
         }else{
             let btn = e.target.outerHTML
-                        .replace(/remove-item">x/gm,'up">back');
+                        .replace(/remove-item">/gm,'up">');
             todo.removeChild(e.target);
             prog.insertAdjacentHTML('afterbegin',btn);
         }
@@ -70,7 +68,7 @@
     function inProg(e){
         if(e.target.classList.contains('up')){
             let btn = e.target.parentElement.outerHTML
-                        .replace(/up">back/gm,'remove-item">x');
+                        .replace(/up">/gm,'remove-item">');
             prog.removeChild(e.target.parentElement);
             todo.insertAdjacentHTML('afterbegin',btn);
         }else if(e.target.classList.contains('edit-item')){

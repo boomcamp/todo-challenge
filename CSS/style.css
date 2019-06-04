@@ -86,18 +86,23 @@ fieldset #txtVal{
     margin-left: 5px;
     padding: 0 5px;
     font-weight: bolder;
+    border: 1px solid white;
+    background: url("../Images/icons.jpg");
+    background-size: 285px;
+    height: 22px;
+    width: 22px;
 }
 
-.remove-item:hover{
-    background: red;
+.remove-item{
+    background-position: -36px -181px;
 }
 
-.to-progress:hover{
-    background: green;
+.edit-item{
+    background-position: 0 -109px;
 }
 
-.up:hover{
-    background: blue;
+.up{
+    background-position: -229px -74px;
 }
 
 #overlay{
@@ -128,4 +133,3 @@ fieldset #txtVal{
     margin-top: 5px;
 }
 
-/*{ border: 1px solid aqua !important }
