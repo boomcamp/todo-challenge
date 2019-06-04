@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>To do</title>
+    <link href="https://fonts.googleapis.com/css?family=East+Sea+Dokdo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <div class="main">
+        <div class="wrapper">
+            <div class="header">
+                <img class="header-img" src="assets/img/morning.jpg" alt="morning">
+                <div class="after">
+                    <div class="content-header">
+                        <span class="fa fa-bars fa-2x"></span>
+                    </div>
+                    <div class="text-content">
+                        <h1>Good morning</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="write-todo">
+                    <div class="box">
+                        <!-- todo list -->
+                        <div id="todo-home">
+                            <div class="title-todo">Todo List</div>
+                            <div class="content-todo">
+                                <div id="todo-table-home" class="todo-table">
+                                    <div id="local"></div>
+                                <!--  <script>
+                                        var local = document.getElementById('local');
+                                        local.innerHTML =(window.localStorage.getItem('newTodo'));    
+                                    </script>
+                                    -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- progress list -->
+                        <div id="todo-progress">
+                            <div class="title-todo">In-Progress Todo</div>
+                            <div class="content-todo">
+                                <div id="todo-table-progress" class="todo-table">
+                                    <div id="local"></div>
+                                <!--  <script>
+                                        var local = document.getElementById('local');
+                                        local.innerHTML =(window.localStorage.getItem('newTodo'));    
+                                    </script>
+                                    -->
+                                </div>
+                            </div>
+                        </div>
+
+                            <!-- done list -->
+                        <div id="todo-done">
+                            <div class="title-todo">Done Todo</div>
+                            <div class="content-todo">
+                                <div id="todo-table-done" class="todo-table">
+                                    <div id="local"></div>
+                                <!--  <script>
+                                        var local = document.getElementById('local');
+                                        local.innerHTML =(window.localStorage.getItem('newTodo'));    
+                                    </script>
+                                    -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- trash list -->
+                        <div id="todo-trash">
+                            <div class="title-todo">Trash Bin</div>
+                            <div class="content-todo">
+                                <div id="todo-table-trash" class="todo-table">
+                                    <div id="local"></div>
+                                <!--  <script>
+                                        var local = document.getElementById('local');
+                                        local.innerHTML =(window.localStorage.getItem('newTodo'));    
+                                    </script>
+                                    -->
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="bottom">
+                        <button id="myBtn" class="btn btn-circle btn-xl">
+                            <span class="fa fa-edit"></span>
+                        </button>
+                        <!-- Trigger/Open The Modal -->
+
+                        <!-- The Modal -->
+                        <div id="myModal" class="modal">
+
+                        <!-- Modal content -->
+                        <div class="modal-content">
+                            <span class="close">&times;</span>
+                            <div class="modal-text">
+                               <span class="title-todo">Add Todo</span> 
+                                <div class="modal-input">
+                                    <div class="title-input">
+                                        <span>Todo Title:</span>
+                                        <input class="m-input" type="text" name="" id="">
+                                    </div>
+                                    <div class="submit-div">
+                                        <button class="submit-btn">
+                                            Add To-do
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <button data-id="home" value="home" id="ftr-btn" class="footer-btn actib"><span class="fa fa-home fa-2x"></span></button>
+                <button data-id="progress" value="progress" class="footer-btn"><span class="fa fa-list fa-2x"></span></button>
+                <button data-id="done" value="done" class="footer-btn"><span class="fa fa-check fa-2x"></span></button>
+                <button data-id="trash" value="trash" class="footer-btn"><span class="fa fa-trash fa-2x"></span></button>
+            </div>
+        </div>
+    </div>
+    <script>
+            
+            </script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/add-todo.js"></script>
+</body>
+</html>
