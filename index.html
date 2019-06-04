@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+		<title>Todo App</title>
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="resources/css/reset.min.css">
+		<link rel="stylesheet" type="text/css" href="resources/css/style.css">
+	</head>
+	<body>
+		<div class="to-do-header-title">
+			<span class="to-do-header">TODO APP</span>
+		</div>
+		<header>
+			<input type="text" placeholder="Add new task.." id="item">
+			<button id="add">
+				<p class="addbtn">Add</p>
+			</button>
+		</header>
+		<div class="container">
+			<div class="tasklist">
+				<span class="taskstat">New task</span>
+				<ul class="todo" id="todo"></ul>
+			</div>
+			<div class="tasklist">
+				<span class="taskstat">In Progress</span>
+				<ul class="todo" id="completed"></ul>
+			</div>
+			<div class="tasklist">
+				<span class="taskstat">Done</span>
+				<ul class="todo" id="done"></ul>
+			</div>
+
+		</div>
+
+		<!-- JavaScripts -->
+		<script src="resources/js/main.js"></script>
+		<script src="resources/js/jquery.js"></script>
+		<script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
+	</body>
+</html>
