@@ -1,72 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>To-do Challenge</title>
+    <title>TO-DO LIST APP</title>
+    <link
+     rel="stylesheet"
+     href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+     crossorigin="anonymous"
+   />
     <link rel="stylesheet" href="styles/index.css">
-    <link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
-
 </head>
 <body>
-    <main>
-        <!-- Header -->
-        <section>
-            <div class="header">
-              <div>
-                <img src="img/16-165882_check-mark-computer-icons-check-icon-png-clipart.png" alt="">
-              </div>
-              <div class="header-text">  
-               <h1>TO-DO <em>LIST</em></h1>
-             </div>
+    <!-- Title Header -->
+    <section class="header">
+        <div class="header-title">
+            <h1>TO-DO LIST APP</h1>
+        </div>
+    </section>
+    <!-- New Task Input -->
+    <section class="body-container">
+        <div class="new-task-wrapper">
+            <div class="post-task">
+                <input class="input-task" type="text" id="add-task" placeholder="New Task Here...">
+            </div>
+            <div class="submit-task">
+                <img id="add-btn" src="img/submit.png" alt="">
+            </div>
+       </div>
+
+       <div class="list-row">
+           <!-- New Tasks -->
+            <div class="row">
+                <div class="column" id="task-container">
+                    <label for=""> To-do Tasks</label>
+                </div>
+                <div class="box-list new-task">
+                    
+                </div>
                 
             </div>
-        </section>
+            <!-- In Porgress -->
+            <div class="row">
+                <div class="column" id="task-container">
+                    <label for=""> In-Progress Tasks</label>
+                </div>
+                <div class="box-list in-progress">
+                    
+                </div>
+            </div>
+            <!-- Done Tasks -->
+            <div class="row">
+                <div class="column" id="task-container">
+                    <label for=""> Done Tasks</label>
+                </div>
+                <div class="box-list done">
+                    
+                </div>
+            </div>
+       </div>
 
-        <!-- Task Lists -->
-        <section class="todos">
-            <div class="new-tasks">
-                <h1>To-DO</h1>
-            </div>
-            <div class="in-progress">
-                <h1>In Progress</h1>
-            </div>
-            <div class="done-tasks">
-                <h1>Done</h1>
-            </div>
-            
-        </section>
-        <div class="content-section">
-        <section class="content-section">
-            <div class="list-overflow">
-            <div class="new-list">
-                <ul class="list-group" id="newList"></ul>
-            </div>
-            <div>
-                <ul class="list-group" id="currentList"></ul>
-            </div>
-            <div>
-                <ul class="list-group" id="archivedList"></ul>
-            </div>
-            </div>
-        </section>
-        <!-- Add Task -->
-        <section class="task-section">
-            <div class="task-form">
-                <input type="text" id="newInput" placeholder="Task..."><br><br>
-                <button id="submit">Add To-Do</button>
-            </div>
-        </section>
-         </div>
-        <!-- Footer -->
+    </section>
+    <footer>
         
-        <footer>
-            
-        </footer>
-        <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
-        <script src="scripts/script.js"></script>
-    </main>
-    
+    </footer>
+    <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
 </html>
