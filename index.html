@@ -7,17 +7,20 @@
     <link rel="stylesheet" href="main.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
     <title>Todo-Rookie</title>
 </head>
 <body>
     <div class="header">
         <div>
             <h1>Todo-R🐵okie</h1>
+            <h5>By: Arman</h5>
         </div>
         <ul class="navbar">
-            <li>Todo</li>
-            <li>In Progress</li>
-            <li>Done</li>
+            <li><i class="material-icons icons">assignment</i><span class="menu-name">Todo</span></li>
+            <li><i class="material-icons icons">assignment_late</i><span class="menu-name">In Progress</span></li>
+            <li><i class="material-icons icons">assignment_turned_in</i><span class="menu-name">Done</span></li>
         </ul>
     </div>
 
@@ -28,7 +31,10 @@
                 <i class="material-icons dropbtn">more_vert</i>
                     <div class="dropdown-content">
                         <a id="0" class="edit">Edit</a>
-                        <a id="0" class="progress">Set as In Progress</a>
+                        <a id="0" class="stat_todo">Mark as Todo</a>
+                        <a id="0" class="stat_progress">Mark as In Progress</a>
+                        <a id="0" class="stat_done">Mark as Done</a>
+                        <a id="0" class="delete">Delete</a>
                     </div>
                 </div>
             </li>  
@@ -36,10 +42,11 @@
 
 
         <ul class="list progress">
-            <li>Lorem ipsum dolor sit amet.</li>
+            
         </ul>
+
         <ul class="list done">
-            <li>Lorem ipsum dolor sit amet.</li>
+           
         </ul>
     </div> 
 
