@@ -14,8 +14,9 @@ html {
 
 body {
     background-color: rgba(255,255,255,0.5);
-    height: 700px;
+    min-height: 700px;
     margin: 5% 10%;
+    height: auto;
 }
 
 .nav-bar {
@@ -123,4 +124,10 @@ input[type=text], select {
 
 .new-task .fa-angle-double-left {
     display: none;
+}
+
+.edit {
+    border: 1px solid black;
+    padding: 8px;
+    background-color: white;
 }

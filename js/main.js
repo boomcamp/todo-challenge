@@ -6,9 +6,13 @@ $( document ).ready(function() {
     $('#add-btn').on('click', function() {
         var newTask = $('.task-input').val();
         tasks.push(newTask);
+        if (newTask.length === 0) {
+            alert('Enter a new task!');
+        }
+        else {
         var addTask = `
         <div class="box-item gray">
-            <label class="task-name" for="styled-checkbox-1">${newTask}${x}</label>
+            <label class="task-name" for="styled-checkbox-1">${newTask}</label>
             <i class="far fa-trash-alt"></i>
             <i class="far fa-edit"></i>
             <i class="far fa-check-circle" id="task${x}"></i>
@@ -18,6 +22,7 @@ $( document ).ready(function() {
         $('.new-task').append(addTask);
         $('.task-input').val('');
        x++;
+        }
     })
 
     $('.box-list').on('click', '.fa-trash-alt',function(){
@@ -45,4 +50,16 @@ $( document ).ready(function() {
         $('.task-name').css('text-decoration', 'none')
     })
 
+   
+    $('.box-list').on('click', '.fa-edit', function(){
+       $(this).prev().prev().attr('contenteditable', 'true');
+       $(this).prev().prev().addClass('edit');
+       $(this).prev().prev().focus();
+    });
+
+    $('.box-list').on('focusout', '.task-name', function(){
+        $(this).removeAttr('contenteditable');
+        $(this).removeClass('edit');
+    })
+    
 });
