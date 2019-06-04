@@ -1,193 +1,167 @@
 
-var i = 0;
-function displayDate(){
-    
-
-
-}
+let itemsArray = localStorage.getItem('items') ? JSON.parse(localStorage.getItem('items')) : [];
 
 function startTime() {
-  var today = new Date();
-  var h = today.getHours();
-  var m = today.getMinutes();
-  var s = today.getSeconds();
-  var ampm = h >= 12 ? 'pm' : 'am';
-  m = checkTime(m);
-  s = checkTime(s);
-  document.getElementById('header-time').innerHTML =
-  h + ":" + m + ":" +  s +" " + ampm;
-  var t = setTimeout(startTime, 500);
-
-
-  let dateDisplay = document.querySelector('.date-display');
- 
-  let date = today.toLocaleString('en-us', { month: 'long' })+ ' ' + today.getDate() + ', ' + today.getFullYear();
-  dateDisplay.innerHTML = date
-
-}
-function checkTime(i) {
-  if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-  return i;
-}
-
-function todoDone(id){
-    console.log('id = ' + id);
-    var x = '.' + id;
-    let elem = document.getElementsByClassName(id);
-
-    
-    $(x).addClass('done');
-    removeProgress(id);
-    cancelDone(id);
-}
-
-
-function cancelDone(elementId){
-    var CancelElem = '.cancelAction-'+elementId;
-    
-    var addCancel = $(
-        '<span class="pull-right cancelAction-'+elementId+'">' +
-            '<button class="btn btn-cancel" onclick="normalState('+elementId+')">'+
-                '<i class="fa fa-minus-square"></i>'+                 
-            '</button>'+
-        '</span>'    
-    );
-    
-    $(CancelElem).prepend(addCancel);
-}
-
-
-function removeProgress(elementId){
-    var Elem = '.description-'+elementId;
-
-    $(Elem).remove();
-
-    var removeDoneAction = '.doneAction-' + elementId;
-
-    $(removeDoneAction).remove();
-
-
-}
-function progressTodo2(id){
-    console.log(id);
-}
-
-function normalState(elementId){
-    console.log('asdasd' + elementId);
-
-    var cancelThis = '.cancelAction-' + elementId;
-
-    $(cancelThis).remove();
-
-    var addProgress = $(
-
-        '<span class="pull-right action1-'+i+'">' +
-            '<button class="btn btn-proceed" onclick="progressTodo2('+elementId+')">'+
-             '<i class="fa fa-flag"></i>'+
-            '</button>'+
-        '</span>'
-    ); 
-    
-    var progressElem = '.progressAction-' + elementId;
-
-    $(progressElem).prepend(addProgress);
-    
-    var x = '.' + elementId;
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    var ampm = h >= 12 ? 'pm' : 'am';
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('header-time').innerHTML =
+    h + ":" + m + ":" +  s +" " + ampm;
+    var t = setTimeout(startTime, 500);
   
-    $(x).removeClass('done');
-
-}
-function progressTodo(id){
-    console.log('xexe' + id);
-    var description_id = '.description-'+id;
-    var action1 = '.action1-'+id;
-    var doneAction = '.doneAction-'+id;
-    
-    var flagTodo = $(
-        '<small style="color:orange">(In progress)</small>'
-    );
-
-    $(description_id).prepend(flagTodo);
-    
-    $(action1).remove();
-
-
-    var addDone = $(
-        '<span class="pull-right action-1-'+id+'">' +
-            '<button class="btn btn-done" onclick="todoDone('+id+')">'+
-                '<i class="fa fa-check"></i>'+                 
-            '</button>'+
-        '</span>'                 
-    );
-
-    $(doneAction).prepend(addDone);
-    console.log(document.querySelector(description_id));
-    
-}
-
-
-function removeNoTask(){
-    let noTask = document.querySelector('.no-task');
-    if(i > 0){
-        noTask.style.display = 'none';
+  
+    let dateDisplay = document.querySelector('.date-display');
+   
+    let date = today.toLocaleString('en-us', { month: 'long' })+ ' ' + today.getDate() + ', ' + today.getFullYear();
+    dateDisplay.innerHTML = date
+  
+  }
+  function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
     }
-    else{
-        noTask.style.display = 'flex';
-    }
+
+function addTask(taskId , description , date , status){
+    this.taskId = taskId;
+    this.description = description;
+    this.date = date;
+    this.status = status;
 }
 
 
-function deleteTodo(id){
-    i--;
-    var x = '.'+id;
-    $(x).remove();
+function normalState(id){
+    itemsArray[id].status = 'pending';
+  
+    localStorage.clear();
+    localStorage.setItem('items', JSON.stringify(itemsArray))
+    console.log(itemsArray);
+    location.reload();
+}
 
-    removeNoTask();
-}   
+function completeTask(id){
+    itemsArray[id].status = 'done';
+  
+    localStorage.clear();
+    localStorage.setItem('items', JSON.stringify(itemsArray))
+    console.log(itemsArray);
+    location.reload();
+}
 
+
+function progressTask(id){
+    itemsArray[id].status = 'progress';
+  
+    localStorage.clear();
+    localStorage.setItem('items', JSON.stringify(itemsArray))
+    console.log(itemsArray);
+    location.reload();
+}
+
+function deleteTask(id){
+
+
+    newItemsArr = itemsArray;
+    newItemsArr.splice(id, 1);
+
+    localStorage.clear();
+
+    localStorage.setItem('items', JSON.stringify(newItemsArr))
+    console.log(newItemsArr);
+    
+    location.reload();
+    
+}
+
+
+function listCreate(taskId , description , date , number , status){
+    var flagBtn = '';
+    var taskDescription = '';
+
+
+
+
+    if(status == 'pending'){
+        flagBtn = '<button class="btn btn-proceed" id="progressTask" onclick="progressTask('+number+')"><i class="fa fa-flag-o"></i></button>';
+
+        taskDescription = '<a href="#">'+ description +'</a>';
+    }
+    else if(status == 'progress'){
+        flagBtn = '<button class="btn btn-done" id="progressTask" onclick="completeTask('+number+')"><i class="fa fa-check"></i></button>';
+
+        taskDescription = '<a href="#" class="orange">'+ description +'</a>&nbsp;<small class="small-add orange">(In Progress)</small>'
+
+    }
+    else if(status == 'done'){
+        flagBtn = '<button class="btn btn-cancel" id="progressTask" onclick="normalState('+number+')"><i class="fa fa-minus"></i></button>';
+        
+        taskDescription = '<del ><a href="#" class="green">'+ description +'</a></del> &nbsp;<small class="small-add green">(Completed)</small>';
+
+    }
+
+    var taskList = $(
+        '<li class="list-group-item item-'+number+'">' +
+            '<div class="description">' +
+                taskDescription +
+                '<br>' +
+                '<div class="description-date">' +
+                    '<i class="fa fa-clock-o"></i>&nbsp;&nbsp;'+ 
+                     jQuery.timeago(date) +
+                '</div>' +
+            '</div>' +
+
+            '<div class="actions">' +
+                    flagBtn
+                +
+
+                '<button class="btn btn-delete" id="deleteTask" onclick="deleteTask('+number+')"><i class="fa  fa-trash-o"></i></button>'+
+               
+            '</div>' +
+        '</li>' 
+    );
+  
+    $('#taskList').prepend(taskList);
+}
+function listDisplay(){
+    
+    data = JSON.parse(localStorage.getItem('items'))
+    if(data.length > 0){
+        var num = 0;
+        data.forEach(element => {
+
+            listCreate(element.taskId ,element.description , element.date , num , element.status);
+            num++;
+        })
+
+        $('.no-task').remove();
+    }
+    
+}
 $(document).ready(function(){
     startTime();
-    
-    $('#todoForm').on('submit' , function(e){
-        var todoInput = document.querySelector('.text');
+   $('#todoForm').on('submit' , function(){
+        var description = document.querySelector('.text');
+        var date = new Date();
+        var taskId = itemsArray.length;
+
+        var newTask = new addTask(taskId , description.value , date , 'pending');
         
+        itemsArray.push(newTask);
 
-        var newTodo = $(
-            '<li class="list-group-item '+i+'">' +
-                '<span class="description">'+todoInput.value+' <span class="description-'+i+'"></span></span> ' + 
-                
-                '<span class="pull-right progressAction-'+i+'"></span>'+
-                '<span class="pull-right doneAction-'+i+'"></span>'+
-                '<span class="pull-right cancelAction-'+i+'"></span>'+
-                
-                '<span class="pull-right action1-'+i+'">' +
-                    '<button class="btn btn-proceed" onclick="progressTodo('+i+')">'+
-                       '<i class="fa fa-flag"></i>'+
-                    '</button>'+
-                '</span>'+
+        console.log(itemsArray);
 
-                '<span class="pull-right">' +
-                    '<button class="btn btn-delete" onclick="deleteTodo('+i+')">'+
-                       '<i class="fa fa-trash"></i>'+
-                    '</button>'+
-                '</span>'+
-                
-            '</li>'
-          
-            
-                            
-         );
+        localStorage.setItem('items', JSON.stringify(itemsArray))
+        
+        description.value = '';
 
-        $('.list-group').prepend(newTodo);
-        todoInput.value = '';
-        i++;
+        
+        
+   });
 
-        removeNoTask();
-            
-console.log(i);
+   listDisplay();
 
-    console.log(newTodo);
-    })
-   
-   
-});
+})
+
