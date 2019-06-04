@@ -8,11 +8,10 @@
 <body>
 <div class="box">
 <div class="container">
-    
-      <div id="myToDo" class="header">
-        <h2>My To Do List</h2>
-        <input type="text" id="myInput" placeholder="Input a To-Do List Here">
-        <span onclick="newElement()" class="addBtn"><b>Add</b></span>
+    <div id="myToDo" class="header">
+      <h2>My To Do List</h2>
+      <input type="text" id="myInput" placeholder="Input To-Do List">
+      <span onclick="newElement()" class="addBtn"><b>Add</b></span>
     </div>
 
     <ul id="toDoList">
@@ -23,12 +22,11 @@
 </div>
 
 <div class="container">
-    
-  <div id="inProgress" class="header">
+  <div id="myInProgress" class="header">
     <h2>In Progress Task</h2>
 </div>
 
-<ul id="toDoList">
+<ul id="toProgress">
 
   <!-- List items will be added here -->
 
@@ -36,18 +34,28 @@
 </div>
 
 <div class="container">
-    
-  <div id="doneTasks" class="header">
-    <h2>Done Tasks</h2>
+  <div id="myDoneTasks" class="header">
+    <h2>Done<br> Tasks</h2>
 </div>
 
-<ul id="toDoList">
+<ul id="doneTasks">
 
   <!-- List items will be added here -->
 
 </ul>
 </div>
 
+<div class="container">
+    <div id="myAllTasks" class="header">
+      <h2>All<br> Tasks</h2>
+  </div>
+  
+  <ul id="allTasks">
+  
+    <!-- List items will be added here -->
+  
+  </ul>
+  </div>
 </div>
 <script src="main.js"></script>
 </body>
