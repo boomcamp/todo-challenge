@@ -130,12 +130,14 @@ li {
     cursor: copy;
 }
 
+.edit,
 .todo-del {
     margin: 0 20px;
     background-color: transparent;
     border: none;
 }
 
+.edit:hover,
 .todo-del:hover {
     -moz-box-shadow: 0 0 5px 5px #888;
     -webkit-box-shadow: 0 0 5px 5px#888;
@@ -153,7 +155,7 @@ form.NewTask-form {
     position: absolute;
     bottom: 0;
     padding: 20px;
-    z-index: 1;
+    z-index: 2;
 }
 
 .newTaskForm {
@@ -245,7 +247,7 @@ input:not([type="image" i]) {
 
 .prog-list {
     font-size: 2em;
-    text-align: center;
+    text-align: right;
 }
 
 .prog {
@@ -261,6 +263,7 @@ input:not([type="image" i]) {
     cursor: cell;
 }
 
+.save-edit,
 .todo-undo,
 .prog-undo {
     background-color: transparent;
@@ -268,6 +271,7 @@ input:not([type="image" i]) {
     cursor: pointer;
 }
 
+.save-edit:hover,
 .prog-undo:hover,
 .todo-undo:hover {
     -webkit-box-shadow: 0px -1px 20px -3px rgba(0, 0, 0, 0.75);
@@ -283,6 +287,7 @@ input:not([type="image" i]) {
     border-radius: 4px;
     margin: 5px;
     padding: 5px;
+    text-align: left;
 }
 
 .jobDone:hover {
@@ -290,6 +295,12 @@ input:not([type="image" i]) {
     -webkit-box-shadow: -5px -5px 5px 5px#888;
     box-shadow: -5px -5px 5px 5px #888;
     cursor: grabbing;
+}
+
+.edit-area {
+    font-size: 2em;
+    width: 100%;
+    height: 50px;
 }
 
 @media only screen and (max-device-width: 2560px) and (min-device-width: 1500px) {
