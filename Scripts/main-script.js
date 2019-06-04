@@ -5,7 +5,7 @@
     let todo = document.getElementById('todoLists');
     let prog = document.getElementById('progressLists');
     let done = document.getElementById('doneList');
-    let all = document.getElementById('list');
+    let overlay = document.getElementById('overlay');
     
     let items = [];
 
@@ -18,6 +18,7 @@
         let li = document.createElement('li');
         let rem = document.createElement('span');
         let inProg = document.createElement('span');
+        let edit = document.createElement('span');
         
         li.className = 'list-item hover';
         li.appendChild(document.createTextNode(newItem));
@@ -25,7 +26,11 @@
         rem.className = 'hover remove-item';
         rem.appendChild(document.createTextNode('x'));
 
+        edit.className = 'hover edit-item';
+        edit.appendChild(document.createTextNode('e'));
+
         li.appendChild(rem);
+        li.appendChild(edit);
         todo.appendChild(li);
 
         inTxt.value = "";
@@ -50,6 +55,8 @@
                 let li = e.target.parentElement;
                 todo.removeChild(li);
             }
+        }else if(e.target.classList.contains('edit-item')){
+            updateItem(e);
         }else{
             let btn = e.target.outerHTML
                         .replace(/remove-item">x/gm,'up">back');
@@ -66,6 +73,8 @@
                         .replace(/up">back/gm,'remove-item">x');
             prog.removeChild(e.target.parentElement);
             todo.insertAdjacentHTML('afterbegin',btn);
+        }else if(e.target.classList.contains('edit-item')){
+            updateItem(e);
         }else{
             prog.removeChild(e.target);
             done.appendChild(e.target);
@@ -78,6 +87,8 @@
         if(e.target.classList.contains('up')){
             done.removeChild(e.target.parentElement);
             prog.appendChild(e.target.parentElement);
+        }else if(e.target.classList.contains('edit-item')){
+            updateItem(e);
         }else{
             if(confirm('Are you sure you want to remove this item from the done list?')){
                 let li = e.target;
@@ -86,14 +97,32 @@
         }
     }
 
-    all.addEventListener('click', editItem);
+    let editing = document.getElementById('edit-item');
+    editing.addEventListener('input', updating);
 
-    function editItem(e){
-        if(e.target.classList.contains('list-item')){
-            // add edit button
-            // open edit form
-            // save / cancel
+    function updateItem(e){
+        overlay.style.display = "block";
+        editing.value = e.target.parentElement.firstChild.textContent;
+
+        let updItem = document.getElementById('update');
+        updItem.addEventListener('click', submitUpdate);
+
+        function submitUpdate(){
+            e.target.parentElement.firstChild.textContent = editing.value;
+            closeForm();
         }
     }
 
+    function updating(){
+        let updBtn = document.getElementById('update');
+        if(editing.value) updBtn.removeAttribute('disabled');
+        else updBtn.setAttribute("disabled", "disabled");
+    }
+
+    let cancel = document.getElementById('cancel');
+    cancel.addEventListener('click', closeForm);
+
+    function closeForm(){
+        overlay.style.display = "none";
+    }
 })()

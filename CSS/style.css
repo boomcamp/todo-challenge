@@ -39,7 +39,8 @@ ul{
 fieldset{
     font-size: 18px;
     color: white;
-    width: 100%;
+    width: 99%;
+    margin: 0 auto;
 }
 
 legend{
@@ -79,7 +80,8 @@ fieldset #txtVal{
     padding: 3px;
 }
 
-.remove-item, .to-progress, .up{
+.remove-item, .to-progress, 
+.up, .edit-item{
     float: right;
     margin-left: 5px;
     padding: 0 5px;
@@ -96,6 +98,34 @@ fieldset #txtVal{
 
 .up:hover{
     background: blue;
+}
+
+#overlay{
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+}
+
+#edit-form{
+    display: inline-block;
+    position: fixed;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 18px;
+}
+
+#edit-item{
+    padding:5px;
+    width: 300px;
+}
+
+#update,#cancel{
+    width: 88px;
+    margin-top: 5px;
 }
 
 /*{ border: 1px solid aqua !important }
