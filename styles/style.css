@@ -1,0 +1,186 @@
+body {
+  margin: 0;
+  min-width: 250px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  background-color: #0897aa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 40px;
+  color: white;
+  text-align: center;
+}
+
+
+.todoLabel {
+  font-size: 42px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.addText {
+  width: 50%;
+  height: 50px;
+  margin: 0;
+  border: none;
+  border-radius: 5px;
+  width: 70%;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.addBtn {
+  margin-top: 20px;
+  padding: 10px;
+  width: 10%;
+  font-weight: bold;
+  background: #80dde9;
+  color: rgb(54, 52, 52);
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 800px){
+  .addText {
+    width: 100%;
+  }
+
+  .addBtn {
+    width: 100px;
+  }
+}
+
+.addBtn:hover {
+  background-color: #a9f8fd;
+}
+
+.row{
+  width: 76%;
+  display: flex;
+  flex-direction: row;
+  margin: 1% 12% 0 12%;
+  flex: 1 auto;
+}
+
+
+.column {
+  float: left;
+  height: 100%; 
+  text-align: center;
+  width: 33.33%;
+  padding: 10px;
+  margin: 0 5px 5px 5px;
+}
+
+.col1{
+  background-color: #dcfbff;
+  border: 0.5px solid #7df3f3;
+  border-style: double;
+}
+
+.col2{
+  background-color: #dcfbff;
+  border: 0.5px solid #7bfdfd;
+  border-style: double;
+
+}
+
+.col3{
+  background-color: #dcfbff;
+  border: 0.5px solid #7df3f3;
+  border-style: double;
+}
+
+
+@media screen and (max-width: 940px){
+  .row {
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    flex: 1 auto;
+  }
+
+  .column {
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+.taskLabel {
+  font-size: 28px;
+  border: 0.5px solid #138585;
+  background-color: #0897aa;
+  color: white;
+  width: 55%;
+  border-radius: 4px;
+  align-content: center;
+}
+
+ul {
+  width: 100%; 
+  padding: 2px;
+  margin: 0 1% 2px 1%;  
+}
+
+ul li {
+  width: 98%;
+  background: #e6e6ff ;
+  list-style: none;
+  text-align: left;
+  padding: 7px;
+  margin: 5px 1% 5px 1%;  
+  border-radius: 4px;
+  color:#3a3939;
+  
+}
+
+ul li:nth-child(even){
+  background: #b0c2c2;
+}
+
+li:hover {
+  cursor: pointer;
+ }
+
+li button{
+  border-style: none;
+  float: right;
+ }
+
+#edit {
+  float: right;
+}
+
+#del {
+    float: right;
+
+}
+
+#inProg {
+    float: right;
+
+}
+
+#backToDo {
+  float: right;
+
+}
+
+#done {
+  float: right;
+
+}
+
+
+

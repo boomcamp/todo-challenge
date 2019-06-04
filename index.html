@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>To Do Lists App</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="styles/style.css"
+      type="text/css"
+      media="screen"
+      title="no title"
+      charset="utf-8"
+    />
+    <link 
+      rel="stylesheet" 
+      href="https://material.io/tools/icons/?style=baseline" 
+    />
+  </head>
+  <body>
+    <div id="addCont" class="header">
+      <h2 class="todoLabel"><img src="img/baseline-storage-24px.svg" style="color: white;" /> To Do Lists</h2>
+        <input class="addText" type="text" name="taskList" id="taskInput" placeholder=" Add New Task...">
+      <span class="addBtn" disabled>Add</span>
+    </div>
+    <div class="row">
+      <div class="column col1" id="todoList">
+        <center><h2 class="taskLabel">To Do</h2></center>
+          <ul id="toDoUl">
+            <!-- <li id="toDoLi">
+              Some task...
+              <img id="inProg" src="img/baseline-forward-24px.svg"/>
+              <img id="del" src="img/baseline-delete-24px.svg"/>
+              <img id="edit" src="img/baseline-create-24px.svg"/>
+            </li> -->
+          </ul>
+      </div>
+      <div class="column col2">
+          <center><h2 class="taskLabel">In Progress</h2></center>
+          <ul id="inProgUl">
+            <!-- <li id="inProgLi">
+              Some task...
+              <img id="done" src="img/baseline-forward-24px.svg"/>
+              <img id="backToDo" src="img/baseline-backward-24px.png"/>
+              <img id="edit" src="img/baseline-create-24px.svg"/>
+            </li> -->
+          </ul>
+      </div>
+      <div class="column col3">
+          <center><h2 class="taskLabel">Done</h2></center>
+          <ul id="doneUl">
+            <!-- <li id="doneLi">
+              Some task...
+              <img id="inProg" src="img/baseline-delete-24px.svg"/>
+              <img id="del" src="img/baseline-backward-24px.png"/>
+              <img id="edit" src="img/baseline-create-24px.svg"/>
+            </li> -->
+          </ul>
+      </div>
+    </div>
+
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.min.js"></script>
+    <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
