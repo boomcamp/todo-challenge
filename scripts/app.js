@@ -145,12 +145,23 @@ function deleteTodo(id){
     removeNoTask();
 }   
 
+function addTask(description , date){
+    this.description = description;
+    this.date = date;
+}
+
 $(document).ready(function(){
+
+
+  
     startTime();
     
     $('#todoForm').on('submit' , function(e){
+
+
         var todoInput = document.querySelector('.text');
-        
+
+   
 
         var newTodo = $(
             '<li class="list-group-item '+i+'">' +
