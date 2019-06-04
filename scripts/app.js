@@ -87,7 +87,7 @@ function listCreate(taskId , description , date , number , status){
     if(status == 'pending'){
         flagBtn = '<button class="btn btn-proceed" id="progressTask" onclick="progressTask('+number+')"><i class="fa fa-flag-o"></i></button>';
 
-        taskDescription = '<a href="#">'+ description +'</a>';
+        taskDescription = '<a href="#">'+ description +'</a> ';
     }
     else if(status == 'progress'){
         flagBtn = '<button class="btn btn-done" id="progressTask" onclick="completeTask('+number+')"><i class="fa fa-check"></i></button>';
@@ -106,17 +106,19 @@ function listCreate(taskId , description , date , number , status){
         '<li class="list-group-item item-'+number+'">' +
             '<div class="description">' +
                 taskDescription +
+                
                 '<br>' +
+                
+
                 '<div class="description-date">' +
                     '<i class="fa fa-clock-o"></i>&nbsp;&nbsp;'+ 
                      jQuery.timeago(date) +
                 '</div>' +
             '</div>' +
 
-            '<div class="actions">' +
-                    flagBtn
-                +
-
+            '<div class="actions">'+ 
+                 flagBtn +
+                
                 '<button class="btn btn-delete" id="deleteTask" onclick="deleteTask('+number+')"><i class="fa  fa-trash-o"></i></button>'+
                
             '</div>' +
@@ -131,8 +133,13 @@ function listDisplay(){
     if(data.length > 0){
         var num = 0;
         data.forEach(element => {
+            
+
+         
 
             listCreate(element.taskId ,element.description , element.date , num , element.status);
+
+
             num++;
         })
 
