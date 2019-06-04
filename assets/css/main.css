@@ -1,0 +1,338 @@
+html, body{
+    margin: 4px;
+    background-color: #6c7277;
+    font-family: 'East Sea Dokdo', cursive;
+}
+
+.main{
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-around;
+}
+.wrapper{
+    border-radius: 10px;
+    width:30%;
+    height: 100%;
+    background-color: white;
+}
+.header{
+    box-sizing: border-box;
+    width:100%;
+    height:300px;
+    border-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    overflow: hidden;
+    position: relative;
+}
+.header-img{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+.header .after{
+    background-color: hsla(207, 61%, 33%,0.4);
+    height: 100%;
+    width: 100%;
+    top:0;
+    right:0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+.header .text-content{
+    color:rgb(81, 206, 248);
+    display: flex;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 0px;
+}
+.after .content-header{
+    margin:20px;
+    color:rgb(81, 206, 248);
+}
+
+.header h1{
+    font-size: 5rem;
+    font-weight: 300;
+}
+
+.content{
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    padding:10px;
+}
+.content .write-todo{
+    display: flex;
+    flex-direction: column;
+}
+.title-todo{
+    text-align: center;
+    font-size: 4rem;
+}
+.content-todo{
+    display: flex;
+    justify-content: center;
+    padding:10px;
+}
+.todo-table{
+    width:500px;
+    display: flex;
+    flex-direction: column;
+    height: 380px;
+}
+.header-todo{
+    display:flex; 
+    justify-content: space-between;
+    width: 100%;
+}
+a{
+    color:black;
+    text-decoration: none;
+}
+.check{
+  color:green;margin-right:20px
+}
+.trash{
+  color:red;
+}
+.todo-tr{
+    display:flex;
+    font-size: 1.5rem;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.left{
+  width:70%;
+  word-wrap: break-word;
+}
+.accordion {
+  border-radius: 10px;
+  background-color: hsl(207, 61%, 33%);
+  color: #fff;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  margin-bottom: 10px;
+}
+
+.active, .accordion:hover {
+  background-color: #25689e;
+}
+
+.accordion:after {
+ 
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+
+.panel {
+  font-size: 1.5rem;
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+}
+
+.box
+{
+    overflow-y: scroll;
+    position: relative;
+    padding:10px;
+	margin: 0 auto;
+	background-color: #fff;
+	-webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0 0 4px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2), inset 0 0 50px rgba(0, 0, 0, 0.1);
+}
+.box:before, .box:after
+{
+	position: absolute;
+	width: 40%;
+	height: 10px;
+	content: ' ';
+	left: 12px;
+	bottom: 12px;
+	background: transparent;
+	-webkit-transform: skew(-5deg) rotate(-5deg);
+	-moz-transform: skew(-5deg) rotate(-5deg);
+	-ms-transform: skew(-5deg) rotate(-5deg);
+	-o-transform: skew(-5deg) rotate(-5deg);
+	transform: skew(-5deg) rotate(-5deg);
+	-webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+	box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+	z-index: -1;
+} 
+
+.box:after
+{
+	left: auto;
+	right: 12px;
+	-webkit-transform: skew(5deg) rotate(5deg);
+	-moz-transform: skew(5deg) rotate(5deg);
+	-ms-transform: skew(5deg) rotate(5deg);
+	-o-transform: skew(5deg) rotate(5deg);
+	transform: skew(5deg) rotate(5deg);
+}
+
+
+/* write button */
+.bottom{
+    position:fixed;
+    bottom: 150px;
+    right:700px;
+    display: flex;
+    justify-content: flex-end;
+}
+.btn:hover{
+  background-color: #25689e;
+  color:rgb(81, 206, 248);
+}
+.btn{
+    background-color: #205886;
+    border:0px;
+    box-shadow: 5px 10px 18px #888888;
+    align-items: center;
+    color:white;
+}
+.btn-circle {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+.btn-circle.btn-lg {
+  width: 60px;
+  height: 60px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+.btn-circle.btn-xl {
+  width: 100px;
+  height: 100px;
+  font-size: 24px;
+  line-height: 1.33;
+  border-radius: 50px;
+}
+
+
+.footer{
+    display: flex;
+    height: 70px;
+    background-color: #205886;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow: hidden;
+}
+.footer-btn{
+  width: 25%;
+  background-color: transparent;
+  color: white;
+  border-left: 1px solid #25689e;
+  border-right:none;
+  border-top:none;
+  border-bottom:none;
+}
+.footer-btn:hover{
+  background-color: #25689e;
+}
+.actib{
+  color: rgb(81, 206, 248);
+}
+#ftr-btn{
+  border-bottom:5px solid rgb(81, 206, 248);
+  padding-bottom:10px;
+}
+
+
+
+.submit-div{
+  margin-top:20px;
+}
+.submit-btn{
+  width:100px;
+  padding:10px;
+  border-radius: 10px;
+  background-color: #205886;
+  color: #fff;
+  border: none;
+}
+.sub-items{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.title-input{
+  display:flex;
+  justify-content: space-around;
+}
+.modal-text{
+  font-size: 1.3rem;
+  display: flex;
+  flex-direction: column;
+}
+.modal-input{
+  margin-top:20px;
+  display: flex;
+  flex-direction: column;
+}
+.m-input{
+  padding:10px;
+  border-radius: 5px;
+  border:1px solid;
+}
+/* The Modal (background) */
+.modal {
+  text-align: center;
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 350px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  border-radius: 10px;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 25%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
