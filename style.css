@@ -1,6 +1,7 @@
 
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,400);
 @import url('https://fonts.googleapis.com/css?family=Ranga:700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Shadows+Into+Light&display=swap');
 
 body {
 font: normal normal 13px/16px "Open Sans", sans-serif;
@@ -9,6 +10,7 @@ background: url(https://source.unsplash.com/user/erondu/1600x900) no-repeat cent
 -moz-background-size: cover;
 -o-background-size: cover;
 background-size: cover;
+display: flex;
 }
 
 h2 {
@@ -24,7 +26,9 @@ width: 350px;
 margin: 0 auto;
 margin-top: 40px;
 background: white;
-border-radius: 5px;}
+border-radius: 5px;
+box-shadow: 5px 5px 4px rgb(34, 34, 34);
+}
 
 form {
 display: inline-block;
@@ -32,6 +36,7 @@ display: inline-block;
 
 p {
   text-align: center;
+  margin-top: 0;
 }
 
 .name {
@@ -49,6 +54,8 @@ width: 230px;
 
 h2 {
   text-align: center;
+  margin-top: 2px;
+  margin-bottom: 0px;
 }
 
 #button{
@@ -58,7 +65,6 @@ color:#ffffff;
 border-radius: 5px;
 text-align:center;
 margin-top:2px;
-margin-left: 15px;
 padding: 5px 15px;
 }
 
@@ -92,6 +98,13 @@ li, h3 {
   clear:both;
 }
 
+#new-task > input[type="text"] {
+  width: 250px;
+  font: 17px 'Shadows Into Light', cursive;
+  color: #282625;
+  margin: 0 auto;
+}
+
 #incomplete-tasks, #done-tasks {
   list-style-type: none;
   padding: 0;
@@ -101,22 +114,27 @@ li, h3 {
 /* Task list */
 .incomplete {
   overflow: hidden;
-  padding: 20px 0;
-  border-bottom: 1px solid #eee;
+  padding: 12px 0;
+  margin-top: 3px;
 }
 .incomplete > input[type="checkbox"] {
   margin: 0 10px;
   position: relative;
-  top: 10px;
+  top: 15px;
 }
-.incomplete > label {
+.incomplete > label, #new-task > label {
   font-size: 18px;
   line-height: 40px;
   width: 200px;
   padding: 0 0 0 11px;
 }
+#new-task > label {
+  line-height: 30px;
+}
+
 .incomplete > input[type="text"] {
   width: 200px;
+  font: 20px 'Shadows Into Light', cursive; color: #282625; margin: 0 auto;
 }
 .incomplete > .delete:hover {
   color: #CF2323;
@@ -142,12 +160,12 @@ ul li.editMode label {
   display:none;
 }
 
-.delete, .edit, .mark-progress, .save, .return, .edit-task, .save-task {
+.delete, .edit, .mark-progress, .save, .return, .edit-task, .save-task, .save-complete, .edit-complete {
   border:none;
-  background-color: #fff;
+  background-color: #fff0;
 }
 
-.save, .save-task {
+.save, .save-task, .save-complete {
   display: none;
 }
 
@@ -158,9 +176,12 @@ ul li.editMode label {
 a {
   float: right; 
   padding-left: 5px;
-  padding-top: 1px; 
-  color: red; 
+  padding-top: 1px;
   font-size: 12px;
+}
+
+a:hover{
+  color: #CF2323;
 }
 
 i {
@@ -170,4 +191,100 @@ i {
 
 .top {
   padding-top: 13px
+}
+
+#done-tasks > li > button > i {
+  padding-top: 6px;
+  
+  font-size: 20px;
+}
+
+#done-tasks > li > button > .fa-edit {
+  color: rgb(155, 155, 39);
+}
+
+#done-tasks > li > button > .fa-check {
+  color: rgb(34, 133, 30)
+}
+
+#tasks > li > button > .fa-edit {
+  color: rgb(155, 155, 39);
+}
+
+#tasks > li > button > .fa-check {
+  color: rgb(34, 133, 30)
+}
+
+#incomplete-tasks > li > button > .fa-edit {
+  color: rgb(155, 155, 39);
+}
+
+#incomplete-tasks > li > button > .fa-check {
+  color: rgb(34, 133, 30)
+}
+
+#incomplete-tasks > li > button > .fa-backward {
+  color: rgb(77, 131, 248)
+}
+
+
+
+#tasks > li > button > i {
+  padding-top: 10px;
+}
+
+#tasks > li > a > i {
+  padding-top: 7px;
+  font-size: 15px;
+}
+
+/* paper test */
+
+#instructions {font: 16px 'Shadows Into Light', cursive; color: #282625; margin: 0 auto; margin-top: 40px;}
+.paper {
+    position: relative;
+    border: 1px solid #B5B5B5;
+    background: white;
+    background: -webkit-linear-gradient(top, #DFE8EC 0%, white 8%) 0 57px;
+    background: -moz-linear-gradient(top, #DFE8EC 0%, white 8%) 0 57px;
+    background: linear-gradient(top, #DFE8EC 0%, white 8%) 0 57px;
+    -webkit-background-size: 100% 30px;
+    -moz-background-size: 100% 30px;
+    -ms-background-size: 100% 30px;
+    background-size: 100% 30px;
+}
+
+.none {
+  height: auto;
+}
+
+.marg {
+  margin-top: 180px !important;
+}
+
+input[type=checkbox]
+{
+  /* Double-sized Checkboxes */
+  -ms-transform: scale(2); /* IE */
+  -moz-transform: scale(2); /* FF */
+  -webkit-transform: scale(2); /* Safari and Chrome */
+  -o-transform: scale(2); /* Opera */
+  transform: scale(2);
+  padding: 10px;
+}
+
+.edit-complete {
+  padding-top: 2.5px;
+}
+
+#done-tasks > li > button {
+  margin-top: 5.5px;
+}
+
+
+
+@media screen and (max-width: 1141px){
+  body {
+    display: block;
+  }
 }

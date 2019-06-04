@@ -1,6 +1,9 @@
 $(document).ready(function() {
     var taskInput = document.getElementsByClassName("new-task");
         
+
+    //add new task
+
     $('#button').click(
         function(){
             var toAdd = $('input[name=ListItem]').val();
@@ -16,6 +19,8 @@ $(document).ready(function() {
             $('input[name=ListItem]').val('');
         });
 
+    //move task to in-progress
+
     $(document).on('click', '#new-task a', function(){
         $(this).parent().toggleClass('strike').fadeOut('slow');
         $($(this).siblings()[0]).toggleClass('strike').fadeOut('slow');
@@ -30,7 +35,6 @@ $(document).ready(function() {
         $($(this).siblings()[1]).attr("value", value);
         $(this).hide();
         $($(this).siblings()[3]).show();
-        console.log($(this).siblings());
     });
 
     $(document).on('click', '.save-task', function(){
@@ -40,7 +44,7 @@ $(document).ready(function() {
         $(this).hide();
         $($(this).siblings()[3]).show();
         $(this).siblings()[0].innerHTML = value;
-        console.log($(this).siblings());
+
     });
 
 
@@ -117,11 +121,33 @@ $(document).ready(function() {
                 <li class = "incomplete">
                     <input type="checkbox" checked >
                     <label>${value}</label>
-                    <button class="delete" id="done"><i class = "fa fa-trash"></i></button>
+                    <input type="text">
+                    <button class="edit-complete" style="float: right;"><i class = "fa fa-edit"></i></button>
+                    <button class="save-complete" style="float: right;"><i class = "fa fa-check"></i></button>
+                    <button class="delete" id="done" style="float: right;"><i class = "fa fa-trash"></i></button>
+                    
                 </li>
             `);
-            console.log(value);
+
         }   
+    });
+
+    $(document).on('click', '.edit-complete', function(){
+        var value = $(this).siblings()[1].innerText
+        $($(this).siblings()[1]).hide();
+        $($(this).siblings()[2]).show();
+        $($(this).siblings()[2]).attr("value", value);
+        $(this).hide();
+        $($(this).siblings()[3]).show();
+    });
+
+    $(document).on('click', '.save-complete', function(){
+        var value = $($(this).siblings()[2]).val();
+        $($(this).siblings()[1]).show();
+        $($(this).siblings()[2]).hide();
+        $(this).hide();
+        $($(this).siblings()[3]).show();
+        $(this).siblings()[1].innerHTML = value;
     });
     
 
