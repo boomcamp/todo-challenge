@@ -1,5 +1,0 @@
-Clicked to-do item turns red to mark it as done.
-
-Cons:
-To-do button still exists. Should be removed when item is marked as done.
-Should change status when "To-Do" button is clicked.
