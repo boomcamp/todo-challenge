@@ -7,6 +7,8 @@ let updateFlag = false;
 
 dataLoader();
 
+new Task('Edit by clicking the task.');
+
 function Task(task){
     let t = {
         id:  tasks.length+1,

@@ -187,8 +187,11 @@ sup {
 
 .ic {
     margin-left: 10px;
-    font-weight: bolder;
+    font-weight: 100;
     color: green;
+    background: none;
+    border: 1px solid green;
+    padding: 10px;
 }
 
 .ic:hover {
