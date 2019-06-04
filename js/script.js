@@ -6,8 +6,9 @@ let gid;
 let updateFlag = false;
 
 dataLoader();
-
-new Task('Edit by clicking the task.');
+if(tasks.length<1){
+    new Task('Edit by clicking the task.');
+}
 
 function Task(task){
     let t = {
