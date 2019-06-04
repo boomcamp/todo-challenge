@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TODO APP</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="icon" type="image/png" sizes="96x96" href="img/todo-icon.png">
+</head>
+<body>
+	<div class="header">
+		<div class="container">
+			<div class="row">
+			<div class="col-xs-2">
+	            <h1><img src="img/td.svg" style="width:45px; height:30px;">TODO APP</h1>
+	        </div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="add-container">
+			<img src="img/pencil.png">
+			<div class="input">
+				<textarea
+					placeholder = "Enter your Text"
+					name = "todo"
+					id = "todoInput"
+				></textarea>
+			<div class="add-button">
+				<button class="post" disabled>ADD</button>
+			</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="todo-container">
+			<div class="block"><br>
+					<input id="tab1" type="radio" name="tabs" checked>
+					<label for="tab1">TODO</label>
+				  
+					<input id="tab2" type="radio" name="tabs">
+					<label for="tab2">In Progress</label>
+				  
+					<input id="tab3" type="radio" name="tabs">
+					<label for="tab3">Done</label>
+
+					<section id="content1">
+						<div class="box-new">
+								<button class="del-btn">Del</button>
+								<button class="prog-btn">In progress</button>
+								<button class="edit-btn">Edit</button>
+							<p>
+								New TODO
+							</p>
+						</div>
+
+						<div class="box-new">
+								<button class="del-btn">Del</button>
+								<button class="prog-btn">In progress</button>
+								<button class="edit-btn">Edit</button>
+							<p>
+								New TODO 2
+							</p>
+						</div>
+					</section>
+						
+					<section id="content2">
+						<div class="box-new">
+								<button class="complete-btn">Done</button>
+								<button class="todo-btn">Todo</button>
+								<button class="edit-btn">Edit</button>
+							<p>
+								IN Progress TODO 
+							</p>
+						</div>
+						<div class="box-new">
+								<button class="complete-btn">Done</button>
+								<button class="todo-btn">Todo</button>
+								<button class="edit-btn">Edit</button>
+							<p>
+								IN Progress TODO 2
+							</p>
+						</div>	
+					</section>
+						
+					<section id="content3">
+							<div class="box-new">
+									<button class="del-btn">Del</button>
+									<button class="prog-btn">In progress</button>
+									<button class="edit-btn">Edit</button>
+								<p>
+									Done TODO
+								</p>
+							</div>
+							<div class="box-new">
+									<button class="del-btn">Del</button>
+									<button class="prog-btn">In progress</button>
+									<button class="edit-btn">Edit</button>
+								<p>
+									Done TODO 2
+								</p>
+							</div>
+					</section>
+
+						  
+			</div>
+		</div>
+	</div>
+	<script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
+	<script src="main.js" type="text/javascript"></script>
+</body>
+</html>
