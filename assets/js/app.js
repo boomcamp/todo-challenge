@@ -1,5 +1,5 @@
-let task = [];
 let taskID = 1;
+
 $(document).ready(function() {
 
     $('.task-btn').click(function() {
@@ -22,18 +22,35 @@ $(document).ready(function() {
     
 });
 
-function alRt(x) {
+function removeT(x) {
     $(`.task${x}`).remove();
 }
 
-function Task(task) {
-    this.task = task;
-    this.id = 0;
+function moveFor(x) {
+    let str = $(`.task${x}`).data("pos");
+    let task = $(`.task${x}`).text();
+    let htm = $(`.task${x}`).detach();
+    if(str === "todo") {
+        $('.unord-prog').prepend(htm);
+        $(`.task${x}`).data("pos","prog");
+    } else if(str === "prog") {
+        $('.unord-done').prepend(htm);
+        $(`.task${x}`).data("pos","done");
+    }
+}
+
+function moveBack() {
+    let str = $(`.task${x}`).data("pos");
+    let task = $(`.task${x}`).text();
+    let htm = $(`.task${x}`).detach();
+    if(str === "prog") {
+        $('.unord-todo').prepend(htm);
+    }
 }
 
 function addTask(task) {
-    $('.unord').prepend(`
-    <li data-id="${taskID}" onclick="alRt(${taskID});" class="task${taskID}">${task} <i class="fa fa-lg fa-"></i></li>
+    $('.unord-todo').prepend(`
+    <li data-id="${taskID}" data-pos="todo" class="task${taskID}">${task}<i class="fa fa-lg fa-trash-o"  onclick="removeT(${taskID});" title="Delete the task"></i><i title="Move it one step back" class="fa fa-lg fa-eraser"></i><i title="Move task forward" onclick="moveFor(${taskID});" class="fa fa-lg fa-check-square-o"></i></li>
     `);
     taskID+=1;
 }

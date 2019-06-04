@@ -47,7 +47,7 @@ body {
 }
 
 #modal-main span:hover {
-    color: red;
+    color: #ff6666;
 }
 
 .header-modal {
@@ -176,10 +176,35 @@ body {
 }
 
 .box-body ul li {
+    margin-top: 5px;
     list-style-type: none;
     font-size: 20px;
     width: 100%;
     margin-bottom: 5px;
+    height: auto;
+    min height: 40px;
+}
+
+.box-body ul li i {
+    font-size: 20px;
+    float: right;
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+.box-body ul li .fa-trash-o:hover {
+    color: #ff6666;
+    text-shadow: -2px 1px rgba(0, 0, 0, 0.3);
+}
+
+.box-body ul li .fa-check-square-o:hover {
+    color: #66cc66;
+    text-shadow: -2px 1px rgba(0, 0, 0, 0.3);
+}
+
+.box-body ul li .fa-eraser:hover {
+    color: #6699cc;
+    text-shadow: -2px 1px rgba(0, 0, 0, 0.3);
 }
 
 .color1 {
