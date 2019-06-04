@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <link rel="stylesheet" href="css/style.css" />
+   <link rel="stylesheet" href="css/button.css" />
+ 
+   <title>To-Do List</title>
+</head>
+<body>
+   <div class="maindiv"> 
+      <nav> <img src="img/todolist.png" class="logoIcon"> ToDo List App <br>
+   <div class="todoInput">
+         <input id="input_task" type="text" placeholder="Enter To do " />
+         <button id="addtask" class="todolistSubmit">Add</button>
+   </div>
+</nav>
+   <div class="list">
+      <div id="todo" class="movement">
+         <div class="tasks"><img src="img/checklist.png" class="taskPic">&nbsp;&nbsp;To do</div>         
+      </div>
+
+      <div id="inprogress" class="movement">
+         <div class="tasks"><img src="img/todolist.png" class="taskPic">&nbsp;&nbsp;In progress</div>   
+      </div>
+
+      <div id="done" class="movement">
+         <div class="tasks"><img src="img/check.jpg" class="taskPic">&nbsp;&nbsp;Done</div>
+      </div>
+
+
+   </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
+
+<script src="js/main.js"></script>
+
+<script src="js/input.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+html, body{  
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 16px;
+}
+.maindiv{ 
+        width: 100%;
+        margin: 0 auto; 
+       /** background-image: url("../img/b.png"); */
+        background-color: #ff77aa;
+        padding-bottom: 50px;   
+}
+nav{
+    font-size: 30px;
+    color: white;
+    padding: 5px 10px 10px 10px;
+    
+}
+.logoIcon{
+    width: 30px;
+    height: 30px;
+}
+.todoInput{
+    background-color: #ffbbee;
+    width: auto;
+    padding: 20px 20px;
+    display: flex;
+    margin: 0 auto; 
+    top: 20px;
+}
+
+input {
+    min-width:300px!important;
+    max-width:99.99%!important;
+    transition: width 0.25s;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    border: 1px solid gray;
+    padding: 10px 10px;
+  }
+.todolistSubmit{
+    background-color: #ff5588;
+    border: 1px solid #ff3377;
+    padding: 5px 25px;
+    font-weight: 600;
+    color: white;
+}
+
+button{
+      margin-left: 20px;
+  }
+
+.list{
+      display: flex;
+      width: 100%;
+      justify-content: space-evenly;
+      padding: 2px 2px;
+      text-align: center; 
+
+  }
+.tasks{
+    font-size: 25px;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    padding: 10px 10px;
+    color: white;
+}
+.taskPic{
+    width: 27px;
+    height: 27px;
+}
+.movement{
+    width: 30%;
+    height: auto;
+    max-width: 33%;
+    padding: 5px 10px 10px 10px;
+    background-color: #ff99cc;
+  
+}
+.todolist{
+    background-color: #ffffff;
+    margin-bottom: 30px;
+    border: 1px solid black;
+    border-radius: 12px;
+    text-align: left; 
+    padding: 5px 10px 10px 10px;
+}
+
+.inprogress{
+     background-color: #ffffff;
+    margin-bottom: 30px;
+    border: 1px solid black;
+    border-radius: 12px;
+    text-align: left; 
+    padding: 5px 10px 10px 10px;
+}
+
+.done{
+    background-color: #ffffff;
+    margin-bottom: 30px;
+    border: 1px solid black;
+    border-radius: 12px;
+    text-align: left; 
+    padding: 5px 10px 10px 10px;
+}
+
+p{
+    height: auto;
+    overflow: hidden;
+   
+}
+.right{
+    float: right;  
+    padding-top: 5px;
+}
+
+.left{
+    float: left;  
+}
+
+img{
+    width: 20px;
+    height: 20px;
+    
+}
+.right button{
+    background: transparent;
+    border: none;
+}
+
