@@ -13,17 +13,17 @@ body {
     align-items: center;
     align-content: space-between;
   }
-
+  
   .container {
-    width: 550px;
-    height: 800px;
+    width: 400px;
+    height: 500px;
     margin: 20px;;
     background-color: #FFFFFF;
     border: 20px solid #0A718A;
   }
 
   h2 {
-    margin: 20px;
+    margin: 10px;
     font-family: monospace;
     font-size: xx-large;
   }
@@ -82,7 +82,7 @@ body {
   }
   
   .close:hover {
-    background-color: #0A718A;
+    background-color: #FF0000;
     color: white;
   }
   
@@ -127,9 +127,9 @@ body {
   }
 
   button {
-    margin: 20px;
-    height: 40px;
-    width: 100px;
+    margin: 10px;
+    height: 30px;
+    width: 80px;
     background-color: #62DC4C;
     color: white;
     font-style: bold;
