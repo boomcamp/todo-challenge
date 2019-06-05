@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/icons/font-awesome-4.7.0/css/font-awesome.min.css">
+    <title>To-Do App</title>
+</head>
+<body>
+    <main>
+        <div class="container">
+            <div class="header">
+                <div class="head-sides col-3">
+                    <div class="head-title">
+                        To-Do List
+                    </div>
+                    <div class="head-title-desc">
+                        Here are the things that are needed to be done
+                    </div>
+                </div>
+                <div class="head-center col-3">
+                    <div class="time"></div>
+                    <div class="day"></div>
+                    <div class="date"></div>
+                </div>
+                <div class="head-sides col-3">
+                    <div class="temp"></div>
+                </div>
+            </div>
+            <div class="tasks-container">
+                <div class="list width25">
+                    <div class="title">
+                        LIST (Not yet Functional)
+                    </div>
+                    <div class="addList input-container">
+                        <input type="text" id="inputList" class="task-add">
+                        <button class="buttonList" id="addList"><i class="fa fa-plus" aria-hidden="true"> Add List</i></button>
+                    </div>
+                    <div class="task-List scroll">
+                        <ul class="tasks" id="List">
+                        </ul>
+                    </div>
+                </div>
+                <div class="task-details width75">
+                    <div class="title" id="title">
+                        TITLE
+                    </div>
+                    <div class="task-order">
+                        <div class="right-bordered col-3">
+                            <div class="task-head">
+                                <div class="task-title">To-Do</div>
+                                <div class="task-number to-do"></div>
+                            </div>
+                            <div class="task-content">
+                                <ul class="tasks" id="toDo">
+                                    
+                                </ul>
+                            </div>
+                            <div class="task-footer addTask input-container">
+                                <input type="text" id="inputTD" class="task-add">
+                                <button class="buttonTD" id="addTD"><i class="fa fa-plus" aria-hidden="true"> Add</i></button>
+                            </div>
+                        </div>
+                        <div class="bordered width34">
+                            <div class="task-head">
+                                <div class="task-title">In-Progress</div>
+                                <div class="task-number in-Prog"></div>
+                            </div>
+                            <div class="task-content">
+                                <ul class="tasks" id="inProgress">
+
+                                </ul>
+                            </div>
+                            <div class="task-footer addTask">
+                            </div>
+                        </div>
+                        <div class="left-bordered col-3">
+                            <div class="task-head">
+                                <div class="task-title">Finished</div>
+                                <div class="task-number Fin"></div>
+                            </div>
+                            <div class="task-content">
+                                <ul class="tasks" id="Finished">
+                                    
+                                </ul>
+                            </div>
+                            <div class="task-footer addTask">
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav footer">FOOTER</div>
+        </div>
+    </main>
+    <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/datetime.js"></script>
+</body>
+</html>
