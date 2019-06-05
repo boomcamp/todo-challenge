@@ -1,5 +1,3 @@
-
-
 var dropdown = document.getElementById('dropdown');
 var body = document.getElementsByTagName('body')[0];
 var dropdownCont = document.querySelector('.dropdown-content');
@@ -18,34 +16,19 @@ var inprogbtns = '<div class="edit">&#9998</div>' +
 var donebtns = '<div class="edit">&#9998</div>' +
     '<div class="next">&#11013</div>' +
     '<div class="deletebtn">&#10006</div>';
-var nextbtn = '<div class="dropdown" id="dropdown">&#10004' +
-'<div class="dropdown-content">' +
-'<p>To do</p>' +
-'<p>Done</p>' +
-'</div>' +
-'</div>';
+var nextbtn = '<div class="back">&larr;</div>' +
+'<div class="proceed">&rarr;</div>';
 
-// design
-// document.body.addEventListener('mouseover', function(e){
-//     var x = e.offsetX;
-//     var y = e.offsetY;
-//     console.log(x);
-//     document.body.style.background = 'linear-gradient(to left, rgb(255, 204, 255), rgb(204, 204, 255))';
-// })
-
-// dropdown events
-dropdown.addEventListener('click', function () {
-    dropdownCont.style.display = 'block';
+add.addEventListener('click', function () {
+    var newTask = document.getElementById('myInput').value;
+    var newli = document.createElement('li');
+    newli.innerHTML = newTask + todobtns;
+    document.getElementById('todo').append(newli);
+    document.getElementById('myInput').value = '';
 })
 
-document.addEventListener('click', function (e) {
-    if (e.target === dropdownCont || e.target === dropdown) {
-        // do nothing
-    }
-    else {
-        dropdownCont.style.display = 'none';
-    }
-})
+window.setInterval(function(){
+
 
 // delete activity from todo, in progress and done
 var delArr = document.getElementsByClassName('deletebtn');
@@ -63,15 +46,6 @@ for(let z=0; z<delArr.length; z++){
 }
 
 
-// add task
-add.addEventListener('click', function () {
-    var newTask = document.getElementById('myInput').value;
-    var newli = document.createElement('li');
-    newli.innerHTML = newTask + todobtns;
-    document.getElementById('todo').append(newli);
-    document.getElementById('myInput').value = '';
-})
-
 // transfer to progress
 var nextArr = Array.from(document.getElementsByClassName('next'));
 for(let z=0; z<nextArr.length; z++){
@@ -80,35 +54,38 @@ for(let z=0; z<nextArr.length; z++){
             if (nextArr[x] === e.target) {
                 document.getElementById('inprogress').append(e.target.parentElement);
                 var last = document.getElementById('inprogress').lastChild;
-                last.children[1].remove();
-                last.children[1].remove();
-                var firstChild = last.children[0];
-                firstChild.classList.remove('edit');
-                firstChild.classList.add('inprogress');
-                firstChild.insertAdjacentHTML("afterend", nextbtn);
+                last.children[0].remove();
+                last.children[0].remove();
+                last.children[0].remove();
+                last.insertAdjacentHTML('beforeend', '<div class="back">&larr;</div>' +
+                '<div class="proceed">&rarr;</div>');
+                console.log('transfer to progress');
                 // // e.target.parentElement.remove;
             }
         }
     })
 }
 
-// transfer either to todo or done
-var ddArr = Array.from(document.getElementsByClassName('dropdown'));
+// transfer back to todo
+var ddArr = Array.from(document.getElementsByClassName('back'));
 for(let z=0; z<ddArr.length; z++){
     ddArr[z].addEventListener('click', function (e) {
         for (let x = 0; x < ddArr.length; x++) {
             if (ddArr[x] === e.target) {
-                var dropdownChild = e.target.children[0];
-                //var todo = dropdownChild.children;
-                dropdownChild.addEventListener('click', function(e){
-                    if(e.target.innerText === 'To do'){
-                        gobackTodo(e.target.parentElement.parentElement.parentElement);
-                    }
-                    else if(e.target.innerText === 'Done'){
-                        goDone(e.target.parentElement.parentElement.parentElement);
-                    }
-                })
+                gobackTodo(e.target.parentElement);
+                console.log('back to todo');
+            }
+        }
+    })
+}
 
+// transfer to done
+var ppArr = Array.from(document.getElementsByClassName('proceed'));
+for(let z=0; z<ppArr.length; z++){
+    ppArr[z].addEventListener('click', function (e) {
+        for (let x = 0; x < ppArr.length; x++) {
+            if (ppArr[x] === e.target) {
+                goDone(e.target.parentElement);
             }
         }
     })
@@ -116,18 +93,23 @@ for(let z=0; z<ddArr.length; z++){
 
 function gobackTodo(target){
     document.getElementById('todo').append(target);
-    var lastChild = document.getElementById('todo').lastChild;
-    lastChild.children[0].remove();
-    lastChild.children[0].insertAdjacentHTML("afterend", todobtns);
-    lastChild.children[0].remove();
+    var last = document.getElementById('todo').lastChild;
+    last.children[0].remove();
+    last.children[0].remove();
+    last.insertAdjacentHTML('beforeend', '<div class="edit">&#9998</div>' +
+    '<div class="next">&#10004</div>' +
+    '<div class="deletebtn">&#10006</div>');
+    console.log(target);
 }
 
 function goDone(target){
     document.getElementById('done').append(target);
-    var lastChild = document.getElementById('done').lastChild;
-    lastChild.children[0].remove();
-    lastChild.children[0].insertAdjacentHTML("afterend", donebtns);
-    lastChild.children[0].remove();
+    var last = document.getElementById('done').lastChild;
+    last.children[0].remove();
+    last.children[0].remove();
+    last.insertAdjacentHTML('beforeend', '<div class="edit">&#9998</div>' +
+    '<div class="next">&#11013</div>' +
+    '<div class="deletebtn">&#10006</div>');
 }
 
 // transfer to progress from done
@@ -143,59 +125,81 @@ for(let z=0; z<doneArr.length; z++){
                 var firstChild = last.children[0];
                 firstChild.classList.remove('edit');
                 firstChild.classList.add('inprogress');
-                firstChild.insertAdjacentHTML("afterend", nextbtn);
+                firstChild.insertAdjacentHTML("afterend", '<div class="back">&larr;</div>' +
+                '<div class="proceed">&rarr;</div>');
                 // // e.target.parentElement.remove;
             }
         }
     })
 }
 
-// editing a task
+
+// when editing task
 var editArr = Array.from(document.getElementsByClassName('edit'));
 for(let z=0; z<editArr.length; z++){
     editArr[z].addEventListener('click', function (e) {
         for (let x = 0; x < editArr.length; x++) {
             if (editArr[x] === e.target) {
-                // variables
-                var parent = e.target.parentElement;
-                var grandParent = parent.parentElement;
-                parent.classList.add('editInput');
-                var parentVal = $('.editInput').contents().first('[nodeType=3]').text();
-                console.log(parentVal);
-                // create li element and appends other elements
-                var createLi = document.createElement('li');
-                var createEdit = document.createElement('input');
-                createEdit.value = parentVal;
-                createEdit.setAttribute("type", "text");
-                var createbtn = document.createElement('div');
-                createbtn.classList.add('edit2');
-                createbtn.id = 'edit2';
-                createbtn.appendChild(document.createTextNode('Save'));
-                createLi.append(createEdit);
-                createLi.append(createbtn);
-                $(".editInput").after(createLi);
-                
+                var value = e.target.parentElement.textContent;
+                document.getElementById('editVal').value = value;
+                e.target.parentElement.id = 'idd';
+            }
+        }
+    })
+}
+
+// when editing task
+var edit2Arr = Array.from(document.getElementsByClassName('edit'));
+for(let z=0; z<edit2Arr.length; z++){
+    edit2Arr[z].addEventListener('click', function (e) {
+        for (let x = 0; x < edit2Arr.length; x++) {
+            if (edit2Arr[x] === e.target) {
+                e.target.id = 'modalBtn';
                 
             }
         }
     })
 }
 
-// saving edit text
-// var edit2Arr = Array.from(document.getElementsByClassName('edit2'));
-// for(let z=0; z<edit2Arr.length; z++){
-//     edit2Arr[z].addEventListener('click', function(e){
-//         for(let x=0; x<edit2Arr.length; x++){
-//             if(edit2Arr[x] === e.target){
-//                 console.log(e.target);
-//             }
-//         }
-//     })
-// }
+// when saving
+document.getElementById('modalSaveBtn').addEventListener('click', function(){
+    var newVal = document.getElementById('editVal').value;
+    document.getElementById('idd').textContent = '';
+    document.getElementById('idd').textContent = newVal;
+    document.getElementById('idd').insertAdjacentHTML("beforeend", todobtns);
+    document.querySelector('.modal').style.display = 'none';
+    document.getElementById('modalBtn').id = '';
+    document.getElementById('idd').id = '';
+    
+    
+})
 
-// var btnsArr = document.getElementsByClassName('btns');
-// for(let x=0; x<btnsArr.length; x++){
-    $('.btns').on('click', function(e){
-        console.log(e.target);
-    })
-// }
+
+// modal
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("modalBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+}, 1000)
