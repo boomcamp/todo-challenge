@@ -1,0 +1,253 @@
+html{
+    background-image: linear-gradient(#89b9d2, #4a5f82);
+    height: 100%;
+    width: 100%;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.container{
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 65%;
+    height: 800px;
+    margin: 75px auto;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.header{
+    background-image: url("../img/bg.png");
+    width: 100%;
+    height: 20%;
+    background-position: center;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+}
+
+.tdhead{
+    padding: 15px 15px;
+}
+
+.col-3{
+    width: 33%;
+}
+.width25{
+    width: 25%;
+}
+.width34{
+    width: 34%;
+}
+.width75{
+    width: 75%;
+}
+
+.head-center{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.head-sides{
+    height: 100%;
+    padding: 15px 40px;
+}
+
+.time{
+    font-size: 20px;
+}
+.day{
+    font-size: 35px;
+}
+.date{
+    font-size: 15px;
+}
+
+.head-title{
+    letter-spacing: .3em;
+    margin-bottom: 10px
+}
+
+.title{
+    background-color: #293d50;
+    width: 100%;
+    height: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+
+.nav{
+    background-color: #293d50;
+    width: 100%;
+    height: 5%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.navi{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+
+.tasks-container{
+    background-color: white;
+    width: 100%;
+    height: 75%;
+    display: flex;
+    justify-content: space-between;
+    color: #3b5977;
+}
+
+.list{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+}
+
+.addList{
+    background-color: #4a5f82;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.addTask{
+    background-color: #4a5f82;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.task-List{
+    padding: 10px 10px;
+    height: 85%;
+}
+
+.scroll{
+    overflow: scroll;
+}
+
+.padded{
+    padding: 10px 0;
+}
+
+.bordered{
+    border-left: .5px solid black;
+    border-right: .5px solid black;
+    height: 100%;
+}
+
+.right-bordered{
+    border-right: .5px solid black;
+    height: 100%;
+}
+
+.left-bordered{
+    border-left: .5px solid black;
+    height: 100%;
+}
+
+.font20{
+    font-size: 20px;
+}
+
+.fa-trash{
+    color: red;
+}
+
+.fa-check{
+    color: green;
+}
+
+.fa{
+    padding-right: 5px;
+}
+
+.task-details{
+    border-left: 1px solid black;
+    height: 100%;
+}
+
+.task-order{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 95%;
+}
+
+.task-head{
+    background-color: lightgray;
+    padding: 10px 10px;
+    height: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    
+}
+
+.task-title{
+    letter-spacing: .7em;
+}
+
+.task-number{
+
+}
+
+.task-content{
+    height: 81%;
+}
+
+.task-footer{
+    height: 10%; 
+}
+
+li{
+    list-style: none;
+}
+
+.input-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.task-container{
+    display: flex;
+    flex-direction: row;
+}
+
+input{
+    border: none;
+    height: 45%;
+    text-align: center;
+}
+
+button{
+    height: 50%;
+    padding: 0 auto;
+}
