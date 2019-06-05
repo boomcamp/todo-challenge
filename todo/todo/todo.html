@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 </head>
 <body>
 
@@ -20,36 +21,35 @@
     <div class="flexDiv">
             <ul id="todo">
                     <li>To do</li>
-                    <li>Sample 
-                                <div class="edit">&#9998</div>
-                                <div class="next">&#10004</div>
-                                <div class="deletebtn">&#10006</div>
-                        
-                    </li>
+                    
             </ul>
             <ul id="inprogress">
                     <li>In progress</li>
-                    <li>Sample
-                                <div class="inprogress">&#9998</div>
-                                <div class="dropdown" id="dropdown">&#10004
-                                        <div class="dropdown-content">
-                                            <p>To do</p>
-                                            <p>Done</p>
-                                        </div>
-                                </div>
-                                <!--<div class="deletebtn">&#10006</div> -->
-                    </li>
+                    
             </ul>
             <ul id="done">
                     <li>Done</li>
-                    <li>Sample
-                                    <div class="edit">&#9998</div>
-                                    <div class="backprogress">&#11013</div>
-                                    <div class="deletebtn">&#10006</div>
-                            
-                    </li>
+                    
             </ul>
     </div>
+
+    <!-- modal -->
+    <!-- Trigger/Open The Modal -->
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+        <center>
+                        <h3> Edit Task </h3>
+                        <input type="text" id="editVal">
+                        <span class="close">&times;</span>
+                        <button id="modalSaveBtn"> Save </button>
+        </center>
+        </div>
+
+        </div>
 
     <footer class="footer"></footer>
     
