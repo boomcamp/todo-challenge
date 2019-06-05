@@ -27,16 +27,14 @@ $(document).ready(() => {
         $('#todoInput').val('');
     })
     
+});
+
+window.setInterval(function(){
     //delete
-    // var del = Array.from(document.getElementsByClassName('del-btn'));
-    // for(let i=0; i<del.length; i++){
-    //     del[i].addEventListener('click', function(e){
-    //         e.target.parentElement.remove();
-    //     })
-    // }
     $('.del-btn').on('click', event => {
         event.target.parentElement.remove();
     })
+
     //from todo-inprogress
     var newToProg = Array.from(document.getElementsByClassName('prog-btn'));
     for(let i = 0; i < newToProg.length; i++){
@@ -109,5 +107,4 @@ $(document).ready(() => {
         })
     }
     
-});
-
+},1000)
