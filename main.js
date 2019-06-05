@@ -25,6 +25,9 @@ $(document).ready(() => {
 
         $('#content1').append(newEl);
         $('#todoInput').val('');
+        if($('#todoInput').val().length == 0){
+            $('.post').attr('disabled','disabled');
+        }
     })
     
 });
