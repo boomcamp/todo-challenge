@@ -71,11 +71,12 @@ var num = 1;
 
 /* ADD LIST */
 $('.circle').click(function () {
+  var value = addList.value.replace(/\s/g, '');
   if (addList.value) {
     if (num == 1 ) {
-     var item = `<li class="active" id="${addList.value}" onclick="taskTitle('${addList.value}')"><i class="fas fa-bars"></i> &emsp;${addList.value}<i class="${addList.value}done hide far fa-check-circle"></i></li>`;
+     var item = `<li class="active" id="${value}" onclick="taskTitle('${value}')"><i class="fas fa-bars"></i> &emsp;${addList.value}<i class="${value}done hide far fa-check-circle"></i></li>`;
     } else {
-      var item = `<li id="${addList.value}" onclick="taskTitle('${addList.value}')"><i class="fas fa-bars"></i> &emsp;${addList.value}<i class="${addList.value}done hide far fa-check-circle"></i></li>`;
+      var item = `<li id="${value}" onclick="taskTitle('${value}')"><i class="fas fa-bars"></i> &emsp;${addList.value}<i class="${value}done hide far fa-check-circle"></i></li>`;
     }
   }
 
@@ -89,8 +90,8 @@ $('.circle').click(function () {
 
         <div class="container box content box-content">
           <div class="row" style="height: 55px">
-            <input class="addtask col-10" id="${addList.value}addtask" type="text" placeholder="Add a task..." onclick="taskTitle('${addList.value}')"></input>
-            <a href="#" id="${addList.value}addtask-btn"><i class="col-1 arrow far fa-arrow-alt-circle-down"></i></a>
+            <input class="addtask col-10" id="${value}addtask" type="text" placeholder="Add a task..." onclick="taskTitle('${value}')"></input>
+            <a href="#" id="${value}addtask-btn"><i class="col-1 arrow far fa-arrow-alt-circle-down"></i></a>
           </div>
 
           <div class="container">
@@ -100,7 +101,7 @@ $('.circle').click(function () {
 
             <div class="row task">
               <div class="row box content scrollbar" id="style">
-              <ul class="list-group ${addList.value}toDO" id="${addList.value}toDO">
+              <ul class="list-group ${value}toDO" id="${value}toDO">
               </ul>
               </div> 
             </div>
@@ -113,7 +114,7 @@ $('.circle').click(function () {
 
             <div class="row task">
               <div class="row box content scrollbar" id="style">
-                <ul class="list-group" id="${addList.value}inProgress">
+                <ul class="list-group" id="${value}inProgress">
                 </ul>
               </div> 
             </div>
@@ -126,7 +127,7 @@ $('.circle').click(function () {
 
             <div class="row task">
               <div class="row box content scrollbar" id="style">
-                <ul class="list-group" id="${addList.value}completed">
+                <ul class="list-group" id="${value}completed">
                 </ul>
               </div> 
             </div>
@@ -142,8 +143,8 @@ $('.circle').click(function () {
 
         <div class="container box content box-content">
           <div class="row" style="height: 55px">
-              <input class="addtask col-10" id="${addList.value}addtask" type="text" placeholder="Add a task..."></input>
-              <a href="#" id="${addList.value}addtask-btn"><i class="col-1 arrow far fa-arrow-alt-circle-down"></i></a>
+              <input class="addtask col-10" id="${value}addtask" type="text" placeholder="Add a task..."></input>
+              <a href="#" id="${value}addtask-btn"><i class="col-1 arrow far fa-arrow-alt-circle-down"></i></a>
           </div>
 
           <div class="container">
@@ -153,7 +154,7 @@ $('.circle').click(function () {
 
             <div class="row task">
               <div class="row box content scrollbar" id="style">
-                <ul class="list-group ${addList.value}toDO" id="${addList.value}toDO">
+                <ul class="list-group ${value}toDO" id="${value}toDO">
                 </ul>
               </div> 
             </div>
@@ -166,7 +167,7 @@ $('.circle').click(function () {
 
             <div class="row task">
               <div class="row box content scrollbar" id="style">
-                <ul class="list-group" id="${addList.value}inProgress">
+                <ul class="list-group" id="${value}inProgress">
                 </ul>
               </div> 
             </div>
@@ -179,7 +180,7 @@ $('.circle').click(function () {
 
             <div class="row task">
               <div class="row box content scrollbar" id="style">
-                <ul class="list-group" id="${addList.value}completed">
+                <ul class="list-group" id="${value}completed">
                 </ul>
               </div> 
             </div>
@@ -240,11 +241,12 @@ function taskTitle(value) {
   /* ADD TASK */
   $(`#${value}addtask-btn`).click(function () {
     var addTask = document.getElementById(`${value}addtask`);
+    var addTaskValue = addTask.value.replace(/\s/g, '');
     if (addTask.value){
       li = `<li class="list-group-item"><i class="check far fa-check-square"></i> 
               <a>${addTask.value}</a>
-              <a href="#" id="${addTask.value}del" onclick="del('${addTask.value}del', '${value}', 'true')"><i class="fas fa-trash del"></i></a>
-              <a href="#" id="${addTask.value}edit" onclick="edit('${addTask.value}edit')"><i class="far fa-edit edit"></i></a>
+              <a href="#" id="${addTaskValue}del" onclick="del('${addTaskValue}del', '${value}', 'true')"><i class="fas fa-trash del"></i></a>
+              <a href="#" id="${addTaskValue}edit" onclick="edit('${addTaskValue}edit')"><i class="far fa-edit edit"></i></a>
             </li>`;
       $(`.${value}toDO`).prepend(li);
       addTask.value = "";
