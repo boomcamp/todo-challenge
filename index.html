@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/index.css"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <title>My To Do List</title>
+</head>
+<body class="bg">
+    <div class="main-container">
+        <header class="header-section bg-color overlay">
+            <div class="row header">
+                <div class="col-3 title-content" style="padding: 1.5%;">
+                    <h2>To-Do List</h2>
+                </div>
+                <div class="col-6 title-content">
+                    <h1 id="weekday">weekday</h1>
+                    <h3 id="month-day">month day</h3> 
+                    <h5 id="time">time</h5>
+                </div>
+
+
+                <div class="col-3 title-content">
+                    <h6 id="temp"> It's currently 59&#176; the high will be 64&#176;</h6>
+                </div>
+            </div>
+
+        </header>
+        <div class="container">
+            <div class="row bg-color">
+                <div class="col-3 bg-color addlist-con">
+                    <div class="row box bg-color todo-header">
+                        <span class="todo-header-title"><i class="fas fa-clipboard-list icon"></i> All List</span>
+                    </div>
+
+                    <div class="row box content">
+                        <div class="scrollbar alllist task-menu" id="style">
+                            <ul class="list" data-testid="list">
+                            </ul>
+                         </div>
+                    </div>
+
+                    <div class="row box bg-color todo-footer">
+                        <a class="circle" id="circle"><i class="fas fa-plus-circle"></i></a>
+                        <input type="text" class="addlist" data-testid="addlist-input" placeholder="Add List"/>
+                    </div>
+                </div>
+                <div class="col-9 bg-color task-content">
+                    <div class="task-tab">
+                        <div class="default">
+                            <div class="row box todo-header task-header">
+                                <span class="todo-header-title" id="task-title"><i class="fas fa-thumbtack thumbstack"></i></span>
+                            </div>
+
+                            <div class="container box content box-content">
+                                <div class="row" style="height: 55px">
+                                </div>
+
+                                <div class="container">
+                                    <div class="row task-title">
+                                        <span class="to-do">To Do</span>
+                                    </div>
+
+                                    <div class="row task">
+                                        <div class="row box content scrollbar" id="style">
+                                            <ul id="toDO">
+                                            </ul>
+                                        </div> 
+                                    </div>
+                                </div>
+
+                                <div class="container">
+                                    <div class="row task-title">
+                                        <span class="to-do">In Progress</span>
+                                    </div>
+
+                                    <div class="row task">
+                                        <div class="row box content scrollbar" id="style">
+                                            <ul id="inProgress">
+                                            </ul>
+                                        </div> 
+                                    </div>
+                                </div>
+
+                                <div class="container">
+                                    <div class="row task-title">
+                                        <span class="to-do">Completed</span>
+                                    </div>
+
+                                    <div class="row task">
+                                        <div class="row box content scrollbar" id="style">
+                                            <ul class="strike" id="completed">
+                                            </ul>
+                                        </div> 
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-3 bg-color edit-div">
+                    <div class="row box bg-color todo-header">
+                        <span class="todo-header-title"><i class="fas fa-cog"></i> Edit</span>
+                    </div>
+
+                    <div class="row box content">
+                        <div class="scrollbar alllist task-menu" id="style">
+                            <input type="text" class="edit-input"/>
+                            <input type="text" class="getValue hide"/>
+                            <button class="edit-btn"><i class="fas fa-share-square"></i> Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer row bg-color" style="height: 50px;">
+                <span><img class="logo" src="assets/images/logo.png"/></span>
+            </div>
+        </div>
+    </div>
+    
+</body>
+    <script src="app/scripts/app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</html>
