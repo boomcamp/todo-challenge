@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <script src="app.js"></script>
+  <title>TO-DO LIST</title>
+</head>
+<body onload="startTime()">
+    <main>
+      <div class="header">
+          <img src="img/white2.png"/>&nbsp;&nbsp;<span>todo list</span>
+         
+      </div>
+      <div class="content">
+
+        <div class="container">
+
+          <div class="column">
+              <div class="container-header">
+                <span>todo</span>
+              </div>
+          </div> 
+          
+          <div class="column" >
+              <div class="container-header">
+                  <span>in progress</span>
+                </div>
+          </div>
+          
+          <div class="column">
+              <div class="container-header">
+                  <span>done</span>
+                </div>
+          </div>
+        </div>
+        <br>
+        <button id="my-button">&nbsp;&nbsp;&nbsp;&nbsp;<img src="img/book.png" height="22px;"/>&nbsp;&nbsp;&nbsp;&nbsp;</button>  
+        <span class="span"><input type="text" id="my-input"></span>
+        <button id="add-button"><i>add task</i></button>
+      <div class="footer"></div>  
+    </main>
+    <script>    
+        document.getElementById("my-button").onclick = function() {
+        document.getElementById("my-input").classList.toggle("show");
+        document.getElementById("add-button").classList.toggle("show");
+        };
+        
+    </script>
+</body>
+</html>
