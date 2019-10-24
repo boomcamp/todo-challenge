@@ -3,6 +3,9 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     letter-spacing: -.015em;
 }
+ul li{
+    list-style-type: none;
+}
 button{
     border: none;
     text-decoration: none;
@@ -19,12 +22,12 @@ button{
 .header{
     border-radius: 5px 5px 0 0;
     margin-top: 10%;
-    width: 40%;
+    width: 50%;
     background-color: #607d8b;
     color:white;
 }
 .content{
-    width: 40%;
+    width: 50%;
     background-color: #ffc107;
 }
 .block{
