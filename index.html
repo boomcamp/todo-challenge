@@ -37,16 +37,8 @@
 
                 <div class="todo-header-container">
                         <h2 class="main-caption">TODO</h2>
-                        <button class="add-task">+</button>
+                        <button class="add-task" data-status='todo'>+</button>
                 </div>
-
-                 <!-- input group -->
-                <section class="card-template task-input ">
-                        <input type="text" class="newtask secondary-font">
-                        <i id="add-this-button" class="material-icons-outlined">
-                                add_box
-                        </i>
-                </section>
                 
                 <!-- individual todo group -->
                 <!-- <section class="todo-task-actionable action">
@@ -62,21 +54,13 @@
 
                 <div class="todo-header-container">
                         <h2 class="main-caption">DOING</h2>
-                        <button class="add-task">+</button>
+                        <button class="add-task" data-status="doing">+</button>
                 </div>
-
-                 <!-- input group -->
-                <section class="card-template task-input ">
-                        <input type="text" class="newtask secondary-font">
-                        <i id="add-this-button" class="material-icons-outlined">
-                                add_box
-                        </i>
-                </section>
                 
                 <!-- individual todo group -->
                 <!-- <section class="todo-task-actionable">
                     <label class="todo-task-action">
-                        <p class="task-statement secondary-font">get it done</p>
+                        <p c    lass="task-statement secondary-font">get it done</p>
                         <input type="checkbox" class="template-checkbox">
                         <span class="checkmark"></span>
                     </label>
@@ -88,16 +72,9 @@
 
                 <div class="todo-header-container">
                         <h2 class="main-caption">DONE</h2>
-                        <button class="add-task">+</button>
-                </div>
+                        <button class="add-task" data-status="done">+</button>
 
-                 <!-- input group -->
-                <section class="card-template task-input ">
-                        <input type="text" class="newtask secondary-font">
-                        <i id="add-this-button" class="material-icons-outlined">
-                                add_box
-                        </i>
-                </section>
+                </div>
                 
                 <!-- individual todo group -->
                 <!-- <section class="todo-task-actionable">
@@ -112,22 +89,30 @@
         
 
     </section>
-    
-                <!-- action button group for todo task -->
-                <!-- <button class="rmvfile">X</button> -->
-                <div class="todo-buttons-container">
-                        <p class="task-status secondary-font">TODO</p>
 
-                        <!--action button imitation -->
-                        <div class="button-group">
-                                <i id="edit-action" class="material-icons-outlined">
-                                        edit
-                                </i>
-                                <i class="material-icons-outlined">
-                                        delete
-                                        </i>
-                        </div>
-                </div>
+    <!-- input group -->
+    <section class="card-template task-input">
+        <input type="text" class="newtask secondary-font">
+        <i id="add-this-button" data-status='' class="material-icons-outlined">
+                add_box
+        </i>
+    </section>
+
+    <!-- action button group for todo task -->
+    <!-- <button class="rmvfile">X</button> -->
+    <div class="todo-buttons-container">
+            <p class="task-status secondary-font">TODO</p>
+
+            <!--action button imitation -->
+            <div class="button-group">
+                    <i id="edit-action" class="material-icons-outlined">
+                            edit
+                    </i>
+                    <i class="material-icons-outlined">
+                            delete
+                            </i>
+            </div>
+    </div>
 
     
 
