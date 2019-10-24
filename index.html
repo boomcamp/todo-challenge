@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./style.css">
+    <title>Todo-Challenge</title>
+</head>
+<body>
+    
+    <h1 class="header"><ion-icon name="checkmark-circle-outline"></ion-icon>SIMPLE TO DO LIST</h1>
+    <!-- ✔ -->
+    <div class="container">
+        <button class="addlist_btn"><ion-icon name="add" class="add_icon"></ion-icon>Add New List</button>
+
+        <div class="create_list">
+            <input type="text" class="text_todo" placeholder="Create Todo List...">
+            <button class="cancel">Cancel</button>
+            <button class="submit_todo">Create Todo List</button>
+        </div>
+
+        <div class="lists">
+            <div class="todo_class">
+                <h3 class="todo">TODO <ion-icon name="hammer"></ion-icon></h3>
+                <!-- <h3 class="empty_todo">Todo List is Empty...</h3> -->
+            </div>
+
+            <hr>
+            <div class="progress_class">
+                <h3 class="progress">IN PROGRESS <ion-icon name="pulse"></ion-icon></h3>
+                <!-- <h3 class="empty_progress">In-Progress List is Empty...</h3> -->
+            </div>
+
+            <hr>
+            <div class="done_class">
+                <h3 class="done">DONE <ion-icon name="checkbox"></ion-icon></h3>
+                <!-- <h3 class="empty_done">Done List is Empty...</h3> -->
+            </div>
+        </div>
+    </div>
+  
+    <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
