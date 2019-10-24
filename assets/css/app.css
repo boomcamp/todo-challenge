@@ -1,0 +1,120 @@
+body,
+body * {
+	font-family: "Roboto", sans-serif;
+	box-sizing: border-box;
+	margin: 0%;
+}
+body::after,
+body::before,
+body *::after,
+body *::before {
+	box-sizing: border-box;
+}
+
+.row {
+	display: flex;
+	justify-content: space-between;
+}
+.col {
+	flex-basis: 49%;
+}
+
+/* container */
+.container {
+	position: relative;
+	max-width: 50rem;
+	margin: 5rem auto;
+	background: #fff;
+	width: 100%;
+	border-radius: 1px;
+}
+.container::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+	-webkit-transform: scale(0.98);
+	transform: scale(0.98);
+	-webkit-transition: -webkit-transform 0.28s ease-in-out;
+	transition: -webkit-transform 0.28s ease-in-out;
+	transition: transform 0.28s ease-in-out;
+	transition: transform 0.28s ease-in-out, -webkit-transform 0.28s ease-in-out;
+	z-index: -1;
+}
+.container:hover::before {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+
+/* forms */
+
+input[type="text"],
+select {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+}
+
+.header {
+	background: #1589ff;
+	width: 100%;
+	color: white;
+	font-size: 30px;
+	padding: 10px;
+	font-family: "Rubik", sans-serif;
+	font-weight: 700;
+}
+
+.holder {
+	padding: 15px;
+}
+#add {
+	background-color: #ff8a14;
+	color: white;
+	padding: 8px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+/* table */
+.todos td,
+.todos th {
+	border: 1px solid #ddd;
+	padding: 8px;
+}
+
+.todos tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+.todos tr:hover {
+	background-color: #ddd;
+}
+.todos th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
+	background-color: #545454;
+	color: white;
+}
+
+.todos td {
+	font-size: 12px;
+}
+
+.todos {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#inprogress th {
+	background: #4caf50;
+}

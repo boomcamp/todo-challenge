@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>ToDo Application</title>
+		<link rel="stylesheet" href="/assets/css/app.css" />
+		<link href="https://fonts.googleapis.com/css?family=Roboto|Rubik&display=swap" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				Todo Application
+			</div>
+			<div class="holder">
+				<div class="row">
+					<div class="col">
+						<div class="form">
+							<input type="text" id="newtask" placeholder="Add Task" />
+							<button id="add">Add Task</button>
+						</div>
+
+						<table class="todos" id="todo">
+							<tr id="dolist">
+								<th width="90%">Todo List</th>
+								<th></th>
+								<th></th>
+								<th></th>
+							</tr>
+							<tr id="list">
+								<td id="content" class="list-group-item">Alfreds Futterkiste</td>
+								<td>&#9997;</td>
+
+								<td id="new">&#10004;</td>
+								<td>&#10060;</td>
+							</tr>
+						</table>
+					</div>
+					<div class="col">
+						<table id="inp" class="todos">
+							<tr id="inprogress">
+								<th width="90%">In Progress</th>
+								<th></th>
+								<th></th>
+								<th></th>
+							</tr>
+							<tr>
+								<td>Alfreds Futterkiste</td>
+								<td>&#9997;</td>
+
+								<td id="toinp">&#10004;</td>
+								<td>&#10060;</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="./assets/js/main.js"></script>
+	</body>
+</html>
