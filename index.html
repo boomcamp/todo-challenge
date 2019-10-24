@@ -4,9 +4,134 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- css -->
+    <link rel="stylesheet" href="main.css">
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Titillium+Web:300,400,700&display=swap" rel="stylesheet">
+    <!-- icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined"
+      rel="stylesheet">
+
     <title>Todo App</title>
 </head>
 <body>
+
     
+
+    </div>
+    <section class="header">
+        <h1 class="header-title main-font">TASKIE</h1>
+        <h1 class="author-title main-font">Hello_@Yow.Molleno</h1>
+    </section>
+
+    <!-- <section class="block-container">
+        <div class="form-add">
+            <h2 class="add-new-template main-font">Add new Task</h2>
+            <button class="add-button">+</button>
+        </div>
+    </section> -->
+
+    <section class="all-task-container">
+
+        <section class="todo-task-container">
+
+                <div class="todo-header-container">
+                        <h2 class="main-caption">TODO</h2>
+                        <button class="add-task">+</button>
+                </div>
+
+                 <!-- input group -->
+                <section class="card-template task-input ">
+                        <input type="text" class="newtask secondary-font">
+                        <i id="add-this-button" class="material-icons-outlined">
+                                add_box
+                        </i>
+                </section>
+                
+                <!-- individual todo group -->
+                <!-- <section class="todo-task-actionable action">
+                    <label class="todo-task-action">
+                        <p class="task-statement secondary-font">get it done</p>
+                        <input type="checkbox" class="template-checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </section> -->
+        </section>
+
+        <section class="doing-task-container">
+
+                <div class="todo-header-container">
+                        <h2 class="main-caption">DOING</h2>
+                        <button class="add-task">+</button>
+                </div>
+
+                 <!-- input group -->
+                <section class="card-template task-input ">
+                        <input type="text" class="newtask secondary-font">
+                        <i id="add-this-button" class="material-icons-outlined">
+                                add_box
+                        </i>
+                </section>
+                
+                <!-- individual todo group -->
+                <!-- <section class="todo-task-actionable">
+                    <label class="todo-task-action">
+                        <p class="task-statement secondary-font">get it done</p>
+                        <input type="checkbox" class="template-checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </section> -->
+        </section>
+
+
+        <section class="done-task-container">
+
+                <div class="todo-header-container">
+                        <h2 class="main-caption">DONE</h2>
+                        <button class="add-task">+</button>
+                </div>
+
+                 <!-- input group -->
+                <section class="card-template task-input ">
+                        <input type="text" class="newtask secondary-font">
+                        <i id="add-this-button" class="material-icons-outlined">
+                                add_box
+                        </i>
+                </section>
+                
+                <!-- individual todo group -->
+                <!-- <section class="todo-task-actionable">
+                    <label class="todo-task-action">
+                        <p class="task-statement secondary-font">get it done</p>
+                        <input type="checkbox" class="template-checkbox">
+                        <span class="checkmark"></span>
+                    </label>
+                </section> -->
+        </section>
+
+        
+
+    </section>
+    
+                <!-- action button group for todo task -->
+                <!-- <button class="rmvfile">X</button> -->
+                <div class="todo-buttons-container">
+                        <p class="task-status secondary-font">TODO</p>
+
+                        <!--action button imitation -->
+                        <div class="button-group">
+                                <i id="edit-action" class="material-icons-outlined">
+                                        edit
+                                </i>
+                                <i class="material-icons-outlined">
+                                        delete
+                                        </i>
+                        </div>
+                </div>
+
+    
+
+    <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
+    <script type="module" src="./Components/Main.js"></script>
 </body>
 </html>
