@@ -66,6 +66,10 @@ body{
   margin-right:10px;
   background-color: white;
   border-radius: 5px 5px 0px 0px; 
+  text-align:center;
+}
+.column ul{
+ list-style-type: none;
 }
 .column .container-header{
   border-radius: 5px 5px 0px 0px;   
