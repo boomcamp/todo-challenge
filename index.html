@@ -5,10 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" href="css/style.css">
-  <script src="app.js"></script>
   <title>TO-DO LIST</title>
 </head>
-<body>
+<body >
     <main>
       <div class="header">
           <img src="img/white2.png"/>&nbsp;&nbsp;<span>todo list</span>
@@ -31,7 +30,7 @@
               <div class="container-header">
                   <span>in progress</span>
                 </div>
-                <div class="todo-list">
+                <div class="progress-list">
                     <ul class="list-group" id="currentList"></ul>
                 </div> 
           </div>
@@ -40,6 +39,9 @@
               <div class="container-header">
                   <span>done</span>
                 </div>
+                <div class="done-list">
+                    <ul class="list-group" id="doneList"></ul>
+                </div> 
           </div>
         </div>
         <br>
@@ -48,56 +50,6 @@
         <button id="add-button"><i>add task</i></button>
       <div class="footer"></div>  
     </main>
-    <script>    
-
-        
-        const list = [];
-        function Task(task) {
-          this.task = task;
-          this.id = "new";
-        }
-        function addTask(task) {
-          if (task) {
-            const newTask = new Task(task);
-            list.push(newTask);
-            document.getElementById("my-input").value = "";
-
-            const taskElem = document.createElement("li");
-            taskElem.id = "item";
-
-            const item = document.getElementById("newList").appendChild(taskElem);
-            item.innerHTML = `
-                  <a id="new" class="list-group-item">
-                    ${newTask.task}
-                    <span id="buttons" style="float:right;" >
-                      <img src="img/move.png" height="30px;" class="next" id="next"/>
-                      <img src="img/trash.png" height="30px;"/>
-                      </span>
-                  </a>
-                `;
-          }
-        }
-
-        document
-          .getElementById("add-button")
-          .addEventListener("click", function(event) {
-            event.preventDefault();
-            const task = document.getElementById("my-input").value.trim();
-            addTask(task);
-          });
-          
-          document.getElementById("newList").addEventListener("click", function(event) {
-            if(e.target.classList.contains("next")){
-              if(confirm("Move to Progress?"))
-              {
-                  const btn = document.createElement('button');
-                  btn.className = "back";
-                  btn.innerHTML = "Back";
-                  e.target.parentElement.append(btn);
-                  document.getElementById('currentList').append(e.target.parentElement.parentElement);
-              }
- }
-        });
-    </script>
+    <script src="app.js"></script>
 </body>
 </html>

@@ -135,6 +135,17 @@ body{
 }
 .todo-list{
   display: flex; 
+  margin-right: 20px; 
+}
+.progress-list{
+  display: flex; 
+  margin-right: 20px;   
+  line-height:45px;
+}
+.done-list{
+  display: flex; 
+  margin-right: 20px;   
+  line-height:45px;
 }
 
 
