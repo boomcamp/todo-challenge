@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>To Do Challenge</title>
+    <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap" rel="stylesheet"> 
+    <style>
+        *,
+        *::after,
+        *::before {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Rubik', sans-serif;
+        }
+
+        html {
+            background-image: url('./img/back.jpg');
+            background-repeat: no-repeat;
+            height: 100vh;
+            width: 100%;
+        }
+        header{
+            width: 100%;
+            text-align: center;
+        }
+        header > h1{
+            font-family: 'Gloria Hallelujah', cursive;
+            font-size: 7.5rem;
+            margin: -1rem auto -2rem;
+            /* visibility: hidden; */
+        }
+        section{
+            width: 30%;
+            height: 50vh;
+            margin: 0 auto;
+        }
+        nav{
+            background-image: url('./img/header.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 25%;
+            width: 100%;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: white;
+        }
+        nav > h1{
+            font-size: 40px;
+            /* visibility: hidden; */
+        }
+        nav > p{
+            font-size: 20px;
+            /* visibility: hidden; */
+        }
+        article:first-of-type{
+            background: linear-gradient(90deg, #69b7eb, #b3dbd3, #f4d6db);
+        }
+        article:first-of-type > ul{
+            display: flex;
+            width: 100%;
+            /* border: 5px solid white; */
+        }
+        article:first-of-type > ul > li{
+            list-style-type: none;
+            width: 33.33%;
+            /* opacity: 0.5; */
+        }
+        article:first-of-type > ul > li > label{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        article:first-of-type > ul > li:hover{
+            background: linear-gradient(90deg, #cfecd0, #a0cea7, #9ec0db);
+            background: rgba(#cfecd0, #a0cea7, #9ec0db,.5);
+        }
+        article:first-of-type > ul > li > label > img{
+            width: 25px;
+            height: 25px;
+            margin: 10px auto;
+        }
+        article:first-of-type{
+            height: auto;
+            width: 100%;
+        }
+        article:last-of-type{
+            height: 100%;
+            width: 100%;
+            background: linear-gradient(90deg, #b9deed, #efefef);
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        article:last-of-type > ul > li{
+            list-style-type: none;
+        }
+
+        /* Other */
+/* .tab-nav{
+  display: flex;
+  
+}
+.tab-nav li {
+  width: 50%;
+  display: block;
+  border-left: 1px solid #af66c6;
+}
+.tab-nav li label {
+  cursor: pointer;
+  padding: 10px 30px;
+  display: block;
+  background: #7b3690;
+  color: #fff;
+  transition: background 0.3s ease-out;
+} */
+/* .tab-nav li label.active {
+  background: #5b286b;
+}
+.tab-nav li:first-child {
+  border-left: none;
+} */
+
+.tab-contents .tab-radio {
+  display: none;
+}
+.tab-contents .tab-content {
+  display: none;
+  padding: 20px 40px;
+}
+.tab-contents h3 {
+  position: relative;
+  padding-bottom: 10px;
+}
+.tab-contents h3:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 5px;
+  background: #ccc;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.tab-contents .tab-radio:checked + .tab-content {
+  display: block;
+}
+.active {
+    background: linear-gradient(90deg, #faf0cd, #fab397);
+}
+article:last-of-type {
+    overflow-y: auto;
+}
+.tab-content ul li{
+    height: 50px;
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 12px;
+    background-color: white;
+    margin: 5px auto;
+}
+.tab-content ul li div:first-of-type{
+    display: flex;
+    flex-direction: row;
+}
+/* Checkbox */
+.control {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 18px;
+}
+.control input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+.control__indicator {
+  top: 2px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background: #e6e6e6;
+}
+.control:hover input ~ .control__indicator,
+.control input:focus ~ .control__indicator {
+  background: #ccc;
+}
+.control input:checked ~ .control__indicator {
+  background: #2aa1c0;
+}
+.control:hover input:not([disabled]):checked ~ .control__indicator,
+.control input:checked:focus ~ .control__indicator {
+  background: #0e647d;
+}
+.control input:disabled ~ .control__indicator {
+  background: #e6e6e6;
+  opacity: 0.6;
+  pointer-events: none;
+}
+.control__indicator:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+.control input:checked ~ .control__indicator:after {
+  display: block;
+}
+.control--checkbox .control__indicator:after {
+  left: 7px;
+  top: 1px;
+  width: 6px;
+  height: 16px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.control--checkbox input:disabled ~ .control__indicator:after {
+  border-color: #7b7b7b;
+ }
+ /* Checkbox End */
+ .tab-content ul li div:first-of-type p{
+    margin-left: 10px;
+ }
+ .tab-content ul li div:last-of-type button img{
+    width: 18px;
+    height: 18px;
+}
+/* Button */
+body .bttn {
+  display: inline-block;
+  padding: 4px 3px 22px;
+  height: 24px;
+  line-height: 24px;
+  border-radius: 2px;
+  text-align: center;
+  cursor: pointer;
+  transition: all ease-in-out 300ms;
+  border: none;
+}
+body .bttn.blue{
+    background-color: #2196f3;
+}
+body .bttn.red{
+    background-color: rgb(244, 67, 54);
+}
+body .bttn.teal{
+    background-color: #009688;
+}
+body .btn-hover {
+  position: relative;
+  overflow: hidden;
+}
+body .btn-hover:hover::before {
+  transform: translateX(100%);
+  box-shadow: 0px 37px 20px -20px rgba(0, 0, 0, 0.4);
+}
+body .btn-hover::before {
+  transition: all 300ms ease-out;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 70%);
+  border-radius: 90%;
+  transform: translateX(-100%);
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* Button End */
+/* Input */
+.add-to-do input{
+    background-image: url(http://fa2png.io/media/icons/ionicons/2-0-1/android-add/30/0/495057_none.png);
+    background-size: 25px 25px;
+    background-position: 0 12px;
+    background-repeat: no-repeat;
+}
+.left input{
+    padding: 15px 15px 15px 32px;
+    border: none;
+    color: #2C3E50;
+    font-size: 16px;
+    width: 100%;
+}
+.tab-contents .tab-1 .tab-content ul li:first-of-type .left{
+    width: 90%;
+}
+.left input:focus{
+    outline: none;
+}
+.left{
+    cursor:default;
+}
+/* Input End */
+.edit{
+    display: flex;
+    align-items: center;
+}
+.edit > input{
+    padding: 15px 0px 15px 10px;
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>To Do List</h1>
+    </header>
+    <section>
+        <nav>
+            <h1>My Day</h1>
+            <p></p>
+        </nav>
+        <article>
+            <ul class="tab-nav">
+                <li>
+                    <label for="tab-radio-1" class="active">
+                        <img src="./img/to-do.png">
+                        <span>To Do</span>
+                    </label>
+                </li>
+                <li>
+                    <label for="tab-radio-2">
+                        <img src="./img/in-progress.png">
+                        <span>In Progress</span>
+                    </label>
+                </li>
+                <li>
+                    <label for="tab-radio-3">
+                        <img src="./img/done.png">
+                        <span>Done</span>
+                    </label>
+                </li>
+            </ul>
+        </article>
+        <article>
+            <ul class="tab-contents">
+                <li class="tab-1">
+                    <input type="radio" name="tabs" id="tab-radio-1" class="tab-radio" checked />
+                    <div class="tab-content">
+                        <ul>
+                            <li>
+                                <div class="left add-to-do">
+                                    <input type="text" class="to-input" placeholder="Add a to-do..." />
+                                </div>
+                                <div>
+                                    <button class="btn bttn btn-hover teal add" title='Add'><img src="./img/add_but.png"></button>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="left">
+                                    <p class="p">First Sample</p>
+                                </div>
+                                <div>
+                                    <button class="btn bttn btn-hover teal save" title='Save'><img src="./img/save.png"></button>
+                                    <button class="btn bttn btn-hover red putBackToProgress" title='Put back to In Progress'><img src="./img/in-progress_white.png"></button>
+                                    <button class="btn bttn btn-hover red putBack" title='Put back to To Do'><img src="./img/back.png"></button>
+                                    <button class="btn bttn btn-hover blue editBtn"><img src="./img/edit.png"></button>
+                                    <button class="btn bttn btn-hover teal inProgress" title='Add to In Progress'><img src="./img/in-progress_white.png"></button>
+                                    <!-- <button class="btn bttn btn-hover red putBack" title='Put back to To Do'><img src="./img/back.png"></button> -->
+                                    <button class="btn bttn btn-hover red delete" title='Delete'><img src="./img/trash.png"></button>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="left">
+                                    <p class="p">Second Sample</p>
+                                </div>
+                                <div>
+                                    <button class="btn bttn btn-hover teal save" title='Save'><img src="./img/save.png"></button>
+                                    <button class="btn bttn btn-hover red putBackToProgress" title='Put back to In Progress'><img src="./img/in-progress_white.png"></button>
+                                    <button class="btn bttn btn-hover red putBack" title='Put back to To Do'><img src="./img/back.png"></button>
+                                    <button class="btn bttn btn-hover blue editBtn"><img src="./img/edit.png"></button>
+                                    <button class="btn bttn btn-hover teal inProgress" title='Add to In Progress'><img src="./img/in-progress_white.png"></button>
+                                    <button class="btn bttn btn-hover red delete" title='Delete'><img src="./img/trash.png"></button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="tab-2">
+                    <input type="radio" name="tabs" id="tab-radio-2" class="tab-radio"/>
+                    <div class="tab-content">
+                        <ul>
+                            <!--<li>
+                                <div class="left">
+                                    <label class="control control--checkbox">
+                                        <input type="checkbox"/>
+                                        <div class="control__indicator"></div>
+                                    </label>
+                                    <p class="p">First Sample</p>
+                                </div>
+                                <div>
+                                    <button class="btn bttn btn-hover blue editBtn" title='Edit'><img src="./img/edit.png"></button>
+                                    <button class="btn bttn btn-hover red delete" title='Delete'><img src="./img/trash.png"></button>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="left">
+                                    <label class="control control--checkbox">
+                                        <input type="checkbox"/>
+                                        <div class="control__indicator"></div>
+                                    </label>
+                                    <p class="p">Second Sample</p>
+                                </div>
+                                <div>
+                                    <button class="btn bttn btn-hover blue editBtn" title='Edit'><img src="./img/edit.png"></button>
+                                    <button class="btn bttn btn-hover red delete" title='Delete'><img src="./img/trash.png"></button>
+                                </div>
+                            </li> -->
+                        </ul>
+                    </div>
+                </li>
+                <li class="tab-3">
+                    <input type="radio" name="tabs" id="tab-radio-3" class="tab-radio" />
+                    <div class="tab-content">
+                        <ul></ul>
+                    </div>
+                </li>
+            </ul> 
+        </article>
+    </section>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
+    <script>
+        var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        var today  = new Date();
+        $('nav p:last-of-type').text(today.toLocaleDateString("en-US", options));
+        // Others
+        (function($){
+            $(function(){
+                var tabNav = $('.tab-nav');
+                tabNav.on('click', 'label', function(){
+                tabNav.find('label').removeClass('active');
+                $(this).addClass('active');
+        })
+        });
+        })(jQuery);
+        $( document ).ready(function() {
+            $('.putBack').hide();
+            $('.putBackToProgress').hide();
+            $('.save').hide();
+            $('body').on('click', '.add', function(e) {
+                e.preventDefault();
+                $('.tab-contents .tab-1 .tab-content ul li:first-of-type').after(`
+                <li>
+                    <div class="left">
+                        <p class="p">${$('.to-input').val()}</p>
+                    </div>
+                    <div>
+                        <button class="btn bttn btn-hover blue editBtn"><img src="./img/edit.png"></button>
+                        <button class="btn bttn btn-hover teal inProgress" title='Add to In Progress'><img src="./img/in-progress_white.png"></button>
+                        <button class="btn bttn btn-hover red delete"><img src="./img/trash.png"></button>
+                    </div>
+                </li>`);
+                $(this).parent().siblings('.left').children(":last").val('');
+            });
+            $('body').on('click', '.delete', function(e) {
+                e.preventDefault();
+                if (confirm("Are you sure you want to delete this task?")) {
+                    $(this).parent().parent().remove(); 
+                }
+                return false;
+            });
+            $('body').on('click', '.editBtn', function(e) {
+                e.preventDefault();
+                var inputValue = $(this).parent().siblings('.left').children(".p").text();
+                $(this).parent().siblings('.left').children(".p").remove();
+                $(this).parent().siblings('.left').append(`<input type="text" class="to-input" required value="${inputValue}"/>`);
+                $(this).parent().siblings('.left').addClass('edit');
+                $(this).parent().siblings('.left').children(".to-input").focus().val('').val(inputValue);
+                $(this).siblings('.save').show();
+                $(this).parent().siblings('.left').children(".control").children("input").attr("disabled", true);
+                // console.log($(this).parent().siblings('.left').children(".control").children('input[type="checkbox"]').html());
+                $(this).hide();
+                // 
+            });
+            $('body').on('click', '.save', function(e) {
+                e.preventDefault();
+                var inputValue = $(this).parent().siblings('.left').children(".to-input").val();
+                $(this).parent().siblings('.left').children(".to-input").remove();
+                $(this).parent().siblings('.left').append(`<p class="p">${inputValue}</p>`);
+                $(this).parent().siblings('.left').removeClass('edit');
+                $(this).siblings('.editBtn').show();
+                $(this).parent().siblings('.left').children(".control").children("input").attr("disabled", false);
+                $(this).hide();
+            });
+            $('body').on('click', '.inProgress', function(e) {
+                e.preventDefault();
+                $(this).parent().siblings('.left').prepend(`<label class="control control--checkbox"><input type="checkbox"/><div class="control__indicator"></div></label>`);
+                $(this).siblings('.putBack').show();
+                $(this).hide();
+                $('.tab-2 .tab-content ul').prepend(`<li>${$(this).parent().parent().remove().html()}</li>`);
+            });
+            $('body').on('click', '.putBack', function(e) {
+                e.preventDefault();
+                $(this).parent().siblings('.left').children('label').remove();
+                $(this).siblings('.inProgress, .editBtn').show();
+                $(this).hide();
+                $(this).siblings('.putBackToProgress').hide();
+                $(this).parent().siblings('div:last').children('p').css('text-decoration','none');
+                $('.tab-1 .tab-content ul li:first-of-type').after(`<li>${$(this).parent().parent().remove().html()}</li>`);
+            })
+            $('body').on('click', 'input[type=checkbox]', function(e) {
+                e.preventDefault();
+                if (confirm("Are you sure you want to mark this task as done?")) {
+                    $(this).parent().siblings('label').hide();
+                    $(this).parent().parent().siblings(':last').children('.editBtn').hide();
+                    $(this).parent().parent().siblings(':last').children('.putBack, .putBackToProgress').show();
+                    $(this).parent().siblings('p').css('text-decoration','line-through');
+                    $('.tab-3 .tab-content ul').prepend(`<li>${$(this).parent().parent().parent().remove().html()}</li>`);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
