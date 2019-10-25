@@ -1,0 +1,231 @@
+html,
+body {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+}
+
+html {
+   /* background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 41%, rgba(252, 176, 215, 1) 76%); */
+   background: url("images/tree.jpg");
+   background-size: cover;
+}
+
+main {
+   width: 30%;
+   /* height: 50%; */
+   margin: 0 auto;
+}
+
+.main-container {
+   width: 100%;
+   height: 50%;
+}
+
+.head-container {
+   background-color: white;
+   margin: 20% 0 0 0;
+   height: 200px;
+   border-radius: 50px 50px 0 0;
+   box-shadow: 5px 10px 8px #888888;
+}
+
+.img {
+   background-image: url("images/head.jpg");
+   background-size: 100%;
+   background-repeat: no-repeat;
+}
+
+.task-cont {
+   background-color: white;
+   width: 100%;
+   height: 500px;
+   border-radius: 0 0 50px 50px;
+   box-shadow: 5px 10px 8px #888888;
+}
+
+h1 {
+   font-size: 50px;
+   font-family: "Fjalla One", sans-serif;
+   font-weight: bold;
+   letter-spacing: 3px;
+   text-align: center;
+   padding: 131px 0 7px 0;
+   color: #6dd3c6;
+   text-shadow: 2px 2px #000000;
+   margin-bottom: 0px;
+}
+
+/* Style the tab */
+
+.tab {
+   overflow: hidden;
+   background-color: #6dd3c6;
+   display: flex;
+   justify-content: space-between;
+   height: 70px;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+   background-color: inherit;
+   float: left;
+   border: none;
+   outline: none;
+   cursor: pointer;
+   padding: 19.5px 68px;
+   transition: 0.3s;
+   color: #404040;
+   font-weight: bold;
+   width: 100%;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+   background-color: white;
+   color: black;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+   background-color: white;
+   color: black;
+}
+
+/* Style the tab content */
+.tabcontent {
+   display: none;
+   padding: 6px 12px;
+   border-top: none;
+}
+
+.tabcontent h3 {
+   font-family: "Signika", sans-serif;
+   font-size: 20px;
+   text-align: center;
+}
+
+.tablinks {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-content: center;
+}
+
+#toDo {
+   margin: auto;
+}
+
+.tablinks img {
+   width: 30px;
+   margin: auto;
+}
+
+.title {
+   padding-top: 5px;
+}
+
+form {
+   text-align: center;
+}
+
+#toDo img {
+   width: 20px;
+   text-align: center;
+}
+
+.i-form {
+   width: 210px;
+   margin-right: 11px;
+   height: 30px;
+   border-radius: 10px;
+   border: 1px solid #d2d1cc;
+   padding-left: 10px;
+}
+
+.tasks {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.all-tasks {
+   overflow: auto;
+   width: 80%;
+   margin: 0 auto;
+   margin-top: -15px;
+   height: 250px;
+}
+
+.tasks-added {
+   padding: 1px;
+   margin: auto;
+   margin-top: 10px;
+   justify-content: space-between;
+}
+
+/* Customize the label (the container) */
+.container {
+   background-color: #6dd3c640;
+   padding: 5px;
+   display: flex;
+   justify-content: space-between;
+   position: relative;
+   cursor: pointer;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+   border-radius: 5px;
+   border: 1px solid #6dd3c6;
+}
+
+/*  */
+
+i {
+   color: #6dd3c6;
+}
+
+#pad {
+   padding-left: 10px;
+}
+
+hr {
+   width: 70%;
+   margin-top: 25px;
+   border: 2px solid #6dd3c661;
+}
+
+.cont-all {
+   width: 80%;
+   margin: 0 auto;
+   margin-top: 21px;
+   overflow: auto;
+   height: 370px;
+}
+
+.cont-all > label {
+   margin-top: 10px;
+}
+.icons {
+   cursor: pointer;
+}
+
+p {
+   margin: 0;
+   font-size: 16px;
+}
+
+#canvas {
+   background-color: transparent;
+   position: absolute;
+   top: 7%;
+   left: 83%;
+   width: 10%;
+}
+
+.inputText {
+   background: #dbf4f0;
+   border: none;
+   outline: none;
+}

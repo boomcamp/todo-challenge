@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+      <title>ToDo List</title>
+      <!-- css -->
+      <link rel="stylesheet" href="style.css" type="text/css" />
+      <!-- fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Fjalla+One|Signika|Bitter&display=swap" rel="stylesheet" />
+      <!-- icons -->
+      <script src="https://kit.fontawesome.com/d541f7f5e0.js" crossorigin="anonymous"></script>
+   </head>
+   <body>
+      <main>
+         <div class="main-container">
+            <div class="head-container img">
+               <h1>ToDo List</h1>
+               <div class="tabs">
+                  <div class="task-cont">
+                     <!-- Tab links -->
+                     <div class="tab">
+                        <button class="tablinks" onclick="todolist(event, 'toDo')" id="defaultOpen">
+                           <img src="images/to-do-list.png" /> <span class="title">To Do</span>
+                        </button>
+                        <button class="tablinks" onclick="todolist(event, 'inProgress')">
+                           <img src="images/inprogress.png" /> <span class="title">In Progress</span>
+                        </button>
+                        <button class="tablinks" onclick="todolist(event, 'done')">
+                           <img src="images/done.png" /> <span class="title">Done</span>
+                        </button>
+                     </div>
+
+                     <!-- Tab content -->
+                     <div id="toDo" class="tabcontent">
+                        <h3>Add Tasks</h3>
+                        <div class="tasks">
+                           <form action="#">
+                              <input
+                                 class="i-form"
+                                 type="text"
+                                 name="fname"
+                                 placeholder="Write your task here..."
+                                 maxlength="40"
+                              />
+                           </form>
+                           <a class="a-task" href="#"><img src="images/plus.png"/></a>
+                        </div>
+                        <hr />
+                        <input type="text" id="s" class="inputText" />
+                        <i class="far fa-save" id="save"></i>
+                        <div class="all-tasks">
+                           <div class="tasks-added">
+                              <div class="tasks-added" id="added-Task">
+                                 <label class="container">
+                                    <p>asa</p>
+                                    <input type="text" id="superman" class="inputText"/>
+
+                                    <div class="icons">
+                                       <i class="fas fa-spinner" onclick="moveFunc(this)"></i
+                                       ><i class="fas fa-edit" id="pad" onclick="editFunc(this)"></i
+                                       ><i class="far fa-trash-alt" id="pad" onclick="myFunc(this)"></i></div
+                                 ></label>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div id="inProgress" class="tabcontent">
+                        <div class="cont-all">
+                           <div class="inprogress"></div>
+                        </div>
+                     </div>
+
+                     <div id="done" class="tabcontent">
+                        <div class="cont-all">
+                           <div class="done"></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <canvas id="canvas" width="400" height="400" style="background-color: transparent"> </canvas>
+      </main>
+
+      <script src="index.js"></script>
+      <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
+   </body>
+</html>
