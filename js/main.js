@@ -18,31 +18,35 @@ progress.style.display = "none";
 done.style.display = "none";
 addTodo.style.display = "none";
 
-todoBtn.addEventListener("click", function() {
+todoBtn.addEventListener("click", function(event) {
   todo.style.display = "";
   progress.style.display = "none";
   done.style.display = "none";
+  todoBtn.classList.remove("color");
   todoBtn.classList.add("color");
   progressBtn.classList.remove("color");
   doneBtn.classList.remove("color");
+  event.stopPropagation();
 });
 
-progressBtn.addEventListener("click", function() {
+progressBtn.addEventListener("click", function(event) {
   todo.style.display = "none";
   progress.style.display = "";
   done.style.display = "none";
   todoBtn.classList.remove("color");
   progressBtn.classList.add("color");
   doneBtn.classList.remove("color");
+  event.stopPropagation();
 });
 
-doneBtn.addEventListener("click", function() {
+doneBtn.addEventListener("click", function(event) {
   todo.style.display = "none";
   progress.style.display = "none";
   done.style.display = "";
   todoBtn.classList.remove("color");
   progressBtn.classList.remove("color");
   doneBtn.classList.add("color");
+  event.stopPropagation();
 });
 
 input.addEventListener("focus", function() {
