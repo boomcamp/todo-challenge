@@ -83,5 +83,5 @@ button{
 }
 .animate-right{position:relative;animation:animateright 0.5s}
 @keyframes animateright{from{right:-50px;opacity:0} to{right:0;opacity:1}}
-.animate-left{position:relative;animation:animateleft 0.5s; }
+.animate-left{position:relative;animation:animateleft 0.5s;}
 @keyframes animateleft{from{left:-50px;opacity:0} to{left:0;opacity:1}}

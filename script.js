@@ -19,6 +19,7 @@ $(document).ready(function(){
         }
         $('.text-input').val('')
     });
+    
 });
 function deletethis(e){
     if(confirm("You sure to Delete this task?")){
