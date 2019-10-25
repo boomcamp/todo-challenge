@@ -87,6 +87,16 @@ body{
     color:  var(--secondary-white-shade-color);
 }
 
+.add-task{
+    cursor: pointer;
+}
+
+.add-task:hover{
+    box-shadow: 0px 0px 3px #d4d4d4;   
+}
+
+
+
 
 
 /* for individual task */
@@ -112,6 +122,11 @@ body{
     border-radius: 5px;
     /* box-shadow: 0px 0px 7px #cccccc; */
     margin: 10px 0;
+    cursor: pointer;
+}
+
+.todo-task-actionable:hover{
+    box-shadow: 0px 1px 5px 0px #cccccc;    
 }
 
 /* checkbox */
@@ -276,6 +291,11 @@ body{
 .status-control i{
     font-size: 2em;
     cursor: pointer;
+}
+
+.checked{
+    text-decoration: line-through;
+    color: darkgrey;
 }
 
 

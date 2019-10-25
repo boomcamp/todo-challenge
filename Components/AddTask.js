@@ -38,7 +38,7 @@ export function displayData(taskData){
 
     let processedInput = `<section id="${taskData.id}" class="todo-task-actionable action" data-status="${taskData.status}" data-id="${taskData.id}">
                             <label class="todo-task-action">
-                                <p class="task-statement main-font">${taskData.task}</p>
+                                <p class="task-statement main-font ${ischecked}">${taskData.task}</p>
                                 <input type="checkbox" class="template-checkbox" ${ischecked}>
                                 <span class="checkmark"></span>
                             </label>
