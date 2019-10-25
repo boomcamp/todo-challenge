@@ -1,0 +1,207 @@
+
+body{
+    overflow: hidden;
+}
+*{
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.main{
+    height: 100vh;
+    width: 100%;
+    background: linear-gradient(to right bottom, #e37da6,#bfb5da,#94bbe9);
+    padding-top: 70px; 
+}
+.titleContent{
+    height: 10%;
+    display: flex;
+}
+ .title{
+    font-family: 'Modak', cursive;
+    font-size: 50px;
+} 
+.listCon{
+    height: 80%;
+    width: 25%;
+    background-color: white;
+    border-radius: 20px
+}
+
+.header{
+    width: 100%;
+    height: auto;
+    display: flex;
+}
+
+.header-con1-toDo, 
+.header-con2-inProgress,
+.header-con3-done
+{
+    width: 33.3333%;
+    padding: 0;
+    height: 40%;
+    background-color:#D1A7DB ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.header-con1-toDo{
+    border-top-left-radius: 20px;
+}
+.header-con2-inProgress{
+    border-left: 1px solid #D1CFCE 
+}
+.header-con3-done{
+    border-top-right-radius: 20px;
+    border-left: 1px solid #D1CFCE 
+}
+.icon1, .icon2, .icon3{
+    height: 40  px;
+    padding-top: 10px;
+}
+span{
+    padding-top: 5px;
+    font-family: 'Baloo Bhai', cursive;
+    font-size: 15px;
+}
+.contents{
+    height: 88%;
+    margin: 0 auto;
+    padding: 5px;
+    background-color: #F0D5F7;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    background: linear-gradient(to right bottom,#cbbcf4, #f1c5f0);
+
+}
+.toDoText, 
+.inProgressText, 
+.doneText
+{
+    font-family: 'Baloo Bhai', cursive;
+}
+
+.toDo-content, 
+.inProgress-content, 
+.done-content
+{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+.inProgress-content{
+    display: flex;
+    flex-direction: column;
+}
+.toDo-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;     
+}
+.addImage, .submit{
+    cursor: pointer;
+    height: 70px
+}
+.submit{
+    height: 60px
+}
+.addToDo{
+    display: flex;
+    flex-direction: column;
+}
+.inputToDo{
+    background-color: transparent;
+    margin: 20px;
+    padding: 10px;
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 20px;
+    outline: none;
+    text-align: center
+}
+.tasks, .tasks1, .tasks2{
+    height: 80%;
+    overflow: auto
+}
+
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
+  }
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    
+  }
+
+  .listBox{
+    height: 35px;
+    width: 400px;
+    background-color: #eee;
+    position: relative;
+    display: flex;
+    margin-bottom: 5px;
+    border-radius: 5px;
+  }
+  .taskList{
+      padding: 5px 5px;
+      text-align: left;
+      font-family: 'Patrick Hand', cursive;
+      margin-left: 10px;
+      width: 100px;
+  }
+
+.editIcon, 
+.move, 
+.backToDo, 
+.trashIcon, 
+.save, 
+.moveDone, 
+.progressToDo, 
+.backProgress, 
+.doneToDo, 
+.doneProgress
+{
+    height: 25px;
+    cursor: pointer;
+    margin: 0;
+}
+.icons{
+    display: flex;
+    align-items: center;
+    width: 30px;
+    margin: 0 auto
+}
+.checkboxDiv{
+    margin: 0;
+}
+
+.text{
+    border: none;
+    outline: none;
+    background-color: #eee;
+    padding: 5px 5px;
+    text-align: left;
+    font-family: 'Patrick Hand', cursive;
+    margin-left: 20px;
+    width: 100px;
+    font-size: 15px;
+
+}
