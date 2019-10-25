@@ -3,6 +3,7 @@ import TaskActions from './TaskActions.js';
 import ProcessData, {DataToTab, LoadData} from './ProcessData.js';
 import EditTask from './EditTask.js';
 import DeleteTask from './DeleteTask.js';
+import ChangingStatus from './ChangingStatus.js';
 
 
 
@@ -19,3 +20,4 @@ AddTask();
 TaskActions();
 EditTask();
 DeleteTask();
+ChangingStatus();

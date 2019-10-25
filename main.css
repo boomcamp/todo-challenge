@@ -262,5 +262,18 @@ body{
 }
 
 
+/* status control */
+.status-control{
+    display: flex;
+    width: 80px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status-control i{
+    font-size: 2em;
+    cursor: pointer;
+}
+
 
 

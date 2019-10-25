@@ -47,13 +47,6 @@ export function DataToTab(todos){
     });
 }
 
-
-
-
 export function LoadData(datain){
     DataToTab(datain);
 }
-
-
-
-
