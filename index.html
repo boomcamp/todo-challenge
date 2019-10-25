@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Todo | Challenge</title>
+	<link rel="stylesheet" type="text/css" href="styles/index.css">
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div class="wrapper">
+		<div class="left">
+			<table class="nav-items">
+				<tr><td>My Todo</td></tr>
+				<tr><td>In Progress</td></tr>
+				<tr><td>Done</td></tr>
+			</table>
+		</div>
+		<div class="right">
+			<div class="header">
+				<!-- <img src="images/wallpaper.jpg" class="bg"> -->
+				<img src="images/add-button.png" class="btn">
+				<form>
+					<input type="text" class="post" placeholder="Add Todo List . . .">
+				</form>
+				<h1>My Todo<h3 class="date"></h3></h1>
+			</div>
+			<div class="body">
+				<table class="items todo-items"><tr><th>My Todo</th><th></th></tr></table>
+				<table class="items inProg-items"><tr><th>In Progress</th><th></th></tr></table>
+				<table class="items done-items"><tr><th>Done</th><th></th></tr></table>
+			</div>
+		</div>
+	</div>
+	<script src="scripts/index.js"></script>
+</body>
+</html>
