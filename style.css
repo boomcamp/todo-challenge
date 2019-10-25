@@ -224,6 +224,12 @@ p {
    width: 10%;
 }
 
+.save-edit {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
 .inputText {
    background: #dbf4f0;
    border: none;
