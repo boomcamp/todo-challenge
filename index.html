@@ -14,49 +14,70 @@
 				Todo Application
 			</div>
 			<div class="holder">
+				<div>
+					<div class="form">
+						<input type="text" id="newtask" placeholder="Add Task" />
+						<button id="add">Add Task</button>
+					</div>
+				</div>
 				<div class="row">
 					<div class="col">
-						<div class="form">
-							<input type="text" id="newtask" placeholder="Add Task" />
-							<button id="add">Add Task</button>
-						</div>
-
 						<table class="todos" id="todo">
 							<tr id="dolist">
-								<th width="90%">Todo List</th>
-								<th></th>
-								<th></th>
-								<th></th>
+								<th width="100%" colspan="3">Todo List</th>
 							</tr>
-							<tr id="list">
-								<td id="content" class="list-group-item">Alfreds Futterkiste</td>
-								<td>&#9997;</td>
-
-								<td id="new">&#10004;</td>
-								<td>&#10060;</td>
+							<tr id="empty">
+								<td id="emptymessage" colspan="3">No Pending Task</td>
 							</tr>
 						</table>
 					</div>
 					<div class="col">
 						<table id="inp" class="todos">
 							<tr id="inprogress">
-								<th width="90%">In Progress</th>
-								<th></th>
-								<th></th>
-								<th></th>
+								<th width="100%" colspan="4">In Progress</th>
 							</tr>
-							<tr>
-								<td>Alfreds Futterkiste</td>
-								<td>&#9997;</td>
-
-								<td id="toinp">&#10004;</td>
-								<td>&#10060;</td>
+							<tr id="emptyInp">
+								<td id="emptymessage" colspan="4">No In-progress Task</td>
 							</tr>
 						</table>
 					</div>
 				</div>
 			</div>
 		</div>
+
+		<div class="bottom-cont">
+			<div class="row">
+				<div class="col">
+					<div id="MyClockDisplay" class="clock" onload="showTime()"></div>
+
+					<div class="widgets">
+						<div class="div">
+							<span id="cDolist" class="step" style="background: #545454;"></span>
+							<p>Todo</p>
+						</div>
+						<div class="div">
+							<span id="cInp" class="step" style="background: coral;"></span>
+							<p>Inprogress</p>
+						</div>
+						<div class="div">
+							<span id="cDone" class="step" style="background: #4caf50;"></span>
+							<p>Done</p>
+						</div>
+					</div>
+				</div>
+				<div class="col mt-10">
+					<table class="todos" id="done">
+						<tr id="donetask">
+							<th width="100%" colspan="4">Done</th>
+						</tr>
+						<tr id="emptyDone">
+							<td id="emptymessage" colspan="4">You've Done Nothing</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+
 		<script src="./assets/js/main.js"></script>
 	</body>
 </html>

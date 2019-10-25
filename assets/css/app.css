@@ -17,13 +17,23 @@ body *::before {
 }
 .col {
 	flex-basis: 49%;
+	max-height: 280px;
+	overflow: auto;
 }
 
+.mt-10 {
+	margin-top: 10px !important;
+}
+
+.bottom-cont {
+	max-width: 50rem;
+	margin: auto;
+}
 /* container */
 .container {
 	position: relative;
 	max-width: 50rem;
-	margin: 5rem auto;
+	margin: 5rem auto 1px;
 	background: #fff;
 	width: 100%;
 	border-radius: 1px;
@@ -71,6 +81,16 @@ select {
 	font-weight: 700;
 }
 
+.header-done {
+	background: #ffc107;
+	width: 100%;
+	color: black;
+	font-size: 20px;
+	padding: 10px;
+	font-family: "Rubik", sans-serif;
+	font-weight: 700;
+}
+
 .holder {
 	padding: 15px;
 }
@@ -89,6 +109,8 @@ select {
 .todos th {
 	border: 1px solid #ddd;
 	padding: 8px;
+	cursor: pointer;
+	word-break: break-all;
 }
 
 .todos tr:nth-child(even) {
@@ -110,11 +132,77 @@ select {
 	font-size: 12px;
 }
 
+.list-group-item {
+	cursor: pointer;
+}
+
+.list-group-item:hover {
+	background: black;
+	color: white;
+	cursor: pointer;
+}
 .todos {
 	border-collapse: collapse;
 	width: 100%;
 }
 
 #inprogress th {
+	background: coral;
+}
+
+#donetask th {
 	background: #4caf50;
+}
+
+/* inprogress */
+#back {
+	font-size: 23px;
+	padding: 0 8px;
+}
+
+#back:hover {
+	background: black;
+	color: white;
+	cursor: pointer;
+}
+
+#up:hover {
+	background: black;
+	color: white;
+	cursor: pointer;
+}
+
+.clock {
+	min-height: 230px;
+	justify-content: center;
+	display: flex;
+	align-items: center;
+	font-size: 80px;
+	text-align: center;
+	font-weight: 700;
+	font-family: "Rubik", sans-serif;
+}
+
+.widgets {
+	display: flex;
+	justify-content: center;
+}
+
+.widgets div {
+	text-align: center;
+	flex-basis: 19%;
+}
+
+span.step {
+	background: #cccccc;
+	border-radius: 0.8em;
+	-moz-border-radius: 0.8em;
+	-webkit-border-radius: 0.8em;
+	color: #ffffff;
+	display: inline-block;
+	font-weight: bold;
+	line-height: 1.6em;
+	margin-right: 5px;
+	text-align: center;
+	width: 1.6em;
 }
