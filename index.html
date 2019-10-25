@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+    <div class= "border" id= "border-id" >
+        <h1 class= "h1" id= "h1" >TOOG</h1>
+
+        <section id="todo-list">
+
+        <div class= "inner-border" id= "inner-border-id" >
+            
+            <section id="todo-id">
+            <div class= "todo" id= "todoId" >
+                <h3>TODO</h3>
+            <ul class="list" id="list-content"> </ul>    
+            </div>
+            </section>
+            
+            <section id="in-progress-id">
+            <div class= "in-progress" id= "in-progressId" >
+               <h3>IN-PROGRESS</h3>
+            <ul class="list" id="list-progress"></ul>  
+            </div>
+            </section>
+
+            <section id="done-id">
+            <div class= "done" id= "doneId" >
+                <h3>DONE</h3>
+            <ul class="list" id="list-done"></ul>      
+            </div>
+            </section>
+
+        </div>
+
+        </section>
+        
+        <div class= "btn-input" id= "btn-input-id" >
+        <input type= "text" class= "text-input" id= "text-id" placeholder= "todo-list" name= "text-name" />
+        <button type= "button" class= "button" id= "button-id" onclick="pushData();"><img src= "img/circle.png" width= "50" /></button>
+        </div>
+
+    </div>    
+    
+</body>
+<script>
+    var myArr = []; 
+
+function pushData(){
+
+    var inputText= document.getElementById('text-id').value;
+    myArr.push(inputText);
+    var pval = "";
+
+    for(i=0;i<myArr.length;i++){
+        pval=pval+myArr[i]+ "<br/>";
+        }
+    document.getElementById('list-content').innerHTML = pval;
+}   
+</script>
+</html>
