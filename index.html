@@ -8,7 +8,7 @@
   <script src="app.js"></script>
   <title>TO-DO LIST</title>
 </head>
-<body onload="startTime()">
+<body>
     <main>
       <div class="header">
           <img src="img/white2.png"/>&nbsp;&nbsp;<span>todo list</span>
@@ -22,13 +22,18 @@
               <div class="container-header">
                 <span>todo</span>
               </div>
-              <ul class="list-group" id="newList"></ul>
+              <div class="todo-list">
+                   <ul class="list-group" id="newList"></ul>
+              </div>
           </div> 
           
           <div class="column" >
               <div class="container-header">
                   <span>in progress</span>
                 </div>
+                <div class="todo-list">
+                    <ul class="list-group" id="currentList"></ul>
+                </div> 
           </div>
           
           <div class="column">
@@ -44,43 +49,55 @@
       <div class="footer"></div>  
     </main>
     <script>    
-        document.getElementById("my-button").onclick = function() {
-        document.getElementById("my-input").classList.toggle("show");
-        document.getElementById("add-button").classList.toggle("show");
-        };
+
         
-
         const list = [];
-function Task(task) {
-  this.task = task;
-  this.id = "new";
-}
-function addTask(task) {
-  if (task) {
-    const newTask = new Task(task);
-    list.push(newTask);
-    document.getElementById("my-input").value = "";
+        function Task(task) {
+          this.task = task;
+          this.id = "new";
+        }
+        function addTask(task) {
+          if (task) {
+            const newTask = new Task(task);
+            list.push(newTask);
+            document.getElementById("my-input").value = "";
 
-    const taskElem = document.createElement("li");
-    taskElem.id = "item";
+            const taskElem = document.createElement("li");
+            taskElem.id = "item";
 
-    const item = document.getElementById("newList").appendChild(taskElem);
-    item.innerHTML = `
-          <a id="new" class="list-group-item">
-            ${newTask.task}
-          </a>
-        `;
-  }
-}
+            const item = document.getElementById("newList").appendChild(taskElem);
+            item.innerHTML = `
+                  <a id="new" class="list-group-item">
+                    ${newTask.task}
+                    <span id="buttons" style="float:right;" >
+                      <img src="img/move.png" height="30px;" class="next" id="next"/>
+                      <img src="img/trash.png" height="30px;"/>
+                      </span>
+                  </a>
+                `;
+          }
+        }
 
-document
-  .getElementById("add-button")
-  .addEventListener("click", function(event) {
-    event.preventDefault();
-    const task = document.getElementById("my-input").value.trim();
-    addTask(task);
-  });
-  
+        document
+          .getElementById("add-button")
+          .addEventListener("click", function(event) {
+            event.preventDefault();
+            const task = document.getElementById("my-input").value.trim();
+            addTask(task);
+          });
+          
+          document.getElementById("newList").addEventListener("click", function(event) {
+            if(e.target.classList.contains("next")){
+              if(confirm("Move to Progress?"))
+              {
+                  const btn = document.createElement('button');
+                  btn.className = "back";
+                  btn.innerHTML = "Back";
+                  e.target.parentElement.append(btn);
+                  document.getElementById('currentList').append(e.target.parentElement.parentElement);
+              }
+ }
+        });
     </script>
 </body>
 </html>
