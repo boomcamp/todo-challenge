@@ -8,6 +8,9 @@ const input = document.querySelector(".inputText");
 const addTodo = document.querySelector(".add-todo");
 const divTodoIn = document.querySelector(".divTodoIn");
 const move2progress = document.querySelector(".move2progress");
+const t = document.getElementsByClassName("divTodo").length;
+const p = document.getElementsByClassName("divProgress").length;
+const d = document.getElementsByClassName("divDone").length;
 
 let clicked = false;
 
