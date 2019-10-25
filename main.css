@@ -11,7 +11,8 @@
     --primary-white-shade-color:  rgb(211, 211, 211);
     --secondary-white-shade-color:  rgb(192, 192, 192);
 
-    --primary-text-shade-color: rgb(73, 73, 73);;
+    --primary-text-shade-color: rgb(73, 73, 73);
+    --secondary-text-shade-color: rgb(236, 236, 236);
 }
 
 body{
@@ -37,11 +38,13 @@ body{
 }
 
 .header-title, .author-title{
-    color:rgb(109, 109, 109);
     color: var(--primary-text-shade-color);
-
     padding: 20px 50px;
     font-size: 1em;
+}
+
+.author-title{
+    color: var(--secondary-text-shade-color);
 }
 
 /* task container */

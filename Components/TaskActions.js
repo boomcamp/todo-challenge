@@ -6,7 +6,7 @@ export default function TaskActions() {
         $('.todo-buttons-container .task-status').html(status);
         $('.todo-buttons-container').insertAfter(this).toggle();
 
-        console.log(status);
+        // console.log(status);
 
         if($('body .todo-buttons-container').get().length === 0){
             $('body').append(todobuttonscontainer);

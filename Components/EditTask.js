@@ -12,7 +12,6 @@ export default function EditTask(){
         const statement = $(`#${TasktoEdit} .task-statement`).html();
         const statusref = $(`#${TasktoEdit}`).attr('data-status');
 
-
         // remove the statement container
         $(`#${TasktoEdit} .todo-task-action`).remove();
         // $(`#${TasktoEdit} .editting-container`).remove();

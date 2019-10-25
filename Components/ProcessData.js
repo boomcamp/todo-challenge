@@ -5,21 +5,18 @@ export default function ProcessData(newTaskdata) {
 
     $('.newtask').val('');
 
-
     var oldState = JSON.parse(window.localStorage.getItem('todoStatelocal')) || [];
 
     var newTodo = {
         id:randomId(),
         task: newTaskdata.task,
-        status: newTaskdata.status
+        status: newTaskdata.status,
+        isChecked: false
     };
 
     oldState.push(newTodo);
 
-    
     window.localStorage.setItem('todoStatelocal', JSON.stringify(oldState));
-
-    // window.localStorage.clear();
 
     DataToTab(JSON.parse(window.localStorage.getItem('todoStatelocal')));
 }

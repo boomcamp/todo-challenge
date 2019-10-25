@@ -4,14 +4,12 @@ import ProcessData, {DataToTab, LoadData} from './ProcessData.js';
 import EditTask from './EditTask.js';
 import DeleteTask from './DeleteTask.js';
 import ChangingStatus from './ChangingStatus.js';
-
-
+import CheckedMod from './CheckedMod.js';
 
 export default function DefaultController(){
     // default properties
     $('.task-input').hide();
     $('.todo-buttons-container').hide();
-
 }
 
 LoadData(JSON.parse(window.localStorage.getItem('todoStatelocal')) || []);
@@ -21,3 +19,4 @@ TaskActions();
 EditTask();
 DeleteTask();
 ChangingStatus();
+CheckedMod();
