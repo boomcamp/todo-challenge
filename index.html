@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>TODO Challenge</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body onload="startTime()">
+    <div class="main-content">
+      <div class="header">
+        <div class="title-page left">
+          <i class="fas fa-list-alt"></i> TODO | Challenge
+        </div>
+        <div class="title-page" id="txt"></div>
+        <div class="title-page date-display"></div>
+      </div>
+      <div class="content">
+        <div class="todo box-flex border-right">
+          <div class="box-header box-title-text"><b>TO DO</b></div>
+        </div>
+        <div class="inprogress box-flex">
+          <div class="box-header box-title-text"><b>IN PROGRESS</b></div>
+        </div>
+        <div class="done box-flex border-left">
+          <div class="box-header box-title-text"><b>DONE</b></div>
+        </div>
+      </div>
+      <div class="add input-footer">
+        <input type="text" class="add-text" />
+        <button type="button" class="input-button fas fa-edit"></button>
+      </div>
+    </div>
+  </body>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="scripts/app.js"></script>
+</html>
