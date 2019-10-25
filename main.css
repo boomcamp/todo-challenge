@@ -69,12 +69,12 @@ body{
     color: rgb(192, 192, 192);
 }
 
-.main-caption, .add-task{
+.main-caption, .add-task, .task-open{
     margin: 0 20px;
     color: var(--primary-text-shade-color);
 }
 
-.add-task{
+.add-task, .task-open{
     border: 1px var(--primary-white-shade-color) solid;
     border-radius: 5px;
     background: none;

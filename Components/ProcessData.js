@@ -1,13 +1,17 @@
 import AddTask, {displayData} from './AddTask.js';
+import randomId from './RandomID.js';
 
-export default function ProcessData(data,status) {
+export default function ProcessData(newTaskdata) {
+
+    $('.newtask').val('');
+
 
     var oldState = JSON.parse(window.localStorage.getItem('todoStatelocal')) || [];
 
     var newTodo = {
-        id:1,
-        task: data,
-        status: status
+        id:randomId(),
+        task: newTaskdata.task,
+        status: newTaskdata.status
     };
 
     oldState.push(newTodo);
@@ -26,58 +30,30 @@ export function DataToTab(todos){
 
     initial = true;
 
-    // $('.todo-task-container').after().after().empty();
-    // $('.doing-task-container').not(':first').empty();
-    // $('.done-task-container').not(':first').empty();
-
-    $('.todo-task-container :first').nextAll().remove();
-    $('.doing-task-container :first').nextAll().remove();
-    $('.done-task-container :first').nextAll().remove();
+    $('.todo-task-container :first').nextAll('.action').remove();
+    $('.doing-task-container :first').nextAll('.action').remove();
+    $('.done-task-container :first').nextAll('.action').remove();
 
     todos.map(todo=>{
         if(todo.status === 'todo'){
-            $('.todo-task-container').append(displayData(todo.task,todo.status));
+            $('.todo-task-container').append(displayData(todo));
         }
         if(todo.status === 'doing'){
-            $('.doing-task-container').append(displayData(todo.task,todo.status));
+            $('.doing-task-container').append(displayData(todo));
         }
         if(todo.status === 'done'){
-            $('.done-task-container').append(displayData(todo.task,todo.status));
+            $('.done-task-container').append(displayData(todo));
         }
     });
 }
 
-function removeTab(container){
-    container.not(':first').empty();
+
+
+
+export function LoadData(datain){
+    DataToTab(datain);
 }
 
 
-//sample data
-// const todoState = {
-//     todos:[{
-//         id:1,
-//         task: 'get it done',
-//         status: 'todo'
-//     },{
-//         id:2,
-//         task: 'dont be average',
-//         status: 'doing'
-//     },{
-//         id:3,
-//         task: 'chat jowa',
-//         status: 'todo'
-//     },{
-//         id:4,
-//         task: 'never drink',
-//         status: 'done'
-//     },{
-//         id:5,
-//         task: 'reinforcement meeting',
-//         status: 'doing'
-//     },{
-//         id:6,
-//         task: 'build project',
-//         status: 'doing'
-//     }]
-// };
+
 

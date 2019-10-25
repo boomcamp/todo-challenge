@@ -10,31 +10,33 @@ export default function AddTask() {
 
         inputstatus = $(e.target).attr('data-status');
         
-        taskinput.insertAfter($(e.target).parent()[0]).show().addClass('.task-open');
+        taskinput.insertAfter($(e.target).parent()[0]).toggle();
     });
-
 
     //append newly created task
     $('.all-task-container').on('click','#add-this-button',function(){
 
-        //append according to status
-        // $(`.${inputstatus}-task-container`).append(displayData($('.newtask').val(), inputstatus));
-
         //process to data
-        ProcessData($('.newtask').val(), inputstatus);
+        let taskForProcess = {
+            task: $('.newtask').val(),
+            status: inputstatus 
+        }
+
+        ProcessData(taskForProcess);
 
         //return modified and called elements to default
-        $('.newtask').val('');
-        $('.task-input').hide();
+        taskinput.hide();
+        $('.todo-buttons-container').hide();
+        console.log('closing');
     });
 }
 
 
-export function displayData(taskText, status){
+export function displayData(taskData){
 
-    let processedInput = `<section class="todo-task-actionable action" data-status="${status}">
+    let processedInput = `<section id="${taskData.id}" class="todo-task-actionable action" data-status="${taskData.status}" data-id="${taskData.id}">
                             <label class="todo-task-action">
-                                <p class="task-statement secondary-font">${taskText}</p>
+                                <p class="task-statement secondary-font">${taskData.task}</p>
                                 <input type="checkbox" class="template-checkbox">
                                 <span class="checkmark"></span>
                             </label>
@@ -42,6 +44,5 @@ export function displayData(taskText, status){
 
     return processedInput;
 }
-
 
 const taskinput = $('.task-input');
