@@ -1,12 +1,11 @@
 import {DataToTab } from "./ProcessData.js";
 
 export default function CheckedMod(){
-    $('.all-task-container').on('click','.checkmark',function(e){
+    $('.all-task-container').on('click','.todo-task-action',function(e){
     
-        const TasktoEdit = $(e.target).parent().parent().attr('id');
+        const TasktoEdit = $(this).parent().attr('id');
 
-
-        const checkStatus = $(this).prev()[0].checked;
+        const checkStatus = $(this).children('input')[0].checked;
         
         const data = {
             id: TasktoEdit,
