@@ -3,6 +3,8 @@ var countTodo = 0;
 var countInp = 0;
 var countDone = 0;
 document.getElementById("add").style.display = "none";
+//document.getElementById("save").style.display = "none";
+document.getElementById("edittext").style.display = "none";
 
 var a = document.getElementById("newtask");
 
@@ -25,7 +27,7 @@ document.getElementById("add").addEventListener("click", function() {
 
 	parent.insertAdjacentHTML(
 		"afterend",
-		`<tr><td id="content${c}" class="list-group-item" width="90%">${task}</td><td>&#9997;</td><td class="delete">&#10060;</td></tr>`
+		`<tr><td id="content${c}" class="list-group-item" width="90%">${task}</td><td onclick="edit(this)" class="edit">&#9997;</td><td class="delete">&#10060;</td></tr>`
 	);
 	c++;
 	countTodo++;
@@ -40,13 +42,12 @@ document.getElementById("add").addEventListener("click", function() {
 });
 
 document.getElementById("todo").addEventListener("click", function(event) {
-	console.log(event.target);
 	if (event.target.matches("td.list-group-item")) {
 		document
 			.getElementById("inprogress")
 			.insertAdjacentHTML(
 				"afterend",
-				`<tr><td id="content${c}" class="list-group-item" width="90%">${event.target.innerText}</td><td id="back">&#171;</td><td>&#9997;</td><td class="delete">&#10060;</td></tr>`
+				`<tr><td id="content${c}" class="list-group-item" width="90%">${event.target.innerText}</td><td id="back">&#171;</td><td onclick="edit(this)" class="edit">&#9997;</td><td class="delete">&#10060;</td></tr>`
 			);
 		event.target.parentElement.remove();
 		countTodo--;
@@ -64,16 +65,43 @@ document.getElementById("todo").addEventListener("click", function(event) {
 			showMessage();
 		} else false;
 	}
+
 	showcount();
 });
 
+function edit(e) {
+	document.getElementById("edittext").style.display = "inline-block";
+	document.getElementById("edittext").value = e.parentElement.querySelector("td").innerText;
+	document.getElementById("edittext").focus();
+	var btnId = e.parentElement.querySelector("td").getAttribute("id");
+	var clickMeButton = document.createElement("button");
+	var ref = btnId;
+	clickMeButton.id = "cref";
+	clickMeButton.innerHTML = "Save";
+
+	document.getElementById("mbut").append(clickMeButton);
+
+	document.getElementById("cref").addEventListener("click", function() {
+		console.log(btnId);
+		document.getElementById(btnId).innerHTML = document.getElementById("edittext").value;
+
+		document.getElementById("cref").remove();
+		document.getElementById("edittext").style.display = "none";
+	});
+	//console.log(e.parentElement.querySelector("td").innerText);
+	//console.log((document.getElementById("edittext").value = e.parentElement.querySelector("td").innerText));
+}
+
+//document.getElementById("edittext").addEventListener("blur", function() {});
+
 document.getElementById("inp").addEventListener("click", function(event) {
+	c++;
 	if (event.target.matches("td.list-group-item")) {
 		document
 			.getElementById("donetask")
 			.insertAdjacentHTML(
 				"afterend",
-				`<tr><td id="content${c}" class="list-group-item" width="90%">${event.target.innerText}</td><td id="up">&#8648;</td><td>&#9997;</td><td class="delete">&#10060;</td></tr>`
+				`<tr><td id="content${c}" class="list-group-item" width="90%">${event.target.innerText}</td><td id="up">&#8648;</td><td onclick="edit(this)" class="edit">&#9997;</td><td class="delete">&#10060;</td></tr>`
 			);
 		event.target.parentElement.remove();
 		countInp--;
@@ -124,6 +152,7 @@ document.getElementById("inp").addEventListener("click", function(event) {
 });
 
 document.getElementById("done").addEventListener("click", function(event) {
+	c++;
 	if (event.target.matches("td#up")) {
 		console.log(true);
 
@@ -133,7 +162,7 @@ document.getElementById("done").addEventListener("click", function(event) {
 				"afterend",
 				`<tr><td id="content${c}" class="list-group-item" width="90%">${
 					event.target.parentElement.querySelector("td").innerText
-				}</td><td id="back">&#171;</td><td>&#9997;</td><td class="delete">&#10060;</td></tr>`
+				}</td><td id="back">&#171;</td><td onclick="edit(this)" class="edit">&#9997;</td><td class="delete">&#10060;</td></tr>`
 			);
 
 		countDone--;

@@ -17,7 +17,7 @@ body *::before {
 }
 .col {
 	flex-basis: 49%;
-	max-height: 280px;
+	max-height: 310px;
 	overflow: auto;
 }
 
@@ -62,7 +62,7 @@ body *::before {
 /* forms */
 
 input[type="text"],
-select {
+textarea {
 	width: 100%;
 	padding: 12px 20px;
 	margin: 8px 0;
@@ -95,6 +95,30 @@ select {
 	padding: 15px;
 }
 #add {
+	background-color: #ff8a14;
+	color: white;
+	padding: 8px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+#save {
+	background-color: #ff8a14;
+	color: white;
+	padding: 8px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+#edittext {
+	width: 50%;
+}
+
+#mbut button {
 	background-color: #ff8a14;
 	color: white;
 	padding: 8px 20px;
