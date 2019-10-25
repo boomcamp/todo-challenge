@@ -1,5 +1,11 @@
 $(document).ready(function(){
-    let id=0;
+    let list=[];
+    // let lists = JSON.parse(localStorage.getItem('tasks'))
+
+    // function storageAdd(task){
+    //     list.push(task)
+    //     localStorage.setItem('tasks', JSON.stringify(list));
+    // }
 
     function hideEdit(edit){
         if($(edit).text() == ""){
@@ -21,13 +27,14 @@ $(document).ready(function(){
     });
     
     $(".submit_todo").on('click',function(){
+        var task = $(".text_todo").val(); 
         if($(".text_todo").val() == ""){
             $(".text_todo").css("border", "1px solid red")
         }
         else{
             $(".todo_class").append(`
             <div class="todo_list">
-                <h3 class="todo_task" data-id=${id}>${$(".text_todo").val()}</h3>
+                <h3 class="todo_task">${$(".text_todo").val()}</h3>
 
                 <div class="actions">
                     <ion-icon name="create" class="edit"></ion-icon>
@@ -37,8 +44,8 @@ $(document).ready(function(){
                 <li class="todo_btn"><ion-icon name="trending-down"></ion-icon> In-Progress</li>                 
             </div>`);
 
-            hideCreate()
-            id += 1;
+            hideCreate();
+            // storageAdd({sched: "todo", task: task});
         }
     });
     
@@ -87,7 +94,7 @@ $(document).ready(function(){
         var todo = this.parentNode;
         $(todo).appendTo(".progress_class");  
         $(this).remove();
-        $(todo).children(".todo_task").css("text-decoration", "none");
+        $(todo).children(".todo_task").css({"text-decoration": "none", "opacity": "1"});
         $(todo).children(".actions").after(
         `<i class="move_todo"><ion-icon name="trending-up"></ion-icon> Todo </i> 
          <i class="move_done"><ion-icon name="checkmark"></ion-icon>Done <i>`);
@@ -96,8 +103,24 @@ $(document).ready(function(){
     $(document).on('click', '.move_done', function(){
         var todo = this.parentNode;
         $(todo).appendTo(".done_class");
-        $(todo).children(".todo_task").css("text-decoration", "line-through");
+        $(todo).children(".todo_task").css({"text-decoration": "line-through", "opacity": "0.5"});
         $(todo).children(".move_todo, .move_done").remove()
         $(todo).children(".actions").after(`<i class="move_inprogress"><ion-icon name="trending-up"></ion-icon> In-Progress </i>`)
     });
-});
+
+    // for(i of lists){
+    //     if(i.sched == "todo"){
+    //         $(".todo_class").append(`
+    //         <div class="todo_list">
+    //             <h3 class="todo_task">${i.task}</h3>
+
+    //             <div class="actions">
+    //                 <ion-icon name="create" class="edit"></ion-icon>
+    //                 <ion-icon name="trash" class="delete"></ion-icon>
+    //             </div>
+
+    //             <li class="todo_btn"><ion-icon name="trending-down"></ion-icon> In-Progress</li>                 
+    //         </div>`);
+    //     }
+    // }
+}); 
