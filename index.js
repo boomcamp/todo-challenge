@@ -137,7 +137,10 @@ $('body').on('click', '.moveDone', function(){
 })
 
 $('body').on('click', '.trashIcon', function(){
-    $(this).parent().parent().remove();
+    if(confirm("Are you sure you want to delete this task?")){
+        $(this).parent().parent().remove();
+    }
+    
 })
 
 $('body').on('click', '.editIcon', function(){
