@@ -51,14 +51,14 @@ doneBtn.addEventListener("click", function(event) {
 
 input.addEventListener("focus", function() {
   if (!clicked) {
-    input.classList.add("extend");
+    // input.classList.add("extend");
     addTodo.style.display = "";
     clicked = true;
   }
 });
 input.addEventListener("blur", function() {
   if (clicked && input.value.length == 0) {
-    input.classList.remove("extend");
+    // input.classList.remove("extend");
     addTodo.style.display = "none";
     clicked = false;
   }

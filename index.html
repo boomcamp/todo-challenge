@@ -22,19 +22,26 @@
   <body>
     <main>
       <div class="main-container">
-        <div class="title"><span>To Do List</span></div>
+        <div class="title">
+          <span class="fa fa-edit"></span>
+          <span> To Do Challenge</span>
+        </div>
         <div class="action-btn">
           <button class="btn color">To Do</button>
           <button class="btn">In Progess</button>
           <button class="btn">Done</button>
         </div>
+        <div class="divTodoIn">
+          <textarea
+            class="inputText"
+            rows="10"
+            cols="50"
+            maxlength="500"
+          ></textarea>
+          <button class="add-todo" disabled>+</button>
+        </div>
         <div class="actions">
-          <div class="todo">
-            <div class="divTodoIn">
-              <textarea class="inputText" maxlength="500"></textarea>
-              <button class="add-todo" disabled>+</button>
-            </div>
-          </div>
+          <div class="todo"></div>
           <div class="progress"></div>
           <div class="done"></div>
         </div>
