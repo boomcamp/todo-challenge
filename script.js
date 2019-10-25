@@ -25,6 +25,9 @@ function deletethis(e){
         $(`.input${e}`).remove();
     }
 }
+function addsub(e){
+
+}
 function movedown(e){
     let txt = $(`.input${e}`).text();
     let data = $(`.input${e}`).data("pos");
@@ -50,18 +53,25 @@ function moveup(e){
     }
 }
 function editme(e){
-    $('.edittxt').attr("contenteditable", "true");
+    $(`.edittxt${e}`).attr("contenteditable", "true");
+    $(`.edittxt${e}`).addClass("text");
+    $(`.edittxt${e}`).keydown(function(press){
+        if(press.keyCode === 13){
+            $(`.edittxt${e}`).removeClass("text");
+            $(`.edittxt${e}`).attr("contenteditable", "false");
+        }
+    });
 }
 function addTaskFunc(task){
     count+=1;
     $('.todo').append(`
-    <li data-pos="todo" class="input${count}">
-        <p class="edittxt">${task}<p>
-        <div class="options center">
-            <button><ion-icon onclick="editme(${count})" name="create"></ion-icon></button>
-            <button><ion-icon id="movedown" onclick="movedown(${count});" name="checkmark-circle-outline"></ion-icon></button>
-            <button><ion-icon id="moveup" onclick="moveup(${count});" name="remove-circle-outline"></ion-icon></button>
-            <button class="delete" onclick="deletethis(${count});"><ion-icon name="trash"></ion-icon></button>
+    <li data-pos="todo" class="margin input${count}">
+        <p contenteditable=false class="edittxt${count} animate-left">${task}<p>
+        <div class="options center animate-left">
+            <button title="Press Enter after you Edit task to save it" class="white"><ion-icon onclick="editme(${count})" name="create"></ion-icon></button>
+            <button class="movedown white" title="Move Task"><ion-icon onclick="movedown(${count});" name="checkmark-circle-outline"></ion-icon></button>
+            <button class="moveup white" title="Cancel Task"><ion-icon onclick="moveup(${count});" name="remove-circle-outline"></ion-icon></button>
+            <button class="delete white" onclick="deletethis(${count});" title="Delete Task"><ion-icon name="trash"></ion-icon></button>
         </div>
     </li>`);
 }

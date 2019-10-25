@@ -22,19 +22,23 @@ button{
 .header{
     border-radius: 5px 5px 0 0;
     margin-top: 10%;
-    width: 50%;
+    width: 51.1%;
     background-color: #607d8b;
     color:white;
 }
 .content{
     width: 50%;
     background-color: #ffc107;
+    padding: 10px;
+    border-radius: 0 0 5px 5px ;
 }
 .block{
     display:block;
 }
 .icon1{
     float:right;
+    margin-top: -35px;
+    color: white;
 }
 .none{
     display: none;
@@ -42,15 +46,14 @@ button{
 .sidebar{
     float: right;
     background-color: white;
-    height: 500px;
+    height: 70px;
+    margin-top: -40px;
+    border-radius: 3px;
 }
 .text-input{
     margin-top: 20px;
     padding:8px;border:none;border-bottom:1px solid #ccc;
 }
-/* .input{
-    margin: 5px;
-} */
 .close{
     cursor:pointer;
     float:left;
@@ -59,13 +62,26 @@ button{
     display: inline-flex;
     margin: 20px;
 }
+.text{
+    background-color: white;
+    display: flex;
+    position: relative;
+}
+.margin{
+    padding:10px;
+}
 .options{
+    float:right;
     border-radius: 3px;
-    margin-top:-25px;
-    width: 150px;
+    margin-top:-23px;
+    width: 200px;
     background-color: #607d8b;
+    position: relative;
+}
+.white{
+    color:white;
 }
 .animate-right{position:relative;animation:animateright 0.5s}
 @keyframes animateright{from{right:-50px;opacity:0} to{right:0;opacity:1}}
-.animate-left{position:relative;animation:animateleft 0.5s}
+.animate-left{position:relative;animation:animateleft 0.5s; }
 @keyframes animateleft{from{left:-50px;opacity:0} to{left:0;opacity:1}}
