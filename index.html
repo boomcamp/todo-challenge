@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="main-container container">
+      <div class="app-container ">
+        <h1>TO DO List</h1>
+        <div class="center-btn">
+          <button class="btn-todo">To Do</button>
+          <button class="btn-prog">In Progress</button>
+          <button class="btn-done">Done</button>
+        </div>
+        <div class="toadd">
+          <textarea
+            value=""
+            class="task"
+            type="text"
+            placeholder="add task here"
+          ></textarea>
+          <button class="fa fa-pencil add-btn"></button>
+        </div>
+        <div class="content-area-todo">
+          <h2>To Do</h2>
+          <hr />
+          <div class="t-cont"></div>
+        </div>
+        <div class="content-area-prog">
+          <h2>In Progress</h2>
+          <hr />
+          <div class="t-cont"></div>
+        </div>
+        <div class="content-area-done">
+          <h2>Done</h2>
+          <hr />
+          <div class="t-cont"></div>
+        </div>
+      </div>
+    </div>
+    <script src="js/app.js"></script>
+  </body>
+</html>
