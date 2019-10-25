@@ -1,0 +1,98 @@
+
+html{
+  height: 100%;
+  background-repeat: no-repeat;
+  font-family: sans-serif;
+  color: #0f222d;
+  background-size: auto;
+  background-image: url(eric.jpeg);
+  background-size: cover;
+}
+
+.main{
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+}
+h1{
+  text-align: center;
+  color: #fff;
+}
+form{
+  background-color: #fff;
+  padding: 15px;
+}
+input[type="text"]{
+  width: 310px;
+  height: 30px;
+  outline: 0;
+  border: none;
+  font-size: 1.5em;
+  background: #fff;
+  color: black;
+}
+button{
+  font-size: 1.5em;
+  color: #53BDFF;
+  background-color: #fff;
+  outline: 0;
+  border: none;
+  width: 50px;
+
+}
+.tasks{
+  background-color: #fff;
+  margin-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  opacity: 0.6;
+  text-align: center;
+
+}
+ul{
+  list-style: none;
+}
+li{
+  border-bottom: 1px solid #53BDFF;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  margin-right: 35px;
+  font-size: 1.3em;
+  color: #2f4f4f;
+}
+a{
+  float: right;
+  text-align: right;
+  color: black;
+  font-size: 1.2em;
+  cursor: pointer;
+  margin-right: 30px;
+  border:solid 2px black;
+  border-radius: 5px;
+  padding: 0px 10px;
+}
+.delete{
+  background-color: #ff6161;
+  padding: 0px 3px 0px 3px;
+  color: #fff;
+  cursor: pointer;
+}
+
+h2
+{
+  text-align: center;
+  color: black;
+}
+img
+{
+  width: 20px;
+  height: 20px;
+}
+.check
+{
+  width: 22px;
+  height: 22px;
+  padding-top: 5px;
+}
