@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css">
+    <title>To Do | Challenge</title>
+
+</head>
+<body>
+    <header>
+        <h1>To Do Tasl Lister</h1>
+    </header>
+
+    <div class="addTask">
+        
+        <div class="note">
+            <label><i class="fas fa-pencil-alt"></i></label>
+            <textarea class="text" name="" id="textArea" cols="30" rows="1" placeholder=""></textarea>
+        </div>
+
+        <div class="toppart">
+                <button class="btn-add" id="buttonAdd" >
+                    Add<i class="far fa-plus-square"></i>
+                </button>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class='todo'>
+            <h1>Todo</h1>
+            <div id="toDo">
+                
+            </div>
+        </div>
+
+        <div class='inprog'>
+            <h1>In Progress</h1>
+            <div id="inProg">
+            </div>
+        </div>
+
+        <div class='done'>
+            <h1>Done</h1>
+            <div id="doNe">
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
+    <script src="script.js"></script>
+
+     
+    
+</body>
+</html>
