@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Todo-Challenge</title>
+</head>
+<body>
+    <div class="container">
+        <section>
+        <h1><div class="new-task-container">
+                <img id="add-task" src="images/addbutton.png" alt="button">
+            </div> CLICK HERE</h1>
+        <div class="new-task-container box" id="new-task-container" >
+            <label for="new-task">Add New Task</label>
+            <input type="text" id="new-task">
+            <button id="saveTask">Add Task</button>
+            <button id="cancel">Cancel</button>
+        </div>
+        <div class="todo-list box" id="todo-list">
+            <h2>TODO TASK</h2>
+        </div><!--/todo-list-->
+        
+        <div class="progress-list box">
+            <h2>IN-PROGRESS TASK</h2>  
+            <ul id="progress-list">
+            </ul>   
+        </div>
+
+        <div class="complete-list box">
+            <h2>DONE TASK</h2>
+            <ul id="done-list">
+            </ul> 
+        </div><!--/complete-list--> 
+      </section><!--/container-->
+    </div>
+    <div class="task-footer">
+            
+    </div>  
+    <script src="js/script.js"></script>
+</body>
+</html>
