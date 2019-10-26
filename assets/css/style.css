@@ -9,7 +9,8 @@ html, body{
 
 main{
     margin: auto;
-    background: #203234;
+    /* background: #203234; */
+    background: black;
     width: 524px;
     height: auto;
     padding: 15px 6px;
@@ -17,26 +18,65 @@ main{
 
 .header-h1{
     display: flex;
-    color: #ce9f46;
+    /* color: #ce9f46; */
+    color: white;
     font-size: 1.5rem;
     justify-content: flex-start;
-    margin: 0 20px 0;
-    padding: 10px; 
+    margin: 0;
+    padding: 10px 10px 10px 0; 
+}
+
+.header-h1 > span{
+    color: black;
+    border: 1px orange solid;
+    background:orange;
+    border-radius: 6px;
+    margin-left: 5px;
+    width: 50px;
+    text-align: center;
 }
 
 .list{
     margin-top: 20px;
     border: 1px solid white;
-    border-radius: 24px;
+    border-radius: 8px;
     background: #fff;
-    height: 87%;
+    height: 82vh;
+}
+
+.adding-task{
+    height: 74vh; 
 }
 
 .task-statuses{
     display: flex;
     border-bottom: 1px solid;
-    /* height: 33.33%; */
-    height: 225px;
+    height: 33.33%;
+    /* height: 225px; */
+    flex-direction: column;
+}
+
+.task-statuses > table{
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+    margin-bottom: 5px;
+}
+
+.task-statuses td, th{
+    border: none;
+    text-align: center;    
+}
+
+.task{
+    width: 75%;
+    text-align: left !important;
+    word-break: break-all;
+    padding-left: 13px !important;
+}
+
+.edit-task, .back-task, .move-task, .remove-task{
+    width: 6.2%;
 }
 
 .nbb{
@@ -47,38 +87,58 @@ main{
     display: flex;
     text-align: center;
     color: #37474F;
-    margin: 10px 0 0 20px;
+    margin: 10px 0 0 10px;
     padding-top: 0;
     font-size: 1.2rem;
 }
 
 .btn-add-task{
     margin-top: 10px;
-    background: #ce9f46;
+    /* background: #ce9f46; */
+    background: orange;
     height: 45px;
     width: 100%;
-    border: 1px solid #ce9f46;
-    border-radius: 12px;
+    border: 1px solid orange;
+    border-radius: 8px;
     font-size: 1.1rem;
     font-weight: 900;
 }
+
 
 .task-popup{
     margin-top: 10px;
     display:flex;
     border: 1px solid white;
-    height: 120px;
+    height: 60px;
     width: 100%;
-    border-radius: 24px;
+    border-radius: 8px;
     background: #fff;
+    flex-direction: column;
 }
 
 .task-popup > textarea{
-    margin: auto;
+    align-self: flex-start;
+    outline: none;
+    margin: 2px auto 0;
     border-radius: 4px;
     box-sizing: border-box;
-    height: 100%;
-    width: 95%;
+    height: 80%;
+    width: 85%;
     resize: none;
     border: none;
+}
+
+.input-count{
+    align-self: center;
+    font-size: 13px;
+    font-weight: 600;
+    color: #37474F;
+}
+
+.danger{
+    color: red; 
+}
+
+.fa-list{
+    margin: 5px 5px 0 0; 
 }

@@ -1,40 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>To Do List beta v2</title>
-</head>
-<body>
-    <main>
-        <header>
-            <h1 class="header-h1">To Do List</h1>
-        </header>
-        <div class="list">
-            <div class="task-statuses">
-                <h1 class="task-status">Todo</h1>
-                <ul class="task"></ul>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+        <title>To Do List beta v2</title>
+    </head>
+    <body>
+        <main>
+            <header>
+                <h1 class="header-h1"><i class="fa fa-list"></i> To do<span> list</span></h1>
+            </header>
+            <div class="list">
+                <div class="task-statuses">
+                    <h1 class="task-status">Todo</h1>
+                    <table class="table-task" id="todo">
+                        <!-- To do Rows Here-->
+                    </table>
+                </div>
+                <div class="task-statuses">
+                    <h1 class="task-status">In Progress</h1>
+                    <table class="table-task" id="inProgress">
+                        <!-- In Progress Rows Here-->
+                    </table>               
+                </div>
+                <div class="task-statuses nbb">
+                    <h1 class="task-status">Done</h1>
+                    <table class="table-task" id="done">
+                        <!-- Done Rows Here-->
+                    </table>
+                </div>
             </div>
-            <div class="task-statuses">
-                <h1 class="task-status">In Progress</h1>
-                <ul class="task"></ul>
+            <div class="task-popup">
+                <textarea class="task-area" id="composeTask" maxlength="150" placeholder="Click Save Task to add"></textarea>
+                <span class="input-count" >150</span>
             </div>
-            <div class="task-statuses nbb">
-                <h1 class="task-status">Done</h1>
-                <ul class="task"></ul>
+            <div class="add-task">
+                <button class="btn-add-task">+ Add Task</button>
             </div>
-        </div>
-        <div class="task-popup">
-            <textarea class="task-area" id="composeTask" maxlength="150"></textarea>
-        </div>
-        <div class="add-task">
-            <button class="btn-add-task">+ Add Task</button>
-        </div>
-    </main>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="./assets/js/script.js"></script>
-</body>
+        </main>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="./assets/js/script.js"></script>
+    </body>
 </html>
