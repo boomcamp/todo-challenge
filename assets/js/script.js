@@ -134,7 +134,7 @@ $(document).ready(function(){
             <td class="move-task" "><i class="fa fa-check-circle" title="Done"></i></td>
             <td class="edit-task"><i class="fa fa-pencil" title="Edit"></i></td>
         </tr>`;
-        $('#done').append(newInProgRow);
+        $('#inProgress').append(newInProgRow);
         $(this).parent().parent().remove();
     });
     //edit
@@ -145,7 +145,6 @@ $(document).ready(function(){
         let thisTaskID = $(this).parent().attr("id");
         tasks[thisTaskID].task = $('.task').text();
         $(this).removeAttr('contenteditable');
-        
     });
     //remove
     $('#todo, #done').on('click', '.fa-trash',function(){
