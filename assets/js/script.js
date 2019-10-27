@@ -143,8 +143,8 @@ $(document).ready(function(){
     })
     .on('focusout', '.task', function(){
         let thisTaskID = $(this).parent().attr("id");
-        tasks[thisTaskID].task = $('.task').text();
-        $(this).removeAttr('contenteditable');
+        tasks[thisTaskID].task = $(this).text();
+        $(this).removeAttr('contenteditable');   
     });
     //remove
     $('#todo, #done').on('click', '.fa-trash',function(){
