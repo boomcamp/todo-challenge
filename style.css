@@ -1,0 +1,132 @@
+*{
+    font-family: 'Quicksand', sans-serif;
+}
+body{
+    background-color: gray;
+}
+.wrapper{
+    display: flex;
+    height: 80vh;
+    width: 65%;
+    margin-left: 20%;
+    background-color:#EAEDED;
+    border-radius: 20px;
+    position: absolute;
+    overflow: scroll;
+}
+.left-container{
+    display: flex;
+    position: absolute;
+    height: 100vh;
+    width: 25%;
+    background-color:#F5F5F5;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;    
+}
+.content{
+    flex-direction: column;
+}
+.content i{
+    margin: 20px;
+    color:gray;
+}
+.header{
+    position: absolute;
+    display: flex;
+   justify-content: space-between;
+    width: 70%;
+    height: 15%;
+    margin-left: 350px;
+    color:gray;
+    border-bottom: 1px solid gray;
+}
+.header i{
+  margin-right: 20px;
+  margin-top: 22px;
+ 
+}
+.main-content{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width:70%;
+    height: 70%;
+    border-radius: 20px;
+    margin: 350px;
+    margin-top: 160px;
+    color:gray;
+    /* border: 1px solid gray; */
+}
+
+li{
+    width: 100%;
+    height: 10%;
+}
+.form{
+    width: 80%;
+    height: 10%;
+    margin-top: 10%;
+    margin-left: 30%;
+    display: flex;
+    z-index: 1;
+    justify-content:space-between;
+    align-content: flex-end;
+}
+.textinput{
+    box-sizing: border-box;
+    width: 70%;
+    height: 34px;
+    padding: 8px 32px 8px 8px;
+    border: 1px solid #EAEDED;
+    border-radius: 8px;
+    resize: none;
+    outline: none;
+}
+.updateinput{
+    box-sizing: border-box;
+    width: 70%;
+    height: 34px;
+    padding: 8px 32px 8px 8px;
+    border: 1px solid #EAEDED;
+    border-radius: 8px;
+    resize: none;
+    outline: none;
+}
+#add-todo{
+    height: 70%;
+    width:10%;
+    
+}
+button{
+    border-radius: 7px;
+    height: 30px;
+    background-color:gray;
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#add{
+    margin: 0 12px 0 18px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+.newlist button{
+    float: right;   
+    margin-left: 20px;
+    cursor: pointer;
+}
+.newlist{
+    width: 100px;
+    padding: 20px;
+}
+.adding{
+    height: 30px;
+    width: 30px;
+}
