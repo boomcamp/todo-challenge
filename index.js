@@ -29,7 +29,7 @@ function addTask() {
 
    allTasks.insertAdjacentHTML(
       "afterend",
-      `<div class="tasks-added" id="added-Task"> <label class="container"><p>${form}</p><div class=icons><i class="fas fa-spinner" onclick="moveFunc(this)"></i><i class="fas fa-edit" id="pad" onclick="editFunc(this)"></i><i class="far fa-trash-alt" id="pad" onclick="myFunc(this)"></i></div></label></div>`
+      `<div class="tasks-added" id="added-Task"> <label class="container"><p contentEditable="true">${form}</p><div class=icons><i class="fas fa-spinner" onclick="moveFunc(this)"></i><i class="far fa-trash-alt" id="pad" onclick="myFunc(this)"></i></div></label></div>`
    );
    document.querySelector(".i-form").value = "";
 }
@@ -64,7 +64,7 @@ function moveFunc(move) {
 
    inProgress.insertAdjacentHTML(
       "afterend",
-      `<div class="tasks-added"><label class="container"><p>${mv}</p><div class="icons"><i class="far fa-check-circle" onclick="doneFunc(this)"></i> <i class="far fa-list-alt" id="pad" onclick="inProgToDo(this)"></i><i class="fas fa-edit" id="pad"></i> <i class="far fa-trash-alt" id="pad" onclick="rmInProgress(this)"></i></div> </label></div>`
+      `<div class="tasks-added"><label class="container"><p contentEditable="true">${mv}</p><div class="icons"><i class="far fa-check-circle" onclick="doneFunc(this)"></i> <i class="far fa-list-alt" id="pad" onclick="inProgToDo(this)"></i><i class="far fa-trash-alt" id="pad" onclick="rmInProgress(this)"></i></div> </label></div>`
    );
 
    rmProgress.remove();
@@ -88,7 +88,7 @@ function doneFunc(done) {
 
    dTask.insertAdjacentHTML(
       "afterend",
-      `<label class="container"><strike><p>${doneTask}</p></strike> <div class="icons"><i class="far fa-list-alt" onclick="backToDo(this)"></i> <i class="fas fa-spinner" id="pad" onclick="backInProgress(this)"></i><i class="fas fa-edit" id="pad"></i><i class="far fa-trash-alt" id="pad" onclick="removeDoneTask(this)"></i></div> </label>`
+      `<label class="container"><strike><p contentEditable="true">${doneTask}</p></strike> <div class="icons"><i class="far fa-list-alt" onclick="backToDo(this)"></i> <i class="fas fa-spinner" id="pad" onclick="backInProgress(this)"></i><i class="far fa-trash-alt" id="pad" onclick="removeDoneTask(this)"></i></div> </label>`
    );
 
    finished.remove();
@@ -112,7 +112,7 @@ function backToDo(back) {
 
    backTD.insertAdjacentHTML(
       "afterend",
-      `<div class="tasks-added" id="added-Task"> <label class="container"><p>${backTodo}</p><div class=icons><i class="fas fa-spinner" onclick="moveFunc(this)"></i><i class="fas fa-edit" id="pad"></i><i class="far fa-trash-alt" id="pad" onclick="myFunc(this)"></i></div></label></div>`
+      `<div class="tasks-added" id="added-Task"> <label class="container"><p contentEditable="true">${backTodo}</p><div class=icons><i class="fas fa-spinner" onclick="moveFunc(this)"></i></i><i class="far fa-trash-alt" id="pad" onclick="myFunc(this)"></i></div></label></div>`
    );
 
    Back.remove();
@@ -127,7 +127,7 @@ function backInProgress(backProg) {
 
    backIP.insertAdjacentHTML(
       "afterend",
-      `<div class="tasks-added"> <label class="container"><p>${backProgress}</p><div class="icons"><i class="far fa-check-circle" onclick="doneFunc(this)"></i><i class="far fa-list-alt" id="pad" onclick="backToDo(this)"></i><i class="fas fa-edit" id="pad"></i><i class="far fa-trash-alt" id="pad" onclick="rmInProgress(this)"></i></div> </label></div>`
+      `<div class="tasks-added"> <label class="container"><p contentEditable="true">${backProgress}</p><div class="icons"><i class="far fa-check-circle" onclick="doneFunc(this)"></i><i class="far fa-list-alt" id="pad" onclick="backToDo(this)"></i><i class="far fa-trash-alt" id="pad" onclick="rmInProgress(this)"></i></div> </label></div>`
    );
 
    BackInProg.remove();
@@ -142,7 +142,7 @@ function inProgToDo(backtoTODO) {
 
    backToDoProg.insertAdjacentHTML(
       "afterend",
-      `<div class="tasks-added" id="added-Task"> <label class="container"><p>${progToToDo}</p><div class=icons><i class="fas fa-spinner" onclick="moveFunc(this)"></i><i class="fas fa-edit" id="pad"></i><i class="far fa-trash-alt" id="pad" onclick="myFunc(this)"></i></div></label></div>`
+      `<div class="tasks-added" id="added-Task"> <label class="container"><p contentEditable="true">${progToToDo}</p><div class=icons><i class="fas fa-spinner" onclick="moveFunc(this)"></i><i class="far fa-trash-alt" id="pad" onclick="myFunc(this)"></i></div></label></div>`
    );
 
    progressToTodo.remove();
