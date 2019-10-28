@@ -1,9 +1,7 @@
 $(document).ready(function(){  
     $('.toppart').hide();
     $('label').css('top', '-10px');
-    
- 
-  
+   
    function deleteTodo(){
     $('#delete').on('click', function(){
         $(this).parent().parent().remove();
@@ -18,10 +16,7 @@ $(document).ready(function(){
         $(this).removeClass('text');
         $('.note').css('width', '80%');
         $('.toppart').show();
-
-        
-        
-    });
+	});
 
     $('#textArea').on('blur', function(){
         if(this.value  == ''){
@@ -32,116 +27,87 @@ $(document).ready(function(){
         $(this).addClass('text');
         $('.note').css('width', '');
         $('#buttodAdd').prop('disabled', true);
-      
-        }
+		}
     });
 
+	$(".btn-add").on("click", function() {
+		var task = $("#textArea").val();
+		  var addTask = `
+		  <div class="task">
+			<p class="dtask">${task} </p>
+			<div class="ikon">
+				<i id="down" class="fa fa-arrow-down"></i>
+				<i id="up" class="fa fa-arrow-up"></i>
+				<i id="edit" class="fa fa-pencil-alt"></i>
+				<i id="delete" class="fa fa-trash"></i>
+			</div>
+		   
+		  </div>
+		  `;
 
+		$('#toDo').prepend(addTask);
+		$('.toppart').hide();
+		$('label').css('top', '-10px');
+		$('label').css('font-size', '16px');
+		$('#textArea').removeClass('text2', 1000);
+		$('#textArea').addClass('text', 1000);
+		$('.note').css('width', '');
+		$('#textArea').val('');
+	});
+	
+	//from toDO move down to inProg	
+	$('#toDo').on('click', '#down', function(){
+		$('#inProg').prepend($(this).parent().parent());
+			
+	});
+	
+	
+	//from inProg move down to DoNe
+	$('#inProg').on('click', '#down', function(){
+		$('#doNe').prepend($(this).parent().parent());
+		
+	});
+	
+	//from inProg move up to toDo
+	$('#inProg').on('click', '#up', function(){
+		$('#toDo').append($(this).parent().parent());
+	
+	});
+	
+	//from inProg move up to toDo
+	$('#doNe').on('click', '#up', function(){
+		$('#inProg').append($(this).parent().parent());
+	});
+	
+	//edit button
+	$('.box').on('click', '#edit', function(){
+		$(this).parent().prev().attr('contenteditable', 'true');
+		$(this).parent().prev().css('color', 'lightgreen');
+		$(this).parent().prev().css('outline', 'lightgreen');
+		$(this).css('color', 'lightgreen');
+		$(this).parent().prev().focus();
+	});
+	
+	$('.box').on('focusout', '.dtask', function(){
+		$(this).css('color', 'green');
+		$(this).removeAttr('contenteditable');
+		$(this).next().children().css('color', 'green');
+		
+	});
+	
+	
+	//delete button
+	$('.box').on('click', '#delete', function(){
+		$(this).parent().parent().remove();
+		
+	});
+	
+	
+	
+	
+	
+	
+	
+    
+  });
 
-
-    let counter = 0;
-     
-
-    $('#buttonAdd').on ('click', function(){
-
-        $('.toppart').hide();
-        $('label').css('top', '-10px');
-        $('label').css('font-size', '16px');
-        $('#textArea').removeClass('text2');
-        $('#textArea').addClass('text');
-        $('.note').css('width', '');
-
-        var task = $('#textArea').val()
-        ++counter;
-
-        $('#toDo').prepend(`
-        <div class='task' id='${counter}'>
-        <p>${task}</p>
-         <div class="ikon">
-            <i id="moveToProg" class="fa fa-arrow-down"></i>
-            <i id="edit" class="fa fa-pencil-alt"></i>
-            <i id="delete" class="fa fa-trash"></i>
-         </div>
-        </div>
-        `);
-
-        $('#edit').on('click', function(){
-            $('#textArea').val(task);    
-            $('#textArea').addClass('text2');
-            $('#textArea').removeClass('text');
-            $('.note').css('width', '80%');
-            $('.toppart').show();
-            $('label').html('<i id="edit" class="fa fa-pencil-alt"></i>');
-            $('#buttonAdd').html('Save<i id="edit" class="fa fa-pencil-alt">');
-            $(this).parent().parent().remove();
-        });
-
-        //after edit, return to add
-        $('#buttonAdd').on('click', function(){
-            $(this).html('Add<i class="far fa-plus-square"></i>');
-        });
-
-
-        $('#textArea').val('');
-
-        //todo delete button
-        deleteTodo()
-
-        // todo down button
-        $('#moveToProg').on('click', function(){
-            $('#inProg').prepend(`
-            <div class='task' id='${counter}'>
-            <p>${task}</p>
-                <div class="ikon">
-                    <i id="moveToDone" class="fa fa-arrow-down"></i>
-                    <i id="moveToDo" class="fa fa-arrow-up"></i>
-                    <i id="edit" class="fa fa-pencil-alt"></i>
-                    <i id="delete2" class="fa fa-trash"></i>
-                </div>
-            </div>
-            `);
-            $(this).parent().parent().remove();
-            // prog move up button
-            $('#moveToDo').on('click', function(){
-                $('#toDo').prepend(`
-                <div class='task' id='${counter}'>
-                <p>${task}</p>
-                    <div class="ikon">
-                        <i id="moveToProg" class="fa fa-arrow-down"></i>
-                        <i id="edit" class="fa fa-pencil-alt"></i>
-                        <i id="delete2" class="fa fa-trash"></i>
-                    </div>
-                </div>
-                `);
-                $(this).parent().parent().remove();
-                // try lang 
-                // dapat idelete
-
-            });
-            // prog move delete button
-            $('#delete2').on('click', function(){
-                $(this).parent().parent().remove();
-            });
-            // prog move down button
-            $('#moveToDone').on('click', function(){
-                $(this).parent().parent().remove();
-                $('#doNe').prepend(`
-                <div class='task' id='${counter}'>
-                <p>${task}</p>
-                    <div class="ikon">
-                        <i id="moveToDone" class="fa fa-arrow-up"></i>
-                        <i id="edit" class="fa fa-pencil-alt"></i>
-                        <i id="delete3" class="fa fa-trash"></i>
-                    </div>
-                </div>
-                `);
-                // done delete button
-                $('#delete3').on('click', function(){
-                    $(this).parent().parent().remove();
-                });
-            });
-
-            
-        });
-    });
-});
