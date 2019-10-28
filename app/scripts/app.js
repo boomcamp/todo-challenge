@@ -49,11 +49,10 @@ $("#add").click(function(){
   //edit 
   $(document).on('click','.edit',function(e) {
     let id = $(this).attr('id');
-    console.log(id)
     $('#updateinput').val(mylist[id]["task"])
-    $('#update').val(id)
-    $('#'+id).remove()
-    $(".containerupdate").fadeIn();
+  $('#update').val(id)
+  $('#'+id).remove()
+  $(".containerupdate").fadeIn();
     
   
 })
@@ -82,7 +81,6 @@ $("#add").click(function(){
   }
 
   function add_nl(task){
-
     var nlItem = 
     '<li id='+task["id"]+' class="list"> '+
     '<span class="text2" class="list-grouped" id='+task["id"]+'>'+task["task"]+'</span>'+
@@ -90,24 +88,22 @@ $("#add").click(function(){
     '<div class="wiws"><i id='+task["id"]+' class="fa fa-trash red tododel"  style="font-size:20px"></i>' +
     '<i id='+task["id"]+' class="fa fa-angle-double-right progressmove"   style="font-size:20px"></div>'+
     '</i></li></li>';
-    $('#todocontent').prepend(nlItem);
+  $('#todocontent').prepend(nlItem);
   
   }
   function add_cl(task){
-
-    let clItem ='<li id="'+task["id"]+'" class="list"> <span id="'+task["id"]+'"class="fa fa-angle-double-left back" align="right"  style="font-size:20px"></span><span class="text" id="'+task["id"]+'" class="list-grouped">'+task["task"]+'</span>'
-	+'<span id="'+task["id"]+'"class="fa fa-angle-double-right todomove"   style="font-size:20px"></span></div>'
-  +' <i class="fa fa-pencil-square-o edit" id='+task["id"]+' aria-hidden="true"></i>'
-  +'</li>';
-    $('#cl').append(clItem);
+      let clItem ='<li id="'+task["id"]+'" class="list"> <span id="'+task["id"]+'"class="fa fa-angle-double-left back" align="right"  style="font-size:20px"></span><span class="text" id="'+task["id"]+'" class="list-grouped">'+task["task"]+'</span>'
+	    +'<span id="'+task["id"]+'"class="fa fa-angle-double-right todomove"   style="font-size:20px"></span></div>'
+      +' <i class="fa fa-pencil-square-o edit" id='+task["id"]+' aria-hidden="true"></i>'
+      +'</li>';
+  $('#cl').append(clItem);
   }
   function add_al(task){
-
-    let alItem = '<li id="'+task["id"]+'" class="list"> <span id="'+task["id"]+'"class="fa fa-angle-double-left progressmove" align="right"  style="font-size:20px"></span><span class="text" id="'+task["id"]+'" class="list-grouped">'+task["task"]+'</span>'
-  +'<span id='+task["id"]+' class="fa fa-trash red tododel"  style="font-size:20px"></span>'
-  +' <i class="fa fa-pencil-square-o edit" id='+task["id"]+' aria-hidden="true"></i>'+
-  '</li>';
-    $('#al').append(alItem);
+      let alItem = '<li id="'+task["id"]+'" class="list"> <span id="'+task["id"]+'"class="fa fa-angle-double-left progressmove" align="right"  style="font-size:20px"></span><span class="text" id="'+task["id"]+'" class="list-grouped">'+task["task"]+'</span>'
+      +'<span id='+task["id"]+' class="fa fa-trash red tododel"  style="font-size:20px"></span>'
+      +' <i class="fa fa-pencil-square-o edit" id='+task["id"]+' aria-hidden="true"></i>'+
+      '</li>';
+  $('#al').append(alItem);
   }
   
 
@@ -136,94 +132,31 @@ $("#add").click(function(){
     let id = $(this).attr('id');
     mylist[id]["type"] = "cl"
     let todoItem ='<li id="'+id+'" class="list"> <span id="'+id+'"class="fa fa-angle-double-left back" align="right"  style="font-size:20px"></span><span class="text" id="'+id+'" class="list-grouped">'+mylist[id]["task"]+'</span>'
-	+'<span id="'+id+'"class="fa fa-angle-double-right todomove"   style="font-size:20px"></span></div>'
-  +' <i class="fa fa-pencil-square-o edit" id='+id+' aria-hidden="true"></i>'
-  +'</li>';
+	  +'<span id="'+id+'"class="fa fa-angle-double-right todomove"   style="font-size:20px"></span></div>'
+    +' <i class="fa fa-pencil-square-o edit" id='+id+' aria-hidden="true"></i>'
+    +'</li>';
   $('#'+id).remove();
   $('#cl').append(todoItem);
 
 });
 
 $(document).on('click','.todomove',function(e) {
-  let id = $(this).attr('id');
-  mylist[id]["type"] = "al"
-  let doneItem = '<li id="'+id+'" class="list"> <span id="'+id+'"class="fa fa-angle-double-left progressmove" align="right"  style="font-size:20px"></span><span class="text" id="'+id+'" class="list-grouped">'+mylist[id]["task"]+'</span>'
-  +'<span id='+id+' class="fa fa-trash red tododel"  style="font-size:20px"></span>'
-  +' <i class="fa fa-pencil-square-o edit" id='+id+' aria-hidden="true"></i>'+
-  '</li>';
+    let id = $(this).attr('id');
+    mylist[id]["type"] = "al"
+    let doneItem = '<li id="'+id+'" class="list"> <span id="'+id+'"class="fa fa-angle-double-left progressmove" align="right"  style="font-size:20px"></span><span class="text" id="'+id+'" class="list-grouped">'+mylist[id]["task"]+'</span>'
+    +'<span id='+id+' class="fa fa-trash red tododel"  style="font-size:20px"></span>'
+    +' <i class="fa fa-pencil-square-o edit" id='+id+' aria-hidden="true"></i>'+
+    '</li>';
   $('#'+id).remove();
   $('#al').append(doneItem);
 });
 
-$(document).on('click','.tododel',function(e) {
-  let id = $(this).attr('id');
-  console.log(id)
-$('#'+id).remove();
+  $(document).on('click','.tododel',function(e) {
+    let id = $(this).attr('id');
+    console.log(id)
+  $('#'+id).remove();
 });
 
 
-// var btn = document.querySelector('.edit-btn')
-// var save = document.querySelector('.save-btn')
-// var text = document.querySelector('.text2')
 
-// save.style.display = 'none'
-
-// btn.addEventListener('click',  function() {
-// text.setAttribute('contenteditable', 'true')
-//     save.style.display = ''
-// })
-
-// // var save = document.querySelector('.save-btn')
-// // save.addEventListener('click', function(){
-// //   text.setAttribute('contenteditable', 'false')
-// //   save.style.display = 'none'
-// })
-
-
-//   const save = document.getElementById('save')
-//   save.addEventListener('click', function(event) {
-//   event.preventDefault();
-//   const task = document.getElementById('newinput').value.trim();
-//   addTask(task);
-
-     
-//  if(task === ""){
-//    alert("pota ka mag input ka")
-// }else{
-//   // // const con = document.querySelector('.container1')
-//   // con.style.display=rgb(0, 0, 0)"none"
-// }
-  
- 
-  
-//   });
-  
-  // document.getElementById('nl').addEventListener('click', function(event){
-  //   if(event.target.matches('a.list-group-item')){
-  //     event.target.id ='inProgress';
-  //     document.getElementById('cl').append(event.target);
-  //   }
-  // });
-
-
-  // document
-  // .getElementById('cl')
-  // .addEventListener('click', function(event){
-  //   if(event.target.matches('a.list-group-item')){
-  //     event.target.id = 'archived';
-  //     document.getElementById('al').append(event.target);
-  //   }
-  // });
-
-  
-  //   const cl = document.getElementById('al')
-  //   cl.addEventListener('click', function(event){
-  //   if(event.target.matches('a.list-group-item')){
-  //     const itemText = event.target.innerText
-  //     mylist.splice(mylist.findIndex(function(item){return item.task === itemText}, 1))
-  //     event.target.remove();  
-  //   }
-
-  // });
- 
-  });
+});
