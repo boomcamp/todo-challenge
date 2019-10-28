@@ -72,6 +72,7 @@ document.getElementById("todo").addEventListener("click", function(event) {
 function edit(e) {
 	document.getElementById("edittext").style.display = "inline-block";
 	document.getElementById("edittext").value = e.parentElement.querySelector("td").innerText;
+	e.style.display = "none";
 	document.getElementById("edittext").focus();
 	var btnId = e.parentElement.querySelector("td").getAttribute("id");
 	var clickMeButton = document.createElement("button");
@@ -87,6 +88,7 @@ function edit(e) {
 
 		document.getElementById("cref").remove();
 		document.getElementById("edittext").style.display = "none";
+		e.style.display = "block";
 	});
 	//console.log(e.parentElement.querySelector("td").innerText);
 	//console.log((document.getElementById("edittext").value = e.parentElement.querySelector("td").innerText));
