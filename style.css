@@ -145,12 +145,12 @@ background: linear-gradient(90deg, rgba(167,167,231,1) 26%, rgba(5,1,68,1) 50%, 
 }
 
 .btn-trash{
-  background-color: #cc4c57; /* Blue background */
-  border: none; /* Remove borders */
-  color: white; /* White text */
-  padding: 12px 16px; /* Some padding */
-  font-size: 16px; /* Set a font size */
-  cursor: pointer; /* Mouse pointer on hover */
+  background-color: #cc4c57; 
+  border: none; 
+  color: white; 
+  padding: 12px 16px; 
+  font-size: 16px; 
+  cursor: pointer; 
   
 }
 .btn-trash:hover{
@@ -158,12 +158,12 @@ background: linear-gradient(90deg, rgba(167,167,231,1) 26%, rgba(5,1,68,1) 50%, 
 }
 
 .btn-check{
-  background-color: #418950; /* Blue background */
-  border: none; /* Remove borders */
-  color: white; /* White text */
-  padding: 12px 16px; /* Some padding */
-  font-size: 16px; /* Set a font size */
-  cursor: pointer; /* Mouse pointer on hover */
+  background-color: #418950; 
+  border: none; 
+  color: white; 
+  padding: 12px 16px; 
+  font-size: 16px; 
+  cursor: pointer; 
   
 }
 .btn-check:hover{
@@ -171,12 +171,12 @@ background: linear-gradient(90deg, rgba(167,167,231,1) 26%, rgba(5,1,68,1) 50%, 
 }
 
 .btn-undo{
-  background-color: #585be2; /* Blue background */
-  border: none; /* Remove borders */
-  color: white; /* White text */
-  padding: 12px 16px; /* Some padding */
-  font-size: 16px; /* Set a font size */
-  cursor: pointer; /* Mouse pointer on hover */
+  background-color: #585be2; 
+  border: none; 
+  color: white; 
+  padding: 12px 16px; 
+  font-size: 16px; 
+  cursor: pointer;
   
 }
 .btn-undo:hover{

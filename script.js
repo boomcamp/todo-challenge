@@ -80,6 +80,11 @@ $(document).ready(function() {
     $(this).parent().parent().remove();
     
   });
+
+  //EDITABLE
+  $(".box").on("click", "p", function(){
+    $(this).parent().attr('contenteditable','true');
+  });
   
 
 
