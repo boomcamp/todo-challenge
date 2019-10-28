@@ -93,7 +93,7 @@ body {
 #newtask {
     width: 100%;
     height: 50%;
-    
+    padding: 10px;
 }
 
 /* .foot {
@@ -141,6 +141,7 @@ body {
       height: 80%;
       resize: none;
       overflow: scroll;
+      padding: 10px;
   }
 
 .add-btn {

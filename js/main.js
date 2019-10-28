@@ -18,6 +18,14 @@ window.onclick = function(event) {
 }
 
 $(document).ready(function() {
+  $('#txtarea').on("input", function() {
+    if ($(this).val().length > 0) {
+      $(".add-btn").attr("disabled", false);
+    } else {
+      $(".add-btn").attr("disabled", true);
+    }
+  })
+
   //adding task
   $('.add-btn').click(function(){
     var newTask = $('#txtarea').val();
