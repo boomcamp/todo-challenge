@@ -1,59 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>TODO Challenge</title>
-    <link rel="stylesheet" href="css/index.css">
-</head>
-<body class="width">
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+  <body class="width">
     <header>
-        <div class="nav flex">
-            <div class="links flex content-justify-center items-align-center">
-                <a href="#" class="btn" id="btn">ADD TASK</a>
-            </div>
+      <div class="nav flex">
+        <div class="links flex content-justify-center items-align-center">
+          <a href="#" class="btn" id="btn">ADD TASK</a>
         </div>
+      </div>
     </header>
     <!-- modal -->
     <div id="modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-              <p>Add Task</p>
-              <textarea name="txtarea" id="txtarea" cols="30" rows="10" maxlength="200" minlength="2" placeholder="Add New Task Here"></textarea>
-              <button type="submit" class="add-btn" disabled>OK</button>
-        </div>
-          
-          </div>
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Add Task</p>
+        <textarea
+          name="txtarea"
+          id="txtarea"
+          cols="30"
+          rows="10"
+          maxlength="200"
+          minlength="2"
+          placeholder="Add New Task Here"
+        ></textarea>
+        <button type="submit" class="add-btn" disabled>OK</button>
+      </div>
+    </div>
     <main>
-        <div class="main">
-            <div class="todo flex content-justify-center content-align-center">
-                    <div class="flex flex-1 content-justify-center flex-column items-align-center">
-                        <p>TO DO</p>
-                        <div class="task flex flex-column">
-                            <div class="added-task">
-                                
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress flex flex-1 content-justify-center flex-column items-align-center">
-                        <p>IN PROGRESS</p>
-                        <div class="task flex content-justify-center flex-column items-align-center">
-                            <div class="in-progress">
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="done flex flex-1 content-justify-center flex-column items-align-center">
-                        <p>DONE</p>
-                        <div class="task flex content-justify-center flex-column items-align-center">
-                            <div class="done-task">
-                                
-                            </div>
-                        </div>
-                    </div>
+      <div class="main">
+        <div class="todo flex content-justify-center content-align-center">
+          <div
+            class="flex flex-1 content-justify-center flex-column items-align-center"
+          >
+            <p>TO DO</p>
+            <div class="task flex flex-column">
+              <div class="added-task"></div>
             </div>
+          </div>
+          <div
+            class="progress flex flex-1 content-justify-center flex-column items-align-center"
+          >
+            <p>IN PROGRESS</p>
+            <div class="task flex flex-column">
+              <div class="in-progress"></div>
+            </div>
+          </div>
+          <div
+            class="done flex flex-1 content-justify-center flex-column items-align-center"
+          >
+            <p>DONE</p>
+            <div class="task flex flex-column">
+              <div class="done-task"></div>
+            </div>
+          </div>
         </div>
+      </div>
     </main>
     <!-- <footer>
         <div class="foot">
@@ -62,5 +69,5 @@
     </footer> -->
     <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>
