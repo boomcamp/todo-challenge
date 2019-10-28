@@ -67,6 +67,13 @@ $(document).ready(function() {
         .parent()
         .remove();
 
+      //delete
+      $("#done").on("click", "#deletebtn", function() {
+        $(this)
+          .parent()
+          .remove();
+      });
+
       //done task
       $("#done").on("click", "#nextbtn", function() {
         progval = $(this)
