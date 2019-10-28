@@ -9,7 +9,7 @@ body{
   background-size:cover; 
   padding: 10px ;
   background-color: rgb(221, 221, 238);
-  height: auto;
+  height: 70vh;
   max-width: 100%;
   border: 10px thin black;
   margin-top: 100px;
@@ -148,4 +148,27 @@ textarea{
  width: 8%;
  cursor: pointer;
 }
+/*ulscroll*/
 
+/*ul {
+  list-style: none;
+  height: 365px;
+  overflow-x: hidden;
+  overflow:y;
+
+}*/
+table{
+  padding-left: 20%
+}
+   .new{
+    display: inline-flex;
+  }
+.next{
+  width: 15%;
+}
+.remove{
+  width: 15%;
+}
+.back{
+  width: 15%;
+}

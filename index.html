@@ -7,55 +7,46 @@
   <title>TO-DO-LIST</title>
   <link rel="stylesheet" href="style.css">
   <script src="app.js"></script>
+  <script src="newapp.js"></script>
 </head>
 <body>
   
    <div class="main">
-     <div class="head">
+     <div class="head"> 
        <img src="img/icons8-todo-list-100 (1).png" height="60vh">
-        <span class="h1head">TODO LIST</span>
+        <span class="h1head">TO DO LIST</span>
         <span class="add" id="trigger"><img src="img/add.png" height="50vh"></span>
       </div>
       <hr>
       <div class="container">
-        <div class="firstContainer">
-          <div class="top">
-            <h1 class="list">Todo</h1>
-          </div>
-          <h2>mag udo</h2>
-        </div>
-        <div class="secondContainer">
+          <div class="firstContainer">
             <div class="top">
-              <h1 class="list">In Progress</h1>
+              <h1 class="list">To do</h1>
             </div>
-            <h2 style="color:black">mag hugas</h2>
-        </div>
-
-        <div class="thirdContainer">
-            <div class="top">
-              <h1 class="list">Done</h1>
-            </div>
-            <h2>mag turog</h2>
+            <table id="newList"></table>
           </div>
+          <div class="secondContainer">
+              <div class="top">
+                <h1 class="list">In Progress</h1>
+              </div>
+              <table id="prgList"></table>
+            </div>
+          <div class="thirdContainer">
+              <div class="top">
+                <h1 class="list">Done</h1>
+              </div>
+              <table id="doneList"></table>
+            </div>
       </div>
       <hr>
 </div>
-
-  </div>
-  <div class="modal">
-      
+  <div class="modal">  
       <div class="modal-content">
-          
+  
           <span class="close-button">×</span>
-          <textarea
-            placeholder="What to do?"
-            name="todo"
-            class="text"
-            id="composeInput"
-            maxlength="100"
-          ></textarea>
+          <textarea placeholder="What to do?" name="todo" class="text" id="composeInput" maxlength="100"></textarea>
            
-          <span class="addButton"><img src="img/add1.png" height="30vh"></span>
+          <span id="addBtn"><img src="img/add1.png" height="30vh"></span>
   </div>
 <script src="app.js"></script>
 </body>

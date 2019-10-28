@@ -1,5 +1,6 @@
+
 var modal = document.querySelector(".modal");
-var trigger = document.querySelector(".add");
+var show = document.querySelector(".add");
 var closeButton = document.querySelector(".close-button");
 
 function toggleModal() {
@@ -12,6 +13,6 @@ function windowOnClick(event) {
     }
 }
 
-trigger.addEventListener("click", toggleModal);
+show.addEventListener("click", toggleModal);
 closeButton.addEventListener("click", toggleModal);
 window.addEventListener("click", windowOnClick);
