@@ -1,16 +1,6 @@
-var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-var today  = new Date();
+var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' },
+    today  = new Date();
 $('nav p:last-of-type').text(today.toLocaleDateString("en-US", options));
-// Others
-(function($){
-    $(function(){
-        var tabNav = $('.tab-nav');
-        tabNav.on('click', 'label', function(){
-        tabNav.find('label').removeClass('active');
-        $(this).addClass('active');
-})
-});
-})(jQuery);
 $( document ).ready(function() {
     var name;
     if (localStorage.getItem("name") === null) {
@@ -18,9 +8,8 @@ $( document ).ready(function() {
         localStorage.setItem("name", name);
     }
     name = localStorage.getItem("name");
-    if(name) $('nav h1').html(`Good Day, ${name}`);
-    else $('nav h1').html(`Good Day`);
-    // Start
+    if(name && name != 'null') $('nav h1').html('Good Day, ' + `${name}`)
+    else $('nav h1').html(`Good Day`)
     if (localStorage.getItem("toDoList") === null) {
         var toDoList = [];
         localStorage.setItem("toDoList", JSON.stringify(toDoList));
@@ -33,80 +22,59 @@ $( document ).ready(function() {
         var done = [];
         localStorage.setItem("done", JSON.stringify(done));
     }
-    var storedToDoList = JSON.parse(localStorage.getItem("toDoList"));
-    var storedInProgressList = JSON.parse(localStorage.getItem("inProgress"));
-    var storedDoneList = JSON.parse(localStorage.getItem("done"));
-    // End
-    if(storedToDoList.length > 0){
-        storedToDoList.reverse().forEach(element => {
-            $('.tab-contents .tab-1 .tab-content ul li:first-of-type').after(`<li>
+    var storedToDoList = JSON.parse(localStorage.getItem("toDoList")),
+        storedInProgressList = JSON.parse(localStorage.getItem("inProgress")),
+        storedDoneList = JSON.parse(localStorage.getItem("done"));
+    inner = (tab, element) => {
+        return `<li>
                 <div class="left">
+                    ${(tab == 'tab-2') ? '<label class="control control--checkbox"><input type="checkbox"><div class="control__indicator"></div></label>' : ''}
                     <p class="p">${element}</p>
                 </div>
                 <div>
-                    <button class="btn bttn btn-hover teal save" title='Save' style="display: none;"><img src="./img/save.png"></button>
-                    <button class="btn bttn btn-hover red putBack" title='Put back to To Do' style="display: none;"><img src="./img/back.png"></button>
-                    <button class="btn bttn btn-hover blue editBtn"><img src="./img/edit.png"></button>
+                    <button class="btn bttn btn-hover teal save" title='Save'><img src="./img/save.png"></button>
+                    <button class="btn bttn btn-hover red putBack" title='Put back to To Do'><img src="./img/back.png"></button>
+                    <button class="btn bttn btn-hover blue editBtn" title='Edit'><img src="./img/edit.png"></button>
                     <button class="btn bttn btn-hover teal inProgress" title='Add to In Progress'><img src="./img/in-progress_white.png"></button>
-                    <button class="btn bttn btn-hover red delete"><img src="./img/trash.png"></button>
+                    <button class="btn bttn btn-hover red delete" title='Delete'><img src="./img/trash.png"></button>
                 </div>
-            </li>`);
+            </li>`;
+        if(tab == 'tab-1'){
+            return 
+        }
+        
+    }
+    if(storedToDoList.length > 0){
+        storedToDoList.forEach(element => {
+            $('.tab-1 .tab-content ul li:first-of-type').after(`${inner('tab-1', element)}`);
         });
+        $('.tab-1 .tab-content ul li div:last-of-type .putBack').hide();
     }
     if(storedInProgressList.length > 0){
-        storedInProgressList.reverse().forEach(element => {
-            $('.tab-contents .tab-2 .tab-content ul').prepend(`<li>
-                <div class="left">
-                    <label class="control control--checkbox">
-                        <input type="checkbox">
-                        <div class="control__indicator"></div>
-                    </label>
-                    <p class="p">${element}</p>
-                </div>
-                <div>
-                    <button class="btn bttn btn-hover teal save" title="Save" style="display: none;"><img src="./img/save.png"></button>
-                    <button class="btn bttn btn-hover red putBack" title="Put back to To Do"><img src="./img/back.png"></button>
-                    <button class="btn bttn btn-hover blue editBtn"><img src="./img/edit.png"></button>
-                    <button class="btn bttn btn-hover teal inProgress" title="Add to In Progress" style="display: none;"><img src="./img/in-progress_white.png"></button>
-                    <button class="btn bttn btn-hover red delete"><img src="./img/trash.png"></button>
-                </div>
-            </li>`);
+        storedInProgressList.forEach(element => {
+            $('.tab-2 .tab-content ul').prepend(`${inner('tab-2', element)}`);
         });
+        $('.tab-2 .tab-content ul li div:last-of-type .inProgress').hide();
     }
     if(storedDoneList.length > 0){
-        storedDoneList.reverse().forEach(element => {
-            $('.tab-contents .tab-3 .tab-content ul').prepend(`<li>
-                <div class="left">
-                    <p class="p" style="text-decoration: line-through;">${element}</p>
-                </div>
-                <div>
-                    <button class="btn bttn btn-hover teal save" title='Save' style="display: none;"><img src="./img/in-progress_white.png"></button>
-                    <button class="btn bttn btn-hover red putBack" title='Put back to In Progress'><img src="./img/in-progress_white.png"></button>
-                    <button class="btn bttn btn-hover blue editBtn"><img src="./img/edit.png"></button>
-                    <button class="btn bttn btn-hover teal inProgress" title='Add to In Progress' style="display: none;"><img src="./img/in-progress_white.png"></button>
-                    <button class="btn bttn btn-hover red delete"><img src="./img/trash.png"></button>
-                </div>
-            </li>`);
+        storedDoneList.forEach(element => {
+            $('.tab-3 .tab-content ul').prepend(`${inner('tab-3', element)}`);
         });
+        $('.tab-3 .tab-content ul li div:last-of-type .inProgress').hide();
+        $('.tab-3 .tab-content ul li .left').children('p').css('text-decoration','line-through');
+        $('.tab-3 .tab-content ul li div:last-of-type .putBack').prop('title', 'Put back to In Progress');
+        $('.tab-3 .tab-content ul li div:last-of-type .putBack').children('img').prop('src', './img/in-progress_white.png');
     }
+    $('.save').hide();
     $('body').on('click', '.add', function(e) {
         e.preventDefault();
         if($('.to-input').val()){
-            $('.tab-contents .tab-1 .tab-content ul li:first-of-type').after(`<li>
-                <div class="left">
-                    <p class="p">${$('.to-input').val()}</p>
-                </div>
-                <div>
-                    <button class="btn bttn btn-hover teal save" title='Save' style="display: none;"><img src="./img/save.png"></button>
-                    <button class="btn bttn btn-hover red putBack" title='Put back to To Do' style="display: none;"><img src="./img/back.png"></button>
-                    <button class="btn bttn btn-hover blue editBtn"><img src="./img/edit.png"></button>
-                    <button class="btn bttn btn-hover teal inProgress" title='Add to In Progress'><img src="./img/in-progress_white.png"></button>
-                    <button class="btn bttn btn-hover red delete"><img src="./img/trash.png"></button>
-                </div>
-            </li>`);
+            $('.tab-1 .tab-content ul li:first-of-type').after(`${inner('tab-1', $('.to-input').val())}`);
             storedToDoList.push($('.to-input').val());
             localStorage.setItem("toDoList", JSON.stringify(storedToDoList));
             $(this).parent().siblings('.left').children(":last").val('');
+            $('.tab-1 .tab-content ul li div:last-of-type .putBack').hide();
+            $('.tab-1 .tab-content ul li:nth-of-type(2) div:last-of-type .save').hide();
         }else alert('Error! Please add content');
     });
     $('body').on('click', '.delete', function(e) {
@@ -129,49 +97,49 @@ $( document ).ready(function() {
         } 
         return false;
     });
+    var inputValues
     $('body').on('click', '.editBtn', function(e) {
         e.preventDefault();
-        var inputValue = $(this).parent().siblings('.left').children(".p").text();
+        inputValues = $(this).parent().siblings('.left').children(".p").text();
         $(this).parent().siblings('.left').children(".p").remove();
-        $(this).parent().siblings('.left').append(`<input type="text" class="to-input" required value="${inputValue}"/>`);
+        $(this).parent().siblings('.left').append(`<input type="text" class="to-input" required value="${inputValues}"/>`);
         $(this).parent().siblings('.left').addClass('edit');
-        $(this).parent().siblings('.left').children(".to-input").focus().val('').val(inputValue);
+        $(this).parent().siblings('.left').children(".to-input").focus().val('').val(inputValues);
         $(this).siblings('.save').show();
         $(this).parent().siblings('.left').children(".control").children("input").attr("disabled", true);
         $(this).hide();
+        $(this).siblings('.delete').hide();
         if($(this).closest('.tab-content').closest('ul li').attr('class') == 'tab-1'){
-            storedToDoList.splice(storedToDoList.indexOf(inputValue), 1);
-            localStorage.setItem("toDoList", JSON.stringify(storedToDoList));
-        }else if($(this).closest('.tab-content').closest('ul li').attr('class') == 'tab-2'){
-            storedInProgressList.splice(storedInProgressList.indexOf(inputValue), 1);
-            localStorage.setItem("inProgress", JSON.stringify(storedInProgressList));
+            $(this).siblings('.inProgress').hide();
         }else{
-            storedDoneList.splice(storedDoneList.indexOf(inputValue), 1);
-            localStorage.setItem("done", JSON.stringify(storedDoneList));
+            $(this).siblings('.putBack').hide();
         }
     });
     $('body').on('click', '.save', function(e) {
         e.preventDefault();
         var inputValue = $(this).parent().siblings('.left').children(".to-input").val();
-        $(this).parent().siblings('.left').children(".to-input").remove();
-        $(this).parent().siblings('.left').append(`<p class="p">${inputValue}</p>`);
-        $(this).parent().siblings('.left').removeClass('edit');
-        $(this).siblings('.editBtn').show();
-        $(this).parent().siblings('.left').children(".control").children("input").attr("disabled", false);
-        if($(this).closest('.tab-content').closest('ul li').attr('class') == 'tab-3'){
-            $(this).parent().siblings('div:last').children('p').css('text-decoration','line-through');
-        }
-        $(this).hide();
-        if($(this).closest('.tab-content').closest('ul li').attr('class') == 'tab-1'){
-            storedToDoList.push(inputValue);
-            localStorage.setItem("toDoList", JSON.stringify(storedToDoList));
-        }else if($(this).closest('.tab-content').closest('ul li').attr('class') == 'tab-2'){
-            storedInProgressList.push(inputValue);
-            localStorage.setItem("inProgress", JSON.stringify(storedInProgressList));
-        }else{
-            storedDoneList.push(inputValue);
-            localStorage.setItem("done", JSON.stringify(storedDoneList));
-        }
+        if(inputValue){
+           $(this).parent().siblings('.left').children(".to-input").remove();
+            $(this).parent().siblings('.left').append(`<p class="p">${inputValue}</p>`);
+            $(this).parent().siblings('.left').removeClass('edit');
+            $(this).parent().siblings('.left').children(".control").children("input").attr("disabled", false);
+            $(this).hide();
+            $(this).siblings('.delete, .editBtn').show();
+            if($(this).closest('.tab-content').closest('ul li').attr('class') == 'tab-1'){
+                $(this).siblings('.inProgress').show();
+                storedToDoList.splice(storedToDoList.indexOf(inputValues), 1, inputValue);
+                localStorage.setItem("toDoList", JSON.stringify(storedToDoList));
+            }else if($(this).closest('.tab-content').closest('ul li').attr('class') == 'tab-2'){
+                $(this).siblings('.putBack').show();            
+                storedInProgressList.splice(storedInProgressList.indexOf(inputValues), 1, inputValue);
+                localStorage.setItem("inProgress", JSON.stringify(storedInProgressList));
+            }else{
+                $(this).parent().siblings('div:last').children('p').css('text-decoration','line-through');
+                $(this).siblings('.putBack').show();
+                storedDoneList.splice(storedDoneList.indexOf(inputValues), 1, inputValue);
+                localStorage.setItem("done", JSON.stringify(storedDoneList));
+            }
+        }else alert("Please don't leave the field empty!");
     });
     $('body').on('click', '.inProgress', function(e) {
         e.preventDefault();
@@ -187,7 +155,6 @@ $( document ).ready(function() {
         $(this).hide();
         $(this).siblings('.putBack').children('img').prop('src', './img/back.png');
         $('.tab-2 .tab-content ul').prepend(`<li>${$(this).parent().parent().remove().html()}</li>`);
-        // storedToDoList.splice(storedToDoList.indexOf(inputValue), 1);
     });
     $('body').on('click', '.putBack', function(e) {
         e.preventDefault();
@@ -234,6 +201,12 @@ $( document ).ready(function() {
             $(this).parent().parent().siblings(':last').children('.putBack').prop('title', 'Put back to In Progress');
             $(this).parent().parent().siblings(':last').children('.putBack').children('img').prop('src', './img/in-progress_white.png');
             $('.tab-3 .tab-content ul').prepend(`<li>${$(this).parent().parent().parent().remove().html()}</li>`);
+        }
+    });
+    $('body').on('click', '.reset', function(e) {
+        if(confirm('Are you you want to reset the Local Storage?')){
+            localStorage.clear();
+            location.reload();
         }
     });
 });
