@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>TO DO</title>
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link
       rel="stylesheet"
       href="styles/styles.css"
@@ -12,24 +12,45 @@
       title="no title"
       charset="utf-8"
     />
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
   </head>
   <body>
     
-    <div class="arr">
-    <h1>***JaymardMenor To-Do***</h1>
-    <img class="arrow" src="https://media.giphy.com/media/qURsvynKpLXsQ/giphy.gif" />
-</div>
-<div class="btn">
-    <div class="input-container">
-        <textarea
-          placeholder="What's on your mind?"
-          name="tweetText"
-          id="composeInput"
-          data-testid="tweet-input"
-        ></textarea>
+    <div class="main">
+      <img id="add" src="./img/add.png" alt="close form icon">
+     <div class="container1"style="display:none;" >
+                <h3 class="todo">New To Do</h3>
+                <img id="cancel" src="./img/Red.png" alt="close form icon">
+                <input id="newinput"  type="text" placeholder="To-Do Title" >
+                <button  id="save" >Add To Do</button>           
         </div>
-    <button class="post" data-testid="post" disabled>Submit</button> 
-</div> 
+
+      <div class="containerupdate"style="display:none;" >
+          <h3 class="todo">Update Content</h3>
+          <img id="cancel1" src="./img/Red.png" alt="close form icon">
+          <input id="updateinput"  type="text" placeholder="To-Do Title">
+          <button  id="update" >Update</button>
+      </div>
+
+        <section class="container2">
+                <div class="box">
+                  <h5>New Todos<hr ></h5>
+                  <ol class="list-group" id="todocontent" style="list-style-type:none;" ></ol>
+                </div> 
+            
+           
+                <div class="box">
+                  <h5>In Progress<hr></h5>
+                  <ol class="list-group" id="cl" style="list-style-type:none;" ></ol>
+                
+                </div>
+                <div class="box">
+                  <h5>Complete<hr></h5>
+                  <ol class="list-group" id="al" style="list-style-type:none;" ></ol>
+                </div>
+                
+              </section>   
+    </div> 
 <script src="./app/scripts/app.js"></script>
 <script src="https://unpkg.com/jquery@3.4.1/dist/jquery.js"></script>
 </body>
